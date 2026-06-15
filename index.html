@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#8B5CF6" />
+  
+  <!-- SEO Meta Tags -->
+  <title>Radio Rainbow | Live Internet Radio Station</title>
+  <meta name="description" content="Listen to Radio Rainbow live online. Enjoy nonstop music, entertainment, live shows, and worldwide streaming. 24x7 music, DJs & entertainment." />
+  <meta name="keywords" content="radio rainbow, live radio, internet radio, online streaming, music, live shows, radio station" />
+  <meta name="author" content="Radio Rainbow" />
+  <link rel="canonical" href="https://radiorainbow.com" />
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Radio Rainbow | Live Internet Radio Station" />
+  <meta property="og:description" content="Listen to Radio Rainbow live online. Enjoy nonstop music, entertainment, live shows, and worldwide streaming." />
+  <meta property="og:image" content="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w1000" />
+  <meta property="og:url" content="https://radiorainbow.com" />
+  <meta property="og:type" content="website" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Radio Rainbow | Live Internet Radio Station" />
+  <meta name="twitter:description" content="Listen to Radio Rainbow live online. Nonstop music, worldwide streaming." />
+  <meta name="twitter:image" content="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w1000" />
+  
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RadioStation",
+    "name": "Radio Rainbow",
+    "url": "https://radiorainbow.com",
+    "logo": "https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w500",
+    "description": "Global online radio station delivering music, entertainment, culture, talk shows, and community programs 24 hours a day.",
+    "areaServed": "Worldwide"
+  }
+  </script>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  
+  <style>
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    body {
+      background: #0a0a0f;
+      overflow-x: hidden;
+    }
+    
+    /* Custom rainbow glassmorphism */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1.5rem;
+    }
+    
+    .rainbow-gradient-bg {
+      background: linear-gradient(135deg, #FF6B6B, #FFD93D, #6BCB77, #4D96FF, #9B59B6);
+      background-size: 300% 300%;
+      animation: rainbowMove 6s ease infinite;
+    }
+    
+    @keyframes rainbowMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    /* Animated wave background */
+    .waves {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: repeating-linear-gradient(45deg, rgba(139, 92, 246, 0.3) 0px, rgba(139, 92, 246, 0.3) 2px, transparent 2px, transparent 12px);
+      animation: waveShift 8s linear infinite;
+    }
+    
+    @keyframes waveShift {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 0; }
+    }
+    
+    /* Equalizer animation */
+    .equalizer {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      justify-content: center;
+      height: 60px;
+    }
+    
+    .equalizer-bar {
+      width: 4px;
+      height: 20px;
+      background: linear-gradient(to top, #FF6B6B, #FFD93D);
+      animation: bounce 0.6s ease infinite alternate;
+    }
+    
+    .equalizer-bar:nth-child(2) { animation-delay: 0.1s; height: 35px; }
+    .equalizer-bar:nth-child(3) { animation-delay: 0.2s; height: 25px; }
+    .equalizer-bar:nth-child(4) { animation-delay: 0.3s; height: 45px; }
+    .equalizer-bar:nth-child(5) { animation-delay: 0.4s; height: 30px; }
+    .equalizer-bar:nth-child(6) { animation-delay: 0.5s; height: 40px; }
+    
+    @keyframes bounce {
+      from { transform: scaleY(0.3); }
+      to { transform: scaleY(1); }
+    }
+    
+    /* Hover effects */
+    .schedule-card, .show-card {
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      cursor: pointer;
+    }
+    
+    .schedule-card:hover, .show-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+    }
+    
+    .gallery-img {
+      transition: transform 0.4s ease, filter 0.3s;
+    }
+    
+    .gallery-img:hover {
+      transform: scale(1.08);
+      filter: brightness(1.1);
+    }
+    
+    /* Live badge pulse */
+    .live-badge {
+      animation: pulseRed 1.2s infinite;
+    }
+    
+    @keyframes pulseRed {
+      0% { opacity: 1; text-shadow: 0 0 0px #ff4444; }
+      50% { opacity: 0.8; text-shadow: 0 0 8px #ff4444; }
+      100% { opacity: 1; text-shadow: 0 0 0px #ff4444; }
+    }
+    
+    /* Sticky navigation */
+    .sticky-nav {
+      transition: all 0.3s ease;
+    }
+    
+    .sticky-nav.scrolled {
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Progress animation */
+    .progress-bar {
+      transition: width 0.5s linear;
+    }
+    
+    /* Responsive iframe */
+    .player-wrapper iframe {
+      max-width: 100%;
+      width: 100%;
+      min-height: 250px;
+    }
+    
+    @media (max-width: 768px) {
+      .player-wrapper iframe {
+        min-height: 200px;
+      }
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1e1e2a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #8B5CF6;
+      border-radius: 10px;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Logo image styling */
+    .logo-img {
+      height: 45px;
+      width: auto;
+      border-radius: 12px;
+      object-fit: contain;
+      transition: transform 0.2s ease;
+    }
+    .logo-img:hover {
+      transform: scale(1.02);
+    }
+    @media (max-width: 640px) {
+      .logo-img {
+        height: 38px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 sticky-nav">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-3 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <!-- Custom Logo from Google Drive - Using direct thumbnail URL -->
+        <img src="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w200" 
+             alt="Radio Rainbow Logo" 
+             class="logo-img"
+             onerror="this.onerror=null; this.src='https://placehold.co/200x200/8B5CF6/white?text=🌈RR';">
+        <span class="text-2xl font-bold bg-gradient-to-r from-pink-500 via-yellow-400 to-purple-600 bg-clip-text text-transparent hidden md:inline-block">
+          Radio Rainbow
+        </span>
+      </div>
+      <div class="hidden md:flex space-x-6 text-white/80 font-medium">
+        <a href="#home" class="hover:text-white hover:scale-105 transition nav-link">Home</a>
+        <a href="#listenlive" class="hover:text-white hover:scale-105 transition nav-link">Listen Live</a>
+        <a href="#schedule" class="hover:text-white hover:scale-105 transition nav-link">Schedule</a>
+        <a href="#shows" class="hover:text-white hover:scale-105 transition nav-link">Shows</a>
+        <a href="#djs" class="hover:text-white hover:scale-105 transition nav-link">DJs</a>
+        <a href="#news" class="hover:text-white hover:scale-105 transition nav-link">News</a>
+        <a href="#gallery" class="hover:text-white hover:scale-105 transition nav-link">Gallery</a>
+        <a href="#contact" class="hover:text-white hover:scale-105 transition nav-link">Contact</a>
+      </div>
+      <button id="mobileMenuBtn" class="md:hidden text-white text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-black/90 backdrop-blur-md border-t border-white/20 p-5 flex flex-col space-y-4 text-white">
+      <a href="#home" class="text-left text-lg py-2 mobile-link">Home</a>
+      <a href="#listenlive" class="text-left text-lg py-2 mobile-link">Listen Live</a>
+      <a href="#schedule" class="text-left text-lg py-2 mobile-link">Schedule</a>
+      <a href="#shows" class="text-left text-lg py-2 mobile-link">Shows</a>
+      <a href="#djs" class="text-left text-lg py-2 mobile-link">DJs</a>
+      <a href="#news" class="text-left text-lg py-2 mobile-link">News</a>
+      <a href="#gallery" class="text-left text-lg py-2 mobile-link">Gallery</a>
+      <a href="#contact" class="text-left text-lg py-2 mobile-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <div class="absolute inset-0 rainbow-gradient-bg opacity-20"></div>
+    <div class="absolute inset-0 waves"></div>
+    <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0a0a0f] to-transparent"></div>
+    
+    <div class="relative z-10 text-center px-5">
+      <div class="equalizer mb-8">
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+      </div>
+      <!-- Display logo prominently in hero -->
+      <div class="flex justify-center mb-6">
+        <img src="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w400" 
+             alt="Radio Rainbow Official Logo" 
+             class="w-32 h-32 md:w-44 md:h-44 rounded-2xl shadow-2xl object-cover border-2 border-white/20 hover:scale-105 transition-transform"
+             onerror="this.onerror=null; this.src='https://placehold.co/400x400/8B5CF6/white?text=🌈RADIO+RAINBOW';">
+      </div>
+      <h1 class="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-pink-500 via-indigo-400 to-purple-500 bg-clip-text text-transparent animate-fade-in">
+        Radio Rainbow
+      </h1>
+      <p class="text-xl md:text-2xl text-white/80 mt-4 max-w-2xl mx-auto">
+        "Music • Entertainment • Live Shows • 24x7 Streaming"
+      </p>
+      <a href="#listenlive" class="inline-block mt-8 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-bold text-lg shadow-2xl hover:scale-105 transition-transform">
+        <i class="fas fa-headphones mr-2"></i> Listen Live
+      </a>
+    </div>
+  </section>
+
+  <!-- Live Player Section -->
+  <section id="listenlive" class="py-16 px-5">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-4xl font-bold flex justify-center items-center gap-2 text-white">
+        <span class="text-red-500 animate-pulse">🔴</span> LIVE ON AIR
+      </h2>
+      <div class="flex justify-center my-6 player-wrapper">
+        <div class="w-full max-w-3xl glass-card p-4 md:p-6 rounded-2xl">
+          <iframe src="https://zeno.fm/player/radiorainbow" width="100%" height="250" frameborder="0" scrolling="no" title="Radio Rainbow Player"></iframe>
+          <a href="https://zeno.fm/" target="_blank" class="text-xs text-white/50 block mt-2">A Zeno.FM Station</a>
+        </div>
+      </div>
+      <div class="mt-4 flex flex-col items-center gap-2">
+        <div class="flex items-center gap-2 bg-black/40 rounded-full px-4 py-2 backdrop-blur">
+          <span class="text-green-400 text-xl live-badge">●</span>
+          <span class="text-white font-semibold" id="liveStatus">LIVE NOW</span>
+        </div>
+        <p class="text-white/70 text-sm"><i class="fas fa-globe mr-1"></i> Streaming Worldwide · Crystal Clear Audio</p>
+      </div>
+      
+      <!-- Now Playing Widget -->
+      <div class="glass-card p-6 rounded-2xl max-w-md mx-auto mt-8">
+        <div class="flex items-center gap-4">
+          <img id="albumArt" src="https://picsum.photos/id/29/100/100" alt="album art" class="w-20 h-20 rounded-xl shadow-lg object-cover" />
+          <div class="flex-1">
+            <p class="text-pink-400 text-sm flex items-center gap-1">
+              <span class="live-badge">●</span> NOW PLAYING
+            </p>
+            <h3 id="songName" class="text-white font-bold text-lg">Sunshine Love</h3>
+            <p id="artistName" class="text-white/60">Rainbow Beats</p>
+            <div class="w-full bg-white/20 h-1.5 rounded-full mt-2 overflow-hidden">
+              <div id="progressFill" class="bg-gradient-to-r from-pink-500 to-purple-500 h-1.5 rounded-full progress-bar" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Schedule -->
+  <section id="schedule" class="py-20 px-5 bg-white/5">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl font-bold text-center text-white mb-12">📅 Program Schedule</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div class="schedule-card glass-card p-6 rounded-2xl"><div class="h-2 w-20 rounded-full bg-gradient-to-r from-orange-400 to-pink-500 mb-4"></div><h3 class="text-2xl font-bold text-white">Morning Melody</h3><p class="text-white/60 text-lg mt-2"><i class="far fa-clock"></i> 6 AM - 10 AM</p></div>
+        <div class="schedule-card glass-card p-6 rounded-2xl"><div class="h-2 w-20 rounded-full bg-gradient-to-r from-yellow-400 to-red-500 mb-4"></div><h3 class="text-2xl font-bold text-white">Rainbow Hits</h3><p class="text-white/60 text-lg mt-2"><i class="far fa-clock"></i> 10 AM - 2 PM</p></div>
+        <div class="schedule-card glass-card p-6 rounded-2xl"><div class="h-2 w-20 rounded-full bg-gradient-to-r from-green-400 to-teal-500 mb-4"></div><h3 class="text-2xl font-bold text-white">Afternoon Chill</h3><p class="text-white/60 text-lg mt-2"><i class="far fa-clock"></i> 2 PM - 5 PM</p></div>
+        <div class="schedule-card glass-card p-6 rounded-2xl"><div class="h-2 w-20 rounded-full bg-gradient-to-r from-blue-400 to-indigo-500 mb-4"></div><h3 class="text-2xl font-bold text-white">Evening Vibes</h3><p class="text-white/60 text-lg mt-2"><i class="far fa-clock"></i> 5 PM - 8 PM</p></div>
+        <div class="schedule-card glass-card p-6 rounded-2xl"><div class="h-2 w-20 rounded-full bg-gradient-to-r from-purple-500 to-pink-600 mb-4"></div><h3 class="text-2xl font-bold text-white">Night Express</h3><p class="text-white/60 text-lg mt-2"><i class="far fa-clock"></i> 8 PM - Midnight</p></div>
+        <div class="schedule-card glass-card p-6 rounded-2xl"><div class="h-2 w-20 rounded-full bg-gradient-to-r from-gray-700 to-purple-800 mb-4"></div><h3 class="text-2xl font-bold text-white">Midnight Mix</h3><p class="text-white/60 text-lg mt-2"><i class="far fa-clock"></i> 12 AM - 6 AM</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Shows -->
+  <section id="shows" class="py-20 px-5">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl font-bold text-center text-white mb-12">✨ Featured Shows</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="show-card glass-card overflow-hidden rounded-2xl"><img src="https://picsum.photos/id/167/400/250" alt="Music Unlimited" class="w-full h-48 object-cover" loading="lazy" /><div class="p-5"><h3 class="text-2xl font-bold text-white">Music Unlimited</h3><p class="text-white/70 mt-2">Nonstop global hits & classics</p><a href="#listenlive" class="inline-block mt-4 px-5 py-2 bg-purple-700/60 rounded-full text-white text-sm hover:bg-purple-600 transition"><i class="fas fa-play mr-1"></i> Listen Live</a></div></div>
+        <div class="show-card glass-card overflow-hidden rounded-2xl"><img src="https://picsum.photos/id/108/400/250" alt="Retro Night" class="w-full h-48 object-cover" loading="lazy" /><div class="p-5"><h3 class="text-2xl font-bold text-white">Retro Night</h3><p class="text-white/70 mt-2">Best of 80s & 90s</p><a href="#listenlive" class="inline-block mt-4 px-5 py-2 bg-purple-700/60 rounded-full text-white text-sm hover:bg-purple-600 transition"><i class="fas fa-play mr-1"></i> Listen Live</a></div></div>
+        <div class="show-card glass-card overflow-hidden rounded-2xl"><img src="https://picsum.photos/id/64/400/250" alt="Love Songs" class="w-full h-48 object-cover" loading="lazy" /><div class="p-5"><h3 class="text-2xl font-bold text-white">Love Songs</h3><p class="text-white/70 mt-2">Romantic melodies</p><a href="#listenlive" class="inline-block mt-4 px-5 py-2 bg-purple-700/60 rounded-full text-white text-sm hover:bg-purple-600 transition"><i class="fas fa-play mr-1"></i> Listen Live</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DJs Section -->
+  <section id="djs" class="py-20 bg-black/40 px-5">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl font-bold text-white mb-6">🎧 Meet Our DJs</h2>
+      <p class="text-white/60">Coming soon: Profiles of your favorite Radio Rainbow hosts!</p>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section id="news" class="py-20 px-5">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl font-bold text-white">📰 Latest News</h2>
+      <p class="text-white/70 mt-4">Stay tuned for music events & announcements.</p>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="py-20 px-5 bg-white/5">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl font-bold text-center text-white mb-10">📸 Gallery</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="overflow-hidden rounded-xl"><img src="https://picsum.photos/id/169/400/300" alt="Studio" class="gallery-img w-full h-48 object-cover cursor-pointer" loading="lazy" /></div>
+        <div class="overflow-hidden rounded-xl"><img src="https://picsum.photos/id/155/400/300" alt="DJ" class="gallery-img w-full h-48 object-cover cursor-pointer" loading="lazy" /></div>
+        <div class="overflow-hidden rounded-xl"><img src="https://picsum.photos/id/158/400/300" alt="Microphone" class="gallery-img w-full h-48 object-cover cursor-pointer" loading="lazy" /></div>
+        <div class="overflow-hidden rounded-xl"><img src="https://picsum.photos/id/91/400/300" alt="Broadcast" class="gallery-img w-full h-48 object-cover cursor-pointer" loading="lazy" /></div>
+        <div class="overflow-hidden rounded-xl"><img src="https://picsum.photos/id/29/400/300" alt="Music" class="gallery-img w-full h-48 object-cover cursor-pointer" loading="lazy" /></div>
+        <div class="overflow-hidden rounded-xl"><img src="https://picsum.photos/id/24/400/300" alt="Audience" class="gallery-img w-full h-48 object-cover cursor-pointer" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="py-16 px-5 max-w-4xl mx-auto text-center">
+    <div class="glass-card p-8 rounded-3xl">
+      <h2 class="text-3xl font-bold text-white">🎙️ About Radio Rainbow</h2>
+      <p class="text-white/80 mt-4 leading-relaxed">Radio Rainbow is a global online radio station delivering music, entertainment, culture, talk shows, and community programs 24 hours a day. Broadcasting worldwide through internet streaming with crystal clear audio quality.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-5">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="text-4xl font-bold text-white mb-6">Contact Us</h2>
+        <form id="contactForm" class="space-y-5">
+          <input type="text" id="name" placeholder="Name" class="w-full p-3 rounded-xl bg-white/10 text-white border border-white/20 focus:outline-none focus:border-purple-500" required />
+          <input type="email" id="email" placeholder="Email" class="w-full p-3 rounded-xl bg-white/10 text-white border border-white/20 focus:outline-none focus:border-purple-500" required />
+          <textarea id="message" rows="4" placeholder="Message" class="w-full p-3 rounded-xl bg-white/10 text-white border border-white/20 focus:outline-none focus:border-purple-500" required></textarea>
+          <button type="submit" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full text-white font-semibold hover:scale-105 transition">Send Message</button>
+        </form>
+      </div>
+      <div class="text-white">
+        <h3 class="text-2xl font-bold">Get in touch</h3>
+        <p class="mt-4 flex gap-3"><i class="fas fa-envelope mt-1"></i> hello@radiorainbow.com</p>
+        <p class="mt-2 flex gap-3"><i class="fas fa-phone-alt mt-1"></i> +1 (555) 789-RAINBOW</p>
+        <div class="flex gap-5 mt-6 text-3xl">
+          <i class="fab fa-facebook hover:text-pink-500 cursor-pointer transition"></i>
+          <i class="fab fa-instagram hover:text-pink-500 cursor-pointer transition"></i>
+          <i class="fab fa-youtube hover:text-red-500 cursor-pointer transition"></i>
+          <i class="fab fa-whatsapp hover:text-green-400 cursor-pointer transition"></i>
+          <i class="fab fa-twitter hover:text-blue-400 cursor-pointer transition"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black/80 backdrop-blur-lg border-t border-white/10 py-10 px-5 text-center text-white/70">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex justify-center mb-3">
+        <img src="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w200" 
+             alt="Radio Rainbow Logo" 
+             class="h-12 w-auto rounded-lg opacity-90"
+             onerror="this.style.display='none'">
+      </div>
+      <div class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-indigo-400 bg-clip-text text-transparent">🌈 Radio Rainbow</div>
+      <p class="mt-2">Streaming Music Across The World</p>
+      <div class="flex flex-wrap justify-center gap-6 mt-5 text-sm">
+        <span>© 2026 Radio Rainbow</span>
+        <a href="#" class="hover:text-white">Privacy Policy</a>
+        <a href="#" class="hover:text-white">Terms</a>
+        <a href="#" class="hover:text-white">DMCA</a>
+        <a href="#" class="hover:text-white">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky navigation
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if(mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Live status auto-refresh every 30 seconds
+    let liveStatusToggle = false;
+    setInterval(() => {
+      const statusEl = document.getElementById('liveStatus');
+      if (statusEl) {
+        liveStatusToggle = !liveStatusToggle;
+        statusEl.textContent = liveStatusToggle ? "LIVE NOW • Worldwide" : "🔴 LIVE: 24x7 Streaming";
+      }
+    }, 30000);
+
+    // Now playing simulation with progress bar
+    const tracks = [
+      { song: "Electric Dreams", artist: "Neon Lights", img: "https://picsum.photos/id/100/100/100" },
+      { song: "Morning Melody", artist: "DJ Aurora", img: "https://picsum.photos/id/145/100/100" },
+      { song: "Rainbow Vibes", artist: "Radio Rainbow Crew", img: "https://picsum.photos/id/96/100/100" },
+      { song: "Sunshine Love", artist: "Rainbow Beats", img: "https://picsum.photos/id/29/100/100" }
+    ];
+    let trackIndex = 0;
+    let progress = 0;
+    
+    function updateNowPlaying() {
+      const track = tracks[trackIndex];
+      document.getElementById('songName').textContent = track.song;
+      document.getElementById('artistName').textContent = track.artist;
+      document.getElementById('albumArt').src = track.img;
+      progress = 0;
+      document.getElementById('progressFill').style.width = '0%';
+    }
+    
+    function updateProgress() {
+      progress += 1;
+      if (progress >= 100) {
+        progress = 0;
+        trackIndex = (trackIndex + 1) % tracks.length;
+        updateNowPlaying();
+      }
+      document.getElementById('progressFill').style.width = progress + '%';
+    }
+    
+    updateNowPlaying();
+    setInterval(updateProgress, 300);
+    setInterval(() => {
+      trackIndex = (trackIndex + 1) % tracks.length;
+      updateNowPlaying();
+    }, 30000);
+    
+    // Contact form handler
+    const contactForm = document.getElementById('contactForm');
+    if(contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        alert(`Thanks ${name}! We'll get back to you soon. 🎵`);
+        this.reset();
+      });
+    }
+    
+    // Smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
