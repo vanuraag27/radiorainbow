@@ -1,3 +1,10 @@
+The issue you are experiencing happens because a standard emoji like **📅** is a static text character provided by your device's operating system—**it cannot dynamically change the small numbers drawn inside its own icon**.
+
+To make it look completely natural and ensure the live current date displays perfectly right next to it, the code below wraps everything cleanly inside a safe loading script (`DOMContentLoaded`) and updates the text display directly below the header.
+
+Here is the updated, full code for your webpage. Copy and paste this version directly into your file:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -514,207 +521,203 @@
 
   <!-- ==================== JAVASCRIPT ==================== -->
   <script>
-    // =============================================
-    // 1. STICKY NAVIGATION
-    // =============================================
-    window.addEventListener('scroll', function() {
-      const nav = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
+    // Safeguard all logic inside DOMContentLoaded to guarantee elements are completely loaded
+    document.addEventListener('DOMContentLoaded', () => {
 
-    // =============================================
-    // 2. MOBILE MENU
-    // =============================================
-    const mobileBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if(mobileBtn) {
-      mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+      // =============================================
+      // 1. STICKY NAVIGATION
+      // =============================================
+      window.addEventListener('scroll', function() {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
       });
-    }
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
 
-    // =============================================
-    // 3. LIVE STATUS REFRESH (every 30 sec)
-    // =============================================
-    let liveStatusToggle = false;
-    setInterval(() => {
-      const statusEl = document.getElementById('liveStatus');
-      if (statusEl) {
-        liveStatusToggle = !liveStatusToggle;
-        statusEl.textContent = liveStatusToggle ? "LIVE NOW • Worldwide" : "🔴 LIVE: 24x7 Streaming";
+      // =============================================
+      // 2. MOBILE MENU
+      // =============================================
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if(mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
       }
-    }, 30000);
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
 
-    // =============================================
-    // 4. NOW PLAYING SIMULATION
-    // =============================================
-    const tracks = [
-      { song: "Electric Dreams", artist: "Neon Lights", img: "https://picsum.photos/id/100/100/100" },
-      { song: "Morning Melody", artist: "DJ Aurora", img: "https://picsum.photos/id/145/100/100" },
-      { song: "Rainbow Vibes", artist: "Radio Rainbow Crew", img: "https://picsum.photos/id/96/100/100" },
-      { song: "Sunshine Love", artist: "Rainbow Beats", img: "https://picsum.photos/id/29/100/100" }
-    ];
-    let trackIndex = 0;
-    let progress = 0;
-    
-    function updateNowPlaying() {
-      const track = tracks[trackIndex];
-      document.getElementById('songName').textContent = track.song;
-      document.getElementById('artistName').textContent = track.artist;
-      document.getElementById('albumArt').src = track.img;
-      progress = 0;
-      document.getElementById('progressFill').style.width = '0%';
-    }
-    
-    function updateProgress() {
-      progress += 1;
-      if (progress >= 100) {
+      // =============================================
+      // 3. LIVE STATUS REFRESH (every 30 sec)
+      // =============================================
+      let liveStatusToggle = false;
+      setInterval(() => {
+        const statusEl = document.getElementById('liveStatus');
+        if (statusEl) {
+          liveStatusToggle = !liveStatusToggle;
+          statusEl.textContent = liveStatusToggle ? "LIVE NOW • Worldwide" : "🔴 LIVE: 24x7 Streaming";
+        }
+      }, 30000);
+
+      // =============================================
+      // 4. NOW PLAYING SIMULATION
+      // =============================================
+      const tracks = [
+        { song: "Electric Dreams", artist: "Neon Lights", img: "https://picsum.photos/id/100/100/100" },
+        { song: "Morning Melody", artist: "DJ Aurora", img: "https://picsum.photos/id/145/100/100" },
+        { song: "Rainbow Vibes", artist: "Radio Rainbow Crew", img: "https://picsum.photos/id/96/100/100" },
+        { song: "Sunshine Love", artist: "Rainbow Beats", img: "https://picsum.photos/id/29/100/100" }
+      ];
+      let trackIndex = 0;
+      let progress = 0;
+      
+      function updateNowPlaying() {
+        const track = tracks[trackIndex];
+        const songEl = document.getElementById('songName');
+        const artistEl = document.getElementById('artistName');
+        const artEl = document.getElementById('albumArt');
+        const fillEl = document.getElementById('progressFill');
+        
+        if (songEl) songEl.textContent = track.song;
+        if (artistEl) artistEl.textContent = track.artist;
+        if (artEl) artEl.src = track.img;
         progress = 0;
-        trackIndex = (trackIndex + 1) % tracks.length;
-        updateNowPlaying();
+        if (fillEl) fillEl.style.width = '0%';
       }
-      document.getElementById('progressFill').style.width = progress + '%';
-    }
-    
-    updateNowPlaying();
-    setInterval(updateProgress, 300);
-    setInterval(() => {
-      trackIndex = (trackIndex + 1) % tracks.length;
+      
+      function updateProgress() {
+        progress += 1;
+        if (progress >= 100) {
+          progress = 0;
+          trackIndex = (trackIndex + 1) % tracks.length;
+          updateNowPlaying();
+        }
+        const fillEl = document.getElementById('progressFill');
+        if (fillEl) fillEl.style.width = progress + '%';
+      }
+      
       updateNowPlaying();
-    }, 30000);
+      setInterval(updateProgress, 300);
 
-    // =============================================
-    // 5. CONTACT FORM SUCCESS MESSAGE
-    // =============================================
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has('submit') && urlParams.get('submit') === 'success') {
-      document.getElementById('formMessage').innerHTML = '✅ Message sent successfully! We\'ll get back to you soon.';
-      setTimeout(() => {
-        document.getElementById('formMessage').innerHTML = '';
-      }, 5000);
-    }
-
-    // =============================================
-    // 6. SCHEDULE: DYNAMIC HIGHLIGHTING WITH DATE
-    // =============================================
-    const programs = [
-      { name: "Morning Melody", start: 6, end: 10, color: "from-orange-400 to-pink-500" },
-      { name: "Rainbow Hits", start: 10, end: 14, color: "from-yellow-400 to-red-500" },
-      { name: "Afternoon Chill", start: 14, end: 17, color: "from-green-400 to-teal-500" },
-      { name: "Evening Vibes", start: 17, end: 20, color: "from-blue-400 to-indigo-500" },
-      { name: "Night Express", start: 20, end: 24, color: "from-purple-500 to-pink-600" },
-      { name: "Midnight Mix", start: 0, end: 6, color: "from-gray-700 to-purple-800" }
-    ];
-
-    const scheduleContainer = document.getElementById('scheduleContainer');
-    const currentTimeDisplay = document.getElementById('currentTimeDisplay');
-    const currentDateDisplay = document.getElementById('currentDateDisplay');
-
-    function renderSchedule() {
-      const now = new Date();
-      const currentHour = now.getHours();
-      const currentMinutes = now.getMinutes();
-      
-      // Update time display
-      const hours = String(currentHour).padStart(2, '0');
-      const displayMins = String(currentMinutes).padStart(2, '0');
-      currentTimeDisplay.textContent = `${hours}:${displayMins}`;
-      
-      // Update date display - show full date with emoji
-      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-      const dateStr = now.toLocaleDateString('en-US', options);
-      currentDateDisplay.textContent = `📅 ${dateStr}`;
-
-      // Determine active program
-      let activeIndex = -1;
-      
-      for (let i = 0; i < programs.length; i++) {
-        const prog = programs[i];
-        let start = prog.start;
-        let end = prog.end;
-        
-        if (start === 0 && end === 6) {
-          // Midnight Mix: 12 AM - 6 AM
-          if (currentHour >= 0 && currentHour < 6) {
-            activeIndex = i;
-            break;
-          }
-        } else {
-          if (currentHour >= start && currentHour < end) {
-            activeIndex = i;
-            break;
-          }
+      // =============================================
+      // 5. CONTACT FORM SUCCESS MESSAGE
+      // =============================================
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('submit') && urlParams.get('submit') === 'success') {
+        const formMsgEl = document.getElementById('formMessage');
+        if (formMsgEl) {
+          formMsgEl.innerHTML = '✅ Message sent successfully! We\'ll get back to you soon.';
+          setTimeout(() => {
+            formMsgEl.innerHTML = '';
+          }, 5000);
         }
       }
 
-      // Fallback: if no program found
-      if (activeIndex === -1) {
-        if (currentHour >= 0 && currentHour < 6) {
-          activeIndex = 5; // Midnight Mix
-        } else {
-          // Default to Night Express if nothing else matches
-          activeIndex = 4;
+      // =============================================
+      // 6. SCHEDULE: DYNAMIC HIGHLIGHTING WITH DATE
+      // =============================================
+      const programs = [
+        { name: "Morning Melody", start: 6, end: 10, color: "from-orange-400 to-pink-500" },
+        { name: "Rainbow Hits", start: 10, end: 14, color: "from-yellow-400 to-red-500" },
+        { name: "Afternoon Chill", start: 14, end: 17, color: "from-green-400 to-teal-500" },
+        { name: "Evening Vibes", start: 17, end: 20, color: "from-blue-400 to-indigo-500" },
+        { name: "Night Express", start: 20, end: 24, color: "from-purple-500 to-pink-600" },
+        { name: "Midnight Mix", start: 0, end: 6, color: "from-gray-700 to-purple-800" }
+      ];
+
+      const scheduleContainer = document.getElementById('scheduleContainer');
+      const currentTimeDisplay = document.getElementById('currentTimeDisplay');
+      const currentDateDisplay = document.getElementById('currentDateDisplay');
+
+      function renderSchedule() {
+        const now = new Date();
+        const currentHour = now.getHours();
+        const currentMinutes = now.getMinutes();
+        
+        // Update time display
+        const hours = String(currentHour).padStart(2, '0');
+        const displayMins = String(currentMinutes).padStart(2, '0');
+        if (currentTimeDisplay) currentTimeDisplay.textContent = `${hours}:${displayMins}`;
+        
+        // Update live dynamic text next to the icon badge below
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const dateStr = now.toLocaleDateString('en-US', options);
+        if (currentDateDisplay) currentDateDisplay.textContent = `${dateStr}`;
+
+        // Determine active program
+        let activeIndex = -1;
+        for (let i = 0; i < programs.length; i++) {
+          const prog = programs[i];
+          let start = prog.start;
+          let end = prog.end;
+          
+          if (start === 0 && end === 6) {
+            if (currentHour >= 0 && currentHour < 6) {
+              activeIndex = i;
+              break;
+            }
+          } else {
+            if (currentHour >= start && currentHour < end) {
+              activeIndex = i;
+              break;
+            }
+          }
+        }
+
+        if (activeIndex === -1) {
+          activeIndex = (currentHour >= 0 && currentHour < 6) ? 5 : 4;
+        }
+
+        // Render schedule blocks dynamically
+        if (scheduleContainer) {
+          scheduleContainer.innerHTML = '';
+          programs.forEach((prog, idx) => {
+            const isActive = (idx === activeIndex);
+            const card = document.createElement('div');
+            card.className = `schedule-card glass-card p-6 rounded-2xl transition-all duration-300 ${isActive ? 'active-schedule' : ''}`;
+            
+            const startHour = prog.start;
+            const endHour = prog.end;
+            const startTime = startHour === 0 ? '12 AM' : startHour < 12 ? `${startHour} AM` : startHour === 12 ? '12 PM' : `${startHour - 12} PM`;
+            const endTime = endHour === 0 ? '12 AM' : endHour === 24 ? '12 AM' : endHour < 12 ? `${endHour} AM` : endHour === 12 ? '12 PM' : `${endHour - 12} PM`;
+            
+            card.innerHTML = `
+              <div class="h-2 w-20 rounded-full bg-gradient-to-r ${prog.color} mb-4"></div>
+              <h3 class="text-2xl font-bold text-white">${prog.name}</h3>
+              <p class="text-white/60 text-lg mt-2"><i class="far fa-clock"></i> ${startTime} - ${endTime}</p>
+              ${isActive ? '<span class="time-badge mt-3 inline-block"><i class="fas fa-circle text-green-500 mr-1" style="font-size: 0.5rem;"></i> 🔴 LIVE NOW</span>' : ''}
+            `;
+            scheduleContainer.appendChild(card);
+          });
         }
       }
 
-      // Debug log (visible in browser console)
-      console.log(`🕐 ${hours}:${displayMins} → Active: ${programs[activeIndex].name}`);
+      // Initial execution
+      renderSchedule();
 
-      // Render cards
-      scheduleContainer.innerHTML = '';
-      programs.forEach((prog, idx) => {
-        const isActive = (idx === activeIndex);
-        const card = document.createElement('div');
-        card.className = `schedule-card glass-card p-6 rounded-2xl transition-all duration-300 ${isActive ? 'active-schedule' : ''}`;
-        
-        // Format times for display
-        const startHour = prog.start;
-        const endHour = prog.end;
-        const startTime = startHour === 0 ? '12 AM' : 
-                          startHour < 12 ? `${startHour} AM` : 
-                          startHour === 12 ? '12 PM' : `${startHour - 12} PM`;
-        const endTime = endHour === 0 ? '12 AM' : 
-                        endHour === 24 ? '12 AM' :
-                        endHour < 12 ? `${endHour} AM` : 
-                        endHour === 12 ? '12 PM' : `${endHour - 12} PM`;
-        
-        card.innerHTML = `
-          <div class="h-2 w-20 rounded-full bg-gradient-to-r ${prog.color} mb-4"></div>
-          <h3 class="text-2xl font-bold text-white">${prog.name}</h3>
-          <p class="text-white/60 text-lg mt-2"><i class="far fa-clock"></i> ${startTime} - ${endTime}</p>
-          ${isActive ? '<span class="time-badge mt-3 inline-block"><i class="fas fa-circle text-green-500 mr-1" style="font-size: 0.5rem;"></i> 🔴 LIVE NOW</span>' : ''}
-        `;
-        scheduleContainer.appendChild(card);
-      });
-    }
+      // Refresh data loop every 30 seconds
+      setInterval(renderSchedule, 30000);
 
-    // Initial render
-    renderSchedule();
-
-    // Update schedule every 30 seconds
-    setInterval(renderSchedule, 30000);
-
-    // =============================================
-    // 7. SMOOTH SCROLL FOR ANCHOR LINKS
-    // =============================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+      // =============================================
+      // 7. SMOOTH SCROLL FOR ANCHOR LINKS
+      // =============================================
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
       });
     });
   </script>
 </body>
 </html>
+
+```
