@@ -629,7 +629,7 @@
       const mins = String(currentMinutes).padStart(2, '0');
       currentTimeDisplay.textContent = `${hours}:${mins}`;
       
-      // Update date display - show only once below the title
+      // Update date display - show full date with emoji
       const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
       const dateStr = now.toLocaleDateString('en-US', options);
       currentDateDisplay.textContent = `📅 ${dateStr}`;
