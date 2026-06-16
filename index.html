@@ -626,8 +626,8 @@
       
       // Update time display
       const hours = String(currentHour).padStart(2, '0');
-      const mins = String(currentMinutes).padStart(2, '0');
-      currentTimeDisplay.textContent = `${hours}:${mins}`;
+      const displayMins = String(currentMinutes).padStart(2, '0');
+      currentTimeDisplay.textContent = `${hours}:${displayMins}`;
       
       // Update date display - show full date with emoji
       const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -667,7 +667,7 @@
       }
 
       // Debug log (visible in browser console)
-      console.log(`🕐 ${hours}:${mins} → Active: ${programs[activeIndex].name}`);
+      console.log(`🕐 ${hours}:${displayMins} → Active: ${programs[activeIndex].name}`);
 
       // Render cards
       scheduleContainer.innerHTML = '';
