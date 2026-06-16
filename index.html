@@ -366,7 +366,7 @@
     <div class="max-w-7xl mx-auto">
       <div class="text-center">
         <h2 class="text-4xl font-bold text-white mb-2">
-          📅 Program Schedule
+          Program Schedule
         </h2>
         <div class="date-display mt-1">
           <span id="currentDateDisplay" class="text-yellow-400 text-lg font-semibold">
@@ -514,7 +514,6 @@
 
   <!-- ==================== JAVASCRIPT ==================== -->
   <script>
-    // Safeguard all logic inside DOMContentLoaded to guarantee elements are completely loaded
     document.addEventListener('DOMContentLoaded', () => {
 
       // =============================================
@@ -637,7 +636,7 @@
         const displayMins = String(currentMinutes).padStart(2, '0');
         if (currentTimeDisplay) currentTimeDisplay.textContent = `${hours}:${displayMins}`;
         
-        // Update live dynamic text next to the icon badge below
+        // Update live dynamic text (without prepended icon string)
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         const dateStr = now.toLocaleDateString('en-US', options);
         if (currentDateDisplay) currentDateDisplay.textContent = `${dateStr}`;
@@ -712,5 +711,3 @@
   </script>
 </body>
 </html>
-
-```
