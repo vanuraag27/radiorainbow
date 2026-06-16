@@ -208,14 +208,47 @@
         height: 38px;
       }
     }
+
+    /* ========== SCHEDULE HIGHLIGHT STYLES ========== */
+    .schedule-card.active-schedule {
+      border: 2px solid #FFD93D;
+      box-shadow: 0 0 40px rgba(255, 217, 61, 0.25);
+      transform: scale(1.02);
+      background: rgba(255, 217, 61, 0.08);
+    }
+
+    .schedule-card.active-schedule h3 {
+      color: #FFD93D;
+      text-shadow: 0 0 20px rgba(255, 217, 61, 0.2);
+    }
+
+    .schedule-card.active-schedule .time-badge {
+      background: linear-gradient(135deg, #FFD93D, #FF6B6B);
+      color: #0a0a0f;
+      font-weight: bold;
+      animation: pulseBadge 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulseBadge {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+
+    .time-badge {
+      display: inline-block;
+      padding: 2px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      background: rgba(255,255,255,0.1);
+      color: #aaa;
+    }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- ==================== NAVIGATION ==================== -->
   <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 sticky-nav">
     <div class="max-w-7xl mx-auto px-5 md:px-8 py-3 flex justify-between items-center">
       <div class="flex items-center gap-3">
-        <!-- Custom Logo from Google Drive - Using direct thumbnail URL -->
         <img src="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w200" 
              alt="Radio Rainbow Logo" 
              class="logo-img"
@@ -250,7 +283,7 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- ==================== HERO SECTION ==================== -->
   <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
     <div class="absolute inset-0 rainbow-gradient-bg opacity-20"></div>
     <div class="absolute inset-0 waves"></div>
@@ -265,7 +298,6 @@
         <div class="equalizer-bar"></div>
         <div class="equalizer-bar"></div>
       </div>
-      <!-- Display logo prominently in hero -->
       <div class="flex justify-center mb-6">
         <img src="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w400" 
              alt="Radio Rainbow Official Logo" 
@@ -278,11 +310,10 @@
       <p class="text-xl md:text-2xl text-white/80 mt-4 max-w-2xl mx-auto">
         "Music • Entertainment • Live Shows • 24x7 Streaming"
       </p>
-      <!-- Listen Live button removed from hero section as requested -->
     </div>
   </section>
 
-  <!-- Live Player Section -->
+  <!-- ==================== LIVE PLAYER SECTION ==================== -->
   <section id="listenlive" class="py-16 px-5">
     <div class="max-w-5xl mx-auto text-center">
       <h2 class="text-4xl font-bold flex justify-center items-center gap-2 text-white">
@@ -321,34 +352,55 @@
     </div>
   </section>
 
-  <!-- Program Schedule -->
+  <!-- ==================== PROGRAM SCHEDULE ==================== -->
   <section id="schedule" class="py-20 px-5 bg-white/5">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-4xl font-bold text-center text-white mb-12">📅 Program Schedule</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
-        <div class="schedule-card glass-card p-6 rounded-2xl"><div class="h-2 w-20 rounded-full bg-gradient-to-r from-orange-400 to-pink-500 mb-4"></div><h3 class="text-2xl font-bold text-white">Morning Melody</h3><p class="text-white/60 text-lg mt-2"><i class="far fa-clock"></i> 6 AM - 10 AM</p></div>
-        <div class="schedule-card glass-card p-6 rounded-2xl"><div class="h-2 w-20 rounded-full bg-gradient-to-r from-yellow-400 to-red-500 mb-4"></div><h3 class="text-2xl font-bold text-white">Rainbow Hits</h3><p class="text-white/60 text-lg mt-2"><i class="far fa-clock"></i> 10 AM - 2 PM</p></div>
-        <div class="schedule-card glass-card p-6 rounded-2xl"><div class="h-2 w-20 rounded-full bg-gradient-to-r from-green-400 to-teal-500 mb-4"></div><h3 class="text-2xl font-bold text-white">Afternoon Chill</h3><p class="text-white/60 text-lg mt-2"><i class="far fa-clock"></i> 2 PM - 5 PM</p></div>
-        <div class="schedule-card glass-card p-6 rounded-2xl"><div class="h-2 w-20 rounded-full bg-gradient-to-r from-blue-400 to-indigo-500 mb-4"></div><h3 class="text-2xl font-bold text-white">Evening Vibes</h3><p class="text-white/60 text-lg mt-2"><i class="far fa-clock"></i> 5 PM - 8 PM</p></div>
-        <div class="schedule-card glass-card p-6 rounded-2xl"><div class="h-2 w-20 rounded-full bg-gradient-to-r from-purple-500 to-pink-600 mb-4"></div><h3 class="text-2xl font-bold text-white">Night Express</h3><p class="text-white/60 text-lg mt-2"><i class="far fa-clock"></i> 8 PM - Midnight</p></div>
-        <div class="schedule-card glass-card p-6 rounded-2xl"><div class="h-2 w-20 rounded-full bg-gradient-to-r from-gray-700 to-purple-800 mb-4"></div><h3 class="text-2xl font-bold text-white">Midnight Mix</h3><p class="text-white/60 text-lg mt-2"><i class="far fa-clock"></i> 12 AM - 6 AM</p></div>
+      <h2 class="text-4xl font-bold text-center text-white mb-2">📅 Program Schedule</h2>
+      <p id="currentDateDisplay" class="text-center text-white/50 text-sm mt-2"></p>
+      <div id="scheduleContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7 mt-8">
+        <!-- Rendered by JavaScript -->
+      </div>
+      <div class="text-center text-white/40 text-sm mt-6">
+        <i class="far fa-clock"></i> Current time: <span id="currentTimeDisplay">--:--</span> · 
+        <span class="text-yellow-400">★</span> Highlighted = Live Now
       </div>
     </div>
   </section>
 
-  <!-- Featured Shows -->
+  <!-- ==================== FEATURED SHOWS ==================== -->
   <section id="shows" class="py-20 px-5">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-4xl font-bold text-center text-white mb-12">✨ Featured Shows</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="show-card glass-card overflow-hidden rounded-2xl"><img src="https://picsum.photos/id/167/400/250" alt="Music Unlimited" class="w-full h-48 object-cover" loading="lazy" /><div class="p-5"><h3 class="text-2xl font-bold text-white">Music Unlimited</h3><p class="text-white/70 mt-2">Nonstop global hits & classics</p><a href="#listenlive" class="inline-block mt-4 px-5 py-2 bg-purple-700/60 rounded-full text-white text-sm hover:bg-purple-600 transition"><i class="fas fa-play mr-1"></i> Listen Live</a></div></div>
-        <div class="show-card glass-card overflow-hidden rounded-2xl"><img src="https://picsum.photos/id/108/400/250" alt="Retro Night" class="w-full h-48 object-cover" loading="lazy" /><div class="p-5"><h3 class="text-2xl font-bold text-white">Retro Night</h3><p class="text-white/70 mt-2">Best of 80s & 90s</p><a href="#listenlive" class="inline-block mt-4 px-5 py-2 bg-purple-700/60 rounded-full text-white text-sm hover:bg-purple-600 transition"><i class="fas fa-play mr-1"></i> Listen Live</a></div></div>
-        <div class="show-card glass-card overflow-hidden rounded-2xl"><img src="https://picsum.photos/id/64/400/250" alt="Love Songs" class="w-full h-48 object-cover" loading="lazy" /><div class="p-5"><h3 class="text-2xl font-bold text-white">Love Songs</h3><p class="text-white/70 mt-2">Romantic melodies</p><a href="#listenlive" class="inline-block mt-4 px-5 py-2 bg-purple-700/60 rounded-full text-white text-sm hover:bg-purple-600 transition"><i class="fas fa-play mr-1"></i> Listen Live</a></div></div>
+        <div class="show-card glass-card overflow-hidden rounded-2xl">
+          <img src="https://picsum.photos/id/167/400/250" alt="Music Unlimited" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-5">
+            <h3 class="text-2xl font-bold text-white">Music Unlimited</h3>
+            <p class="text-white/70 mt-2">Nonstop global hits & classics</p>
+            <a href="#listenlive" class="inline-block mt-4 px-5 py-2 bg-purple-700/60 rounded-full text-white text-sm hover:bg-purple-600 transition"><i class="fas fa-play mr-1"></i> Listen Live</a>
+          </div>
+        </div>
+        <div class="show-card glass-card overflow-hidden rounded-2xl">
+          <img src="https://picsum.photos/id/108/400/250" alt="Retro Night" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-5">
+            <h3 class="text-2xl font-bold text-white">Retro Night</h3>
+            <p class="text-white/70 mt-2">Best of 80s & 90s</p>
+            <a href="#listenlive" class="inline-block mt-4 px-5 py-2 bg-purple-700/60 rounded-full text-white text-sm hover:bg-purple-600 transition"><i class="fas fa-play mr-1"></i> Listen Live</a>
+          </div>
+        </div>
+        <div class="show-card glass-card overflow-hidden rounded-2xl">
+          <img src="https://picsum.photos/id/64/400/250" alt="Love Songs" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-5">
+            <h3 class="text-2xl font-bold text-white">Love Songs</h3>
+            <p class="text-white/70 mt-2">Romantic melodies</p>
+            <a href="#listenlive" class="inline-block mt-4 px-5 py-2 bg-purple-700/60 rounded-full text-white text-sm hover:bg-purple-600 transition"><i class="fas fa-play mr-1"></i> Listen Live</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- DJs Section -->
+  <!-- ==================== DJs ==================== -->
   <section id="djs" class="py-20 bg-black/40 px-5">
     <div class="max-w-7xl mx-auto text-center">
       <h2 class="text-4xl font-bold text-white mb-6">🎧 Meet Our DJs</h2>
@@ -356,7 +408,7 @@
     </div>
   </section>
 
-  <!-- News Section -->
+  <!-- ==================== NEWS ==================== -->
   <section id="news" class="py-20 px-5">
     <div class="max-w-7xl mx-auto text-center">
       <h2 class="text-4xl font-bold text-white">📰 Latest News</h2>
@@ -364,7 +416,7 @@
     </div>
   </section>
 
-  <!-- Gallery -->
+  <!-- ==================== GALLERY ==================== -->
   <section id="gallery" class="py-20 px-5 bg-white/5">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-4xl font-bold text-center text-white mb-10">📸 Gallery</h2>
@@ -379,7 +431,7 @@
     </div>
   </section>
 
-  <!-- About -->
+  <!-- ==================== ABOUT ==================== -->
   <section class="py-16 px-5 max-w-4xl mx-auto text-center">
     <div class="glass-card p-8 rounded-3xl">
       <h2 class="text-3xl font-bold text-white">🎙️ About Radio Rainbow</h2>
@@ -387,34 +439,42 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- ==================== CONTACT ==================== -->
   <section id="contact" class="py-20 px-5">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
       <div>
         <h2 class="text-4xl font-bold text-white mb-6">Contact Us</h2>
-        <form id="contactForm" class="space-y-5">
-          <input type="text" id="name" placeholder="Name" class="w-full p-3 rounded-xl bg-white/10 text-white border border-white/20 focus:outline-none focus:border-purple-500" required />
-          <input type="email" id="email" placeholder="Email" class="w-full p-3 rounded-xl bg-white/10 text-white border border-white/20 focus:outline-none focus:border-purple-500" required />
-          <textarea id="message" rows="4" placeholder="Message" class="w-full p-3 rounded-xl bg-white/10 text-white border border-white/20 focus:outline-none focus:border-purple-500" required></textarea>
-          <button type="submit" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full text-white font-semibold hover:scale-105 transition">Send Message</button>
+        <form action="https://formsubmit.co/radiorainbow15@gmail.com" method="POST" class="space-y-5">
+          <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded-xl bg-white/10 text-white border border-white/20 focus:outline-none focus:border-purple-500" required />
+          <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded-xl bg-white/10 text-white border border-white/20 focus:outline-none focus:border-purple-500" required />
+          <input type="text" name="subject" placeholder="Subject" class="w-full p-3 rounded-xl bg-white/10 text-white border border-white/20 focus:outline-none focus:border-purple-500" />
+          <textarea name="message" rows="4" placeholder="Your Message" class="w-full p-3 rounded-xl bg-white/10 text-white border border-white/20 focus:outline-none focus:border-purple-500" required></textarea>
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_replyto" value="email">
+          <input type="hidden" name="_subject" value="New message from Radio Rainbow website!">
+          <button type="submit" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full text-white font-semibold hover:scale-105 transition">
+            <i class="fas fa-paper-plane mr-2"></i> Send Message
+          </button>
         </form>
+        <p class="text-green-400 text-sm mt-4 text-center" id="formMessage"></p>
       </div>
       <div class="text-white">
         <h3 class="text-2xl font-bold">Get in touch</h3>
         <p class="mt-4 flex gap-3"><i class="fas fa-envelope mt-1"></i> radiorainbow15@gmail.com</p>
-        <p class="mt-2 flex gap-3"><i class="fas fa-phone-alt mt-1"></i> +91</p>
+        <p class="mt-2 flex gap-3"><i class="fas fa-phone-alt mt-1"></i> +1 (555) 789-RAINBOW</p>
         <div class="flex gap-5 mt-6 text-3xl">
-          <i class="fab fa-facebook hover:text-pink-500 cursor-pointer transition"></i>
-          <i class="fab fa-instagram hover:text-pink-500 cursor-pointer transition"></i>
-          <i class="fab fa-youtube hover:text-red-500 cursor-pointer transition"></i>
-          <i class="fab fa-whatsapp hover:text-green-400 cursor-pointer transition"></i>
-          <i class="fab fa-twitter hover:text-blue-400 cursor-pointer transition"></i>
+          <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:text-red-500 transition"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="hover:text-green-400 transition"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ==================== FOOTER ==================== -->
   <footer class="bg-black/80 backdrop-blur-lg border-t border-white/10 py-10 px-5 text-center text-white/70">
     <div class="max-w-7xl mx-auto">
       <div class="flex justify-center mb-3">
@@ -430,13 +490,16 @@
         <a href="#" class="hover:text-white">Privacy Policy</a>
         <a href="#" class="hover:text-white">Terms</a>
         <a href="#" class="hover:text-white">DMCA</a>
-        <a href="#" class="hover:text-white">Contact</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
       </div>
     </div>
   </footer>
 
+  <!-- ==================== JAVASCRIPT ==================== -->
   <script>
-    // Sticky navigation
+    // =============================================
+    // 1. STICKY NAVIGATION
+    // =============================================
     window.addEventListener('scroll', function() {
       const nav = document.getElementById('navbar');
       if (window.scrollY > 50) {
@@ -446,7 +509,9 @@
       }
     });
 
-    // Mobile menu toggle
+    // =============================================
+    // 2. MOBILE MENU
+    // =============================================
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     if(mobileBtn) {
@@ -454,15 +519,15 @@
         mobileMenu.classList.toggle('hidden');
       });
     }
-
-    // Close mobile menu on link click
     document.querySelectorAll('.mobile-link').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
       });
     });
 
-    // Live status auto-refresh every 30 seconds
+    // =============================================
+    // 3. LIVE STATUS REFRESH (every 30 sec)
+    // =============================================
     let liveStatusToggle = false;
     setInterval(() => {
       const statusEl = document.getElementById('liveStatus');
@@ -472,7 +537,9 @@
       }
     }, 30000);
 
-    // Now playing simulation with progress bar
+    // =============================================
+    // 4. NOW PLAYING SIMULATION
+    // =============================================
     const tracks = [
       { song: "Electric Dreams", artist: "Neon Lights", img: "https://picsum.photos/id/100/100/100" },
       { song: "Morning Melody", artist: "DJ Aurora", img: "https://picsum.photos/id/145/100/100" },
@@ -507,19 +574,120 @@
       trackIndex = (trackIndex + 1) % tracks.length;
       updateNowPlaying();
     }, 30000);
-    
-    // Contact form handler
-    const contactForm = document.getElementById('contactForm');
-    if(contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        alert(`Thanks ${name}! We'll get back to you soon. 🎵`);
-        this.reset();
+
+    // =============================================
+    // 5. CONTACT FORM SUCCESS MESSAGE
+    // =============================================
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('submit') && urlParams.get('submit') === 'success') {
+      document.getElementById('formMessage').innerHTML = '✅ Message sent successfully! We\'ll get back to you soon.';
+      setTimeout(() => {
+        document.getElementById('formMessage').innerHTML = '';
+      }, 5000);
+    }
+
+    // =============================================
+    // 6. SCHEDULE: DYNAMIC HIGHLIGHTING WITH DATE
+    // =============================================
+    const programs = [
+      { name: "Morning Melody", start: 6, end: 10, color: "from-orange-400 to-pink-500" },
+      { name: "Rainbow Hits", start: 10, end: 14, color: "from-yellow-400 to-red-500" },
+      { name: "Afternoon Chill", start: 14, end: 17, color: "from-green-400 to-teal-500" },
+      { name: "Evening Vibes", start: 17, end: 20, color: "from-blue-400 to-indigo-500" },
+      { name: "Night Express", start: 20, end: 24, color: "from-purple-500 to-pink-600" },
+      { name: "Midnight Mix", start: 0, end: 6, color: "from-gray-700 to-purple-800" }
+    ];
+
+    const scheduleContainer = document.getElementById('scheduleContainer');
+    const currentTimeDisplay = document.getElementById('currentTimeDisplay');
+    const currentDateDisplay = document.getElementById('currentDateDisplay');
+
+    function renderSchedule() {
+      const now = new Date();
+      const currentHour = now.getHours();
+      const currentMinutes = now.getMinutes();
+      
+      // Update time display
+      const hours = String(currentHour).padStart(2, '0');
+      const mins = String(currentMinutes).padStart(2, '0');
+      currentTimeDisplay.textContent = `${hours}:${mins}`;
+      
+      // Update date display
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      currentDateDisplay.textContent = `📅 ${now.toLocaleDateString('en-US', options)}`;
+
+      // Determine active program
+      let activeIndex = -1;
+      
+      for (let i = 0; i < programs.length; i++) {
+        const prog = programs[i];
+        let start = prog.start;
+        let end = prog.end;
+        
+        if (start === 0 && end === 6) {
+          // Midnight Mix: 12 AM - 6 AM
+          if (currentHour >= 0 && currentHour < 6) {
+            activeIndex = i;
+            break;
+          }
+        } else {
+          if (currentHour >= start && currentHour < end) {
+            activeIndex = i;
+            break;
+          }
+        }
+      }
+
+      // Fallback: if no program found
+      if (activeIndex === -1) {
+        if (currentHour >= 0 && currentHour < 6) {
+          activeIndex = 5; // Midnight Mix
+        } else {
+          // Default to Night Express if nothing else matches
+          activeIndex = 4;
+        }
+      }
+
+      // Debug log (visible in browser console)
+      console.log(`🕐 ${hours}:${mins} → Active: ${programs[activeIndex].name}`);
+
+      // Render cards
+      scheduleContainer.innerHTML = '';
+      programs.forEach((prog, idx) => {
+        const isActive = (idx === activeIndex);
+        const card = document.createElement('div');
+        card.className = `schedule-card glass-card p-6 rounded-2xl transition-all duration-300 ${isActive ? 'active-schedule' : ''}`;
+        
+        // Format times for display
+        const startHour = prog.start;
+        const endHour = prog.end;
+        const startTime = startHour === 0 ? '12 AM' : 
+                          startHour < 12 ? `${startHour} AM` : 
+                          startHour === 12 ? '12 PM' : `${startHour - 12} PM`;
+        const endTime = endHour === 0 ? '12 AM' : 
+                        endHour === 24 ? '12 AM' :
+                        endHour < 12 ? `${endHour} AM` : 
+                        endHour === 12 ? '12 PM' : `${endHour - 12} PM`;
+        
+        card.innerHTML = `
+          <div class="h-2 w-20 rounded-full bg-gradient-to-r ${prog.color} mb-4"></div>
+          <h3 class="text-2xl font-bold text-white">${prog.name}</h3>
+          <p class="text-white/60 text-lg mt-2"><i class="far fa-clock"></i> ${startTime} - ${endTime}</p>
+          ${isActive ? '<span class="time-badge mt-3 inline-block"><i class="fas fa-circle text-green-500 mr-1" style="font-size: 0.5rem;"></i> 🔴 LIVE NOW</span>' : ''}
+        `;
+        scheduleContainer.appendChild(card);
       });
     }
-    
-    // Smooth scroll for all anchor links
+
+    // Initial render
+    renderSchedule();
+
+    // Update schedule every 30 seconds
+    setInterval(renderSchedule, 30000);
+
+    // =============================================
+    // 7. SMOOTH SCROLL FOR ANCHOR LINKS
+    // =============================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const target = document.querySelector(this.getAttribute('href'));
