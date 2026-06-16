@@ -269,6 +269,13 @@
     .ticker-content:hover {
       animation-play-state: paused;
     }
+
+    /* Legal Overlay Modal System Animation */
+    .modal-backdrop {
+      background-color: rgba(5, 5, 10, 0.85);
+      backdrop-filter: blur(16px);
+      transition: opacity 0.3s ease;
+    }
   </style>
 </head>
 <body>
@@ -574,16 +581,99 @@
       <p class="mt-2">Streaming Music Across The World</p>
       <div class="flex flex-wrap justify-center gap-6 mt-5 text-sm">
         <span>© 2026 Radio Rainbow</span>
-        <a href="#" class="hover:text-white">Privacy Policy</a>
-        <a href="#" class="hover:text-white">Terms</a>
-        <a href="#" class="hover:text-white">DMCA</a>
+        <button onclick="openLegalModal('privacyModal')" class="hover:text-white transition">Privacy Policy</button>
+        <button onclick="openLegalModal('termsModal')" class="hover:text-white transition">Terms</button>
+        <button onclick="openLegalModal('dmcaModal')" class="hover:text-white transition">DMCA</button>
         <a href="#contact" class="hover:text-white">Contact</a>
       </div>
     </div>
   </footer>
 
+  <!-- ==================== LEGAL INTERACTION MODALS ==================== -->
+  <!-- Privacy Modal -->
+  <div id="privacyModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
+    <div class="glass-card max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 md:p-8 text-white relative shadow-2xl border border-white/20">
+      <button onclick="closeLegalModal('privacyModal')" class="absolute top-5 right-5 text-white/60 hover:text-white text-xl"><i class="fas fa-times"></i></button>
+      <h2 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 mb-4 flex items-center gap-2"><i class="fas fa-shield-alt"></i> Privacy Policy</h2>
+      <p class="text-xs text-white/40 mb-4">Last Updated: June 2026</p>
+      <div class="space-y-4 text-sm text-white/80 leading-relaxed">
+        <p>At Radio Rainbow, accessible via our streaming parameters, protecting listener data privacy stands as a chief priority. This statement covers what details are gathered and logged.</p>
+        <h4 class="font-semibold text-white mt-2">1. Log Files and Analytical Telemetry</h4>
+        <p>Radio Rainbow safely follows standard server log protocol. This processes internet protocol (IP) routes, device browser classes, Internet Service Provider (ISP) tags, timestamps, and page engagement data. These are not linked to any personally identifiable elements.</p>
+        <h4 class="font-semibold text-white mt-2">2. Stream Players & External Cookies</h4>
+        <p>Our platform uses third-party widgets like Zeno.FM to route audio tracking channels. These networks may track cookies or utilize behavioral identifiers to gauge stream efficiency. We hold no authorization over these data components.</p>
+        <h4 class="font-semibold text-white mt-2">3. Information Consent</h4>
+        <p>By interacting with our global stream pathways, you hereby accept our privacy structures.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terms Modal -->
+  <div id="termsModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
+    <div class="glass-card max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 md:p-8 text-white relative shadow-2xl border border-white/20">
+      <button onclick="closeLegalModal('termsModal')" class="absolute top-5 right-5 text-white/60 hover:text-white text-xl"><i class="fas fa-times"></i></button>
+      <h2 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-500 mb-4 flex items-center gap-2"><i class="fas fa-file-contract"></i> Terms of Service</h2>
+      <p class="text-xs text-white/40 mb-4">Last Updated: June 2026</p>
+      <div class="space-y-4 text-sm text-white/80 leading-relaxed">
+        <p>Welcome to Radio Rainbow. By entering, configuring, or streaming content via this application interface, you agree to comply with the operational conditions detailed below.</p>
+        <h4 class="font-semibold text-white mt-2">1. Permitted Use & Streaming Allocation</h4>
+        <p>All broadcasts are served exclusively for individual, non-commercial entertainment allocation. You agree not to record, capture, manipulate, or commercially repurpose our streaming feeds or transmission signals without prior written authorization.</p>
+        <h4 class="font-semibold text-white mt-2">2. Communication and Interaction Content</h4>
+        <p>When dropping messages through our integrated contact frameworks or support routes, users are strictly barred from delivering malicious, abusive, or copyright-infringing remarks.</p>
+        <h4 class="font-semibold text-white mt-2">3. Service Liability Disclaimers</h4>
+        <p>Transmissions are delivered on an "as-is" and "as-available" basis. Radio Rainbow cannot guarantee continuous operational status due to external digital routing dropouts beyond station control.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DMCA Modal -->
+  <div id="dmcaModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
+    <div class="glass-card max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 md:p-8 text-white relative shadow-2xl border border-white/20">
+      <button onclick="closeLegalModal('dmcaModal')" class="absolute top-5 right-5 text-white/60 hover:text-white text-xl"><i class="fas fa-times"></i></button>
+      <h2 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-purple-500 mb-4 flex items-center gap-2"><i class="fas fa-gavel"></i> DMCA & Copyright Policy</h2>
+      <p class="text-xs text-white/40 mb-4">Last Updated: June 2026</p>
+      <div class="space-y-4 text-sm text-white/80 leading-relaxed">
+        <p>Radio Rainbow respects the creative ownership rights of recording artists, copyright administrators, and media labels.</p>
+        <h4 class="font-semibold text-white mt-2">Takedown Directives & Infringement Reporting</h4>
+        <p>If you discover any material on our streaming catalog or promotional news grids that breaches your intellectual property protection acts, please forward a formal copyright request containing the following elements to <strong>radiorainbow15@gmail.com</strong>:</p>
+        <ul class="list-disc list-inside space-y-1 text-white/70 bg-white/5 p-3 rounded-xl border border-white/5">
+          <li>A direct signature verification of the authorized copyright owner.</li>
+          <li>Detailed description and verification links of the disputed media track or file.</li>
+          <li>Accurate contact routing parameters (Email, Phone, and Address).</li>
+          <li>A clean affidavit confirming the claim is drafted under penalty of perjury.</li>
+        </ul>
+        <p class="text-xs text-white/50 mt-2">Validated infringement claims will result in immediate removal from our active server pathways.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- ==================== JAVASCRIPT ==================== -->
   <script>
+    // LEGAL MODAL MANAGEMENT ROUTINES
+    function openLegalModal(modalId) {
+      const targetModal = document.getElementById(modalId);
+      if (targetModal) {
+        targetModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Stop background scrolling
+      }
+    }
+
+    function closeLegalModal(modalId) {
+      const targetModal = document.getElementById(modalId);
+      if (targetModal) {
+        targetModal.classList.add('hidden');
+        document.body.style.overflow = ''; // Re-enable background scrolling
+      }
+    }
+
+    // Close Modals if user clicks backdrop area outside content container
+    window.addEventListener('click', (e) => {
+      if (e.target.classList.contains('modal-backdrop')) {
+        e.target.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    });
+
     document.addEventListener('DOMContentLoaded', () => {
 
       // =============================================
