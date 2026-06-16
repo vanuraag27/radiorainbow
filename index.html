@@ -636,7 +636,7 @@
         const displayMins = String(currentMinutes).padStart(2, '0');
         if (currentTimeDisplay) currentTimeDisplay.textContent = `${hours}:${displayMins}`;
         
-        // Update live dynamic text (without prepended icon string)
+        // Update live dynamic text
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         const dateStr = now.toLocaleDateString('en-US', options);
         if (currentDateDisplay) currentDateDisplay.textContent = `${dateStr}`;
