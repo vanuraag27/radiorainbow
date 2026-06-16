@@ -5,23 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#8B5CF6" />
   
+  <!-- SEO Meta Tags -->
   <title>Radio Rainbow | Live Internet Radio Station</title>
   <meta name="description" content="Listen to Radio Rainbow live online. Enjoy nonstop music, entertainment, live shows, and worldwide streaming. 24x7 music, DJs & entertainment." />
   <meta name="keywords" content="radio rainbow, live radio, internet radio, online streaming, music, live shows, radio station" />
   <meta name="author" content="Radio Rainbow" />
   <link rel="canonical" href="https://radiorainbow.com" />
   
+  <!-- Open Graph / Social -->
   <meta property="og:title" content="Radio Rainbow | Live Internet Radio Station" />
   <meta property="og:description" content="Listen to Radio Rainbow live online. Enjoy nonstop music, entertainment, live shows, and worldwide streaming." />
   <meta property="og:image" content="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w1000" />
   <meta property="og:url" content="https://radiorainbow.com" />
   <meta property="og:type" content="website" />
   
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Radio Rainbow | Live Internet Radio Station" />
   <meta name="twitter:description" content="Listen to Radio Rainbow live online. Nonstop music, worldwide streaming." />
   <meta name="twitter:image" content="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w1000" />
   
+  <!-- JSON-LD Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,6 +38,7 @@
   }
   </script>
   
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -112,12 +117,12 @@
     }
     
     /* Hover effects */
-    .schedule-card, .show-card {
+    .schedule-card, .show-card, .news-card {
       transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       cursor: pointer;
     }
     
-    .schedule-card:hover, .show-card:hover {
+    .schedule-card:hover, .show-card:hover, .news-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
     }
@@ -267,6 +272,7 @@
   </style>
 </head>
 <body>
+  <!-- ==================== NAVIGATION ==================== -->
   <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 sticky-nav">
     <div class="max-w-7xl mx-auto px-5 md:px-8 py-3 flex justify-between items-center">
       <div class="flex items-center gap-3">
@@ -304,6 +310,7 @@
     </div>
   </nav>
 
+  <!-- ==================== HERO SECTION ==================== -->
   <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
     <div class="absolute inset-0 rainbow-gradient-bg opacity-20"></div>
     <div class="absolute inset-0 waves"></div>
@@ -333,6 +340,7 @@
     </div>
   </section>
 
+  <!-- ==================== LIVE PLAYER SECTION ==================== -->
   <section id="listenlive" class="py-16 px-5">
     <div class="max-w-5xl mx-auto text-center">
       <h2 class="text-4xl font-bold flex justify-center items-center gap-2 text-white">
@@ -352,6 +360,7 @@
         <p class="text-white/70 text-sm"><i class="fas fa-globe mr-1"></i> Streaming Worldwide · Crystal Clear Audio</p>
       </div>
       
+      <!-- Now Playing Widget -->
       <div class="glass-card p-6 rounded-2xl max-w-md mx-auto mt-8">
         <div class="flex items-center gap-4">
           <img id="albumArt" src="https://picsum.photos/id/29/100/100" alt="album art" class="w-20 h-20 rounded-xl shadow-lg object-cover" />
@@ -370,6 +379,7 @@
     </div>
   </section>
 
+  <!-- ==================== PROGRAM SCHEDULE ==================== -->
   <section id="schedule" class="py-20 px-5 bg-white/5">
     <div class="max-w-7xl mx-auto">
       <div class="text-center">
@@ -381,7 +391,8 @@
         </div>
       </div>
       <div id="scheduleContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7 mt-8">
-        </div>
+        <!-- Rendered by JavaScript -->
+      </div>
       <div class="text-center text-white/40 text-sm mt-6">
         <i class="far fa-clock"></i> Current time: <span id="currentTimeDisplay">--:--</span> · 
         <span class="text-yellow-400">★</span> Highlighted = Live Now
@@ -389,6 +400,7 @@
     </div>
   </section>
 
+  <!-- ==================== FEATURED SHOWS ==================== -->
   <section id="shows" class="py-20 px-5">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-4xl font-bold text-center text-white mb-12">✨ Featured Shows</h2>
@@ -421,6 +433,7 @@
     </div>
   </section>
 
+  <!-- ==================== DJs ==================== -->
   <section id="djs" class="py-20 bg-black/40 px-5">
     <div class="max-w-7xl mx-auto text-center">
       <h2 class="text-4xl font-bold text-white mb-6">🎧 Meet Our DJs</h2>
@@ -428,26 +441,69 @@
     </div>
   </section>
 
-  <section id="news" class="py-20 px-5">
-    <div class="max-w-5xl mx-auto">
+  <!-- ==================== NEWS SECTION ==================== -->
+  <section id="news" class="py-20 px-5 bg-[#0e0e16]/50">
+    <div class="max-w-7xl mx-auto">
       <div class="text-center mb-10">
         <h2 class="text-4xl font-bold text-white">📰 Latest News</h2>
-        <p class="text-white/70 mt-2">Stay tuned for music events & announcements.</p>
+        <p class="text-white/60 mt-2">Stay informed with music updates, station bulletins, and special community announcements.</p>
       </div>
 
-      <div id="breakingNewsTicker" class="hidden flex items-center bg-gradient-to-r from-red-900/80 via-black/40 to-red-900/30 backdrop-blur border border-red-500/40 rounded-xl overflow-hidden mb-12 shadow-[0_0_25px_rgba(239,68,68,0.15)]">
-        <div class="bg-red-600 text-white font-bold text-xs uppercase px-4 py-3 flex items-center gap-2 z-10 shrink-0 select-none shadow-[5px_0_15px_rgba(0,0,0,0.3)]">
+      <!-- 1. Breaking News Banner Framework -->
+      <div id="breakingNewsTicker" class="hidden flex items-center bg-gradient-to-r from-red-950/90 via-black/40 to-red-950/20 backdrop-blur border border-red-500/30 rounded-xl overflow-hidden mb-10 shadow-[0_0_30px_rgba(239,68,68,0.1)]">
+        <div class="bg-red-600 text-white font-bold text-xs uppercase px-5 py-3 flex items-center gap-2 z-10 shrink-0 select-none shadow-[4px_0_12px_rgba(0,0,0,0.4)]">
           <span class="inline-block w-2 h-2 rounded-full bg-white animate-ping"></span>
           <span>Breaking</span>
         </div>
-        <div class="ticker-wrap flex-1 relative w-full text-white py-2 text-sm font-medium">
-          <div id="tickerContainer" class="ticker-content">
-            </div>
+        <div class="ticker-wrap flex-1 relative w-full text-white py-2 text-sm font-semibold tracking-wide">
+          <div id="tickerContainer" class="ticker-content text-red-100">
+            <!-- Driven via JavaScript arrays -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Regular News Card Display Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="news-card glass-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full"><i class="fas fa-calendar-alt mr-1"></i> Event</span>
+            <h3 class="text-xl font-bold text-white mt-4">Grand Studio Relaunch Planned</h3>
+            <p class="text-white/60 text-sm mt-2 leading-relaxed">We are expanding our physical setup to support state-of-the-art digital desks and live visual stream integrations coming down the pipeline later this quarter.</p>
+          </div>
+          <div class="text-xs text-white/40 mt-6 pt-4 border-t border-white/5 flex justify-between items-center">
+            <span>By Team Rainbow</span>
+            <span>June 2026</span>
+          </div>
+        </div>
+
+        <div class="news-card glass-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-yellow-400 bg-yellow-500/10 px-3 py-1 rounded-full"><i class="fas fa-trophy mr-1"></i> Milestone</span>
+            <h3 class="text-xl font-bold text-white mt-4">1 Million Milestone Listeners</h3>
+            <p class="text-white/60 text-sm mt-2 leading-relaxed">Thanks to our incredible global network of listener interactions across 120+ countries, Radio Rainbow has officially crossed one million stream hits this month!</p>
+          </div>
+          <div class="text-xs text-white/40 mt-6 pt-4 border-t border-white/5 flex justify-between items-center">
+            <span>By Station Director</span>
+            <span>June 2026</span>
+          </div>
+        </div>
+
+        <div class="news-card glass-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-green-400 bg-green-500/10 px-3 py-1 rounded-full"><i class="fas fa-music mr-1"></i> Show Buzz</span>
+            <h3 class="text-xl font-bold text-white mt-4">Submissions Open for Indie Hour</h3>
+            <p class="text-white/60 text-sm mt-2 leading-relaxed">Are you an independent tracking artist or producer? Drop your high-fidelity mp3 files to our management mail route to stand a chance to get featured live on air.</p>
+          </div>
+          <div class="text-xs text-white/40 mt-6 pt-4 border-t border-white/5 flex justify-between items-center">
+            <span>By Programming Team</span>
+            <span>May 2026</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ==================== GALLERY ==================== -->
   <section id="gallery" class="py-20 px-5 bg-white/5">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-4xl font-bold text-center text-white mb-10">📸 Gallery</h2>
@@ -462,6 +518,7 @@
     </div>
   </section>
 
+  <!-- ==================== ABOUT ==================== -->
   <section class="py-16 px-5 max-w-4xl mx-auto text-center">
     <div class="glass-card p-8 rounded-3xl">
       <h2 class="text-3xl font-bold text-white">🎙️ About Radio Rainbow</h2>
@@ -469,6 +526,7 @@
     </div>
   </section>
 
+  <!-- ==================== CONTACT ==================== -->
   <section id="contact" class="py-20 px-5">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
       <div>
@@ -503,6 +561,7 @@
     </div>
   </section>
 
+  <!-- ==================== FOOTER ==================== -->
   <footer class="bg-black/80 backdrop-blur-lg border-t border-white/10 py-10 px-5 text-center text-white/70">
     <div class="max-w-7xl mx-auto">
       <div class="flex justify-center mb-3">
@@ -523,12 +582,13 @@
     </div>
   </footer>
 
+  <!-- ==================== JAVASCRIPT ==================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
 
       // =============================================
       // BREAKING NEWS MANAGEMENT TOOL
-      // (Leave empty [] to automatically hide banner)
+      // (Leave array completely empty [] to automatically hide banner)
       // =============================================
       const breakingAlerts = [
         "⚠️ SPECIAL ANNOUNCEMENT: Live DJ Set change tonight at 8 PM EST! Don't miss the ultimate mashup.",
@@ -543,11 +603,11 @@
         if (!banner || !container) return;
 
         if (breakingAlerts && breakingAlerts.length > 0) {
-          // Join headlines with spacing characters
-          const fullTickerText = breakingAlerts.join(" &nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp; ");
+          // Join headlines with safe custom divider icons
+          const fullTickerText = breakingAlerts.join(" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ");
           
-          // Duplicate items to ensure seamless loop sequence
-          container.innerHTML = `${fullTickerText} &nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp; ${fullTickerText}`;
+          // Duplicate text instances to allow flawless continuous looping animation
+          container.innerHTML = `${fullTickerText} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${fullTickerText}`;
           banner.classList.remove('hidden');
         } else {
           banner.classList.add('hidden');
