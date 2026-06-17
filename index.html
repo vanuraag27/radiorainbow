@@ -73,7 +73,7 @@
       100% { background-position: 0% 50%; }
     }
     
-    /* Animated wave background */
+    /* Animated wave background - Isolated safely inside hero area container */
     .waves {
       position: absolute;
       bottom: 0;
@@ -82,6 +82,8 @@
       height: 200px;
       background: repeating-linear-gradient(45deg, rgba(139, 92, 246, 0.3) 0px, rgba(139, 92, 246, 0.3) 2px, transparent 2px, transparent 12px);
       animation: waveShift 8s linear infinite;
+      pointer-events: none;
+      z-index: 1;
     }
     
     @keyframes waveShift {
@@ -295,6 +297,7 @@
         <a href="#home" class="hover:text-white hover:scale-105 transition nav-link">Home</a>
         <a href="#listenlive" class="hover:text-white hover:scale-105 transition nav-link">Listen Live</a>
         <a href="#schedule" class="hover:text-white hover:scale-105 transition nav-link">Schedule</a>
+        <a href="#donations" class="hover:text-white hover:scale-105 transition nav-link">Donations</a>
         <a href="#shows" class="hover:text-white hover:scale-105 transition nav-link">Shows</a>
         <a href="#djs" class="hover:text-white hover:scale-105 transition nav-link">DJs</a>
         <a href="#news" class="hover:text-white hover:scale-105 transition nav-link">News</a>
@@ -309,6 +312,7 @@
       <a href="#home" class="text-left text-lg py-2 mobile-link">Home</a>
       <a href="#listenlive" class="text-left text-lg py-2 mobile-link">Listen Live</a>
       <a href="#schedule" class="text-left text-lg py-2 mobile-link">Schedule</a>
+      <a href="#donations" class="text-left text-lg py-2 mobile-link">Donations</a>
       <a href="#shows" class="text-left text-lg py-2 mobile-link">Shows</a>
       <a href="#djs" class="text-left text-lg py-2 mobile-link">DJs</a>
       <a href="#news" class="text-left text-lg py-2 mobile-link">News</a>
@@ -321,9 +325,9 @@
   <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
     <div class="absolute inset-0 rainbow-gradient-bg opacity-20"></div>
     <div class="absolute inset-0 waves"></div>
-    <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0a0a0f] to-transparent"></div>
+    <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0a0a0f] to-transparent z-10"></div>
     
-    <div class="relative z-10 text-center px-5">
+    <div class="relative z-20 text-center px-5">
       <div class="equalizer mb-8">
         <div class="equalizer-bar"></div>
         <div class="equalizer-bar"></div>
@@ -348,7 +352,7 @@
   </section>
 
   <!-- ==================== LIVE PLAYER SECTION ==================== -->
-  <section id="listenlive" class="py-16 px-5">
+  <section id="listenlive" class="py-16 px-5 relative z-30">
     <div class="max-w-5xl mx-auto text-center">
       <h2 class="text-4xl font-bold flex justify-center items-center gap-2 text-white">
         <span class="text-red-500 animate-pulse">🔴</span> LIVE ON AIR
@@ -387,7 +391,7 @@
   </section>
 
   <!-- ==================== PROGRAM SCHEDULE ==================== -->
-  <section id="schedule" class="py-20 px-5 bg-white/5">
+  <section id="schedule" class="py-20 px-5 bg-white/5 relative z-30">
     <div class="max-w-7xl mx-auto">
       <div class="text-center">
         <h2 class="text-4xl font-bold text-white mb-2">Program Schedule</h2>
@@ -408,9 +412,9 @@
   </section>
 
   <!-- ==================== SUPPORT & DONATIONS BANNER ==================== -->
-  <section id="donations" class="py-12 px-5">
+  <section id="donations" class="py-16 px-5 relative z-30 block">
     <div class="max-w-5xl mx-auto">
-      <div class="glass-card relative overflow-hidden p-8 md:p-12 border border-pink-500/20 shadow-[0_0_50px_rgba(236,72,153,0.05)]">
+      <div class="glass-card relative overflow-hidden p-8 md:p-12 border border-pink-500/20 shadow-[0_0_50px_rgba(236,72,153,0.05)] bg-[#12121a]">
         <!-- Ambient decorative blur glow -->
         <div class="absolute -right-12 -top-12 w-48 h-48 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
         
@@ -445,7 +449,7 @@
   </section>
 
   <!-- ==================== FEATURED SHOWS ==================== -->
-  <section id="shows" class="py-20 px-5">
+  <section id="shows" class="py-20 px-5 relative z-30">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-4xl font-bold text-center text-white mb-12">✨ Featured Shows</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -478,7 +482,7 @@
   </section>
 
   <!-- ==================== DJs ==================== -->
-  <section id="djs" class="py-20 bg-black/40 px-5">
+  <section id="djs" class="py-20 bg-black/40 px-5 relative z-30">
     <div class="max-w-7xl mx-auto text-center">
       <h2 class="text-4xl font-bold text-white mb-6">🎧 Meet Our DJs</h2>
       <p class="text-white/60">Coming soon: Profiles of your favorite Radio Rainbow hosts!</p>
@@ -486,7 +490,7 @@
   </section>
 
   <!-- ==================== NEWS SECTION ==================== -->
-  <section id="news" class="py-20 px-5 bg-[#0e0e16]/50">
+  <section id="news" class="py-20 px-5 bg-[#0e0e16]/50 relative z-30">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-10">
         <h2 class="text-4xl font-bold text-white">📰 Latest News</h2>
@@ -546,7 +550,7 @@
   </section>
 
   <!-- ==================== GALLERY ==================== -->
-  <section id="gallery" class="py-20 px-5 bg-white/5">
+  <section id="gallery" class="py-20 px-5 bg-white/5 relative z-30">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-4xl font-bold text-center text-white mb-10">📸 Gallery</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -561,7 +565,7 @@
   </section>
 
   <!-- ==================== ABOUT ==================== -->
-  <section class="py-16 px-5 max-w-4xl mx-auto text-center">
+  <section class="py-16 px-5 max-w-4xl mx-auto text-center relative z-30">
     <div class="glass-card p-8 rounded-3xl">
       <h2 class="text-3xl font-bold text-white">🎙️ About Radio Rainbow</h2>
       <p class="text-white/80 mt-4 leading-relaxed">Radio Rainbow is a global online radio station delivering music, entertainment, culture, talk shows, and community programs 24 hours a day. Broadcasting worldwide through internet streaming with crystal clear audio quality.</p>
@@ -569,7 +573,7 @@
   </section>
 
   <!-- ==================== CONTACT ==================== -->
-  <section id="contact" class="py-20 px-5">
+  <section id="contact" class="py-20 px-5 relative z-30">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
       <div>
         <h2 class="text-4xl font-bold text-white mb-6">Contact Us</h2>
@@ -590,8 +594,8 @@
       </div>
       <div class="text-white">
         <h3 class="text-2xl font-bold">Get in touch</h3>
-        <p class="mt-4 flex gap-3"><i class="fas fa-envelope mt-1"></i> info@radiorainbow.online/</p>
-        <p class="mt-2 flex gap-3"><i class="fas fa-phone-alt mt-1"></i> +91</p>
+        <p class="mt-4 flex gap-3"><i class="fas fa-envelope mt-1"></i> radiorainbow15@gmail.com</p>
+        <p class="mt-2 flex gap-3"><i class="fas fa-phone-alt mt-1"></i> +1 (555) 789-RAINBOW</p>
         <div class="flex gap-5 mt-6 text-3xl">
           <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-facebook"></i></a>
           <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
@@ -604,7 +608,7 @@
   </section>
 
   <!-- ==================== FOOTER ==================== -->
-  <footer class="bg-black/80 backdrop-blur-lg border-t border-white/10 py-10 px-5 text-center text-white/70">
+  <footer class="bg-black/80 backdrop-blur-lg border-t border-white/10 py-10 px-5 text-center text-white/70 relative z-30">
     <div class="max-w-7xl mx-auto">
       <div class="flex justify-center mb-3">
         <img src="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w200" 
