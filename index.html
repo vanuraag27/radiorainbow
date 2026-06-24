@@ -129,12 +129,12 @@
     }
     
     /* Hover effects */
-    .schedule-card, .show-card, .news-card {
+    .schedule-card, .show-card, .news-card, .platform-card {
       transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       cursor: pointer;
     }
     
-    .schedule-card:hover, .show-card:hover, .news-card:hover {
+    .schedule-card:hover, .show-card:hover, .news-card:hover, .platform-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
     }
@@ -306,6 +306,7 @@
       <div class="hidden md:flex space-x-6 text-white/80 font-medium">
         <a href="#home" class="hover:text-white hover:scale-105 transition nav-link">Home</a>
         <a href="#listenlive" class="hover:text-white hover:scale-105 transition nav-link">Listen Live</a>
+        <a href="#platforms" class="hover:text-white hover:scale-105 transition nav-link">Platforms</a>
         <a href="#schedule" class="hover:text-white hover:scale-105 transition nav-link">Schedule</a>
         <a href="#donations" class="hover:text-white hover:scale-105 transition nav-link">Donations</a>
         <a href="#shows" class="hover:text-white hover:scale-105 transition nav-link">Shows</a>
@@ -321,6 +322,7 @@
     <div id="mobileMenu" class="hidden md:hidden bg-black/90 backdrop-blur-md border-t border-white/20 p-5 flex flex-col space-y-4 text-white">
       <a href="#home" class="text-left text-lg py-2 mobile-link">Home</a>
       <a href="#listenlive" class="text-left text-lg py-2 mobile-link">Listen Live</a>
+      <a href="#platforms" class="text-left text-lg py-2 mobile-link">Platforms</a>
       <a href="#schedule" class="text-left text-lg py-2 mobile-link">Schedule</a>
       <a href="#donations" class="text-left text-lg py-2 mobile-link">Donations</a>
       <a href="#shows" class="text-left text-lg py-2 mobile-link">Shows</a>
@@ -396,6 +398,75 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STREAMING PLATFORMS DIRECTORY ==================== -->
+  <section id="platforms" class="py-16 px-5 bg-gradient-to-b from-transparent to-white/5 relative z-30">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">📡 Also Available On</h2>
+        <p class="text-white/60 text-sm md:text-base">Tune in to Radio Rainbow across your favorite directory networks and online radio streaming platforms globally.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+        
+        <a href="https://radioindia.org/rainbow/" target="_blank" class="platform-card glass-card p-4 flex flex-col items-center justify-center text-center hover:border-pink-500/40 group">
+          <div class="w-12 h-12 rounded-full bg-pink-500/10 flex items-center justify-center text-pink-400 text-xl mb-3 group-hover:bg-pink-500/20 transition">
+            <i class="fas fa-radio"></i>
+          </div>
+          <span class="text-white font-medium text-sm">Radio India</span>
+        </a>
+
+        <a href="https://zeno.fm/radio/radiorainbow/" target="_blank" class="platform-card glass-card p-4 flex flex-col items-center justify-center text-center hover:border-yellow-500/40 group">
+          <div class="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center text-yellow-400 text-xl mb-3 group-hover:bg-yellow-500/20 transition">
+            <i class="fas fa-tower-broadcast"></i>
+          </div>
+          <span class="text-white font-medium text-sm">Zeno.FM</span>
+        </a>
+
+        <a href="https://pcradio.app/radio/radio-rainbow-live-pcr-7mjg0h/" target="_blank" class="platform-card glass-card p-4 flex flex-col items-center justify-center text-center hover:border-green-500/40 group">
+          <div class="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-400 text-xl mb-3 group-hover:bg-green-500/20 transition">
+            <i class="fas fa-mobile-screen"></i>
+          </div>
+          <span class="text-white font-medium text-sm">PCRadio App</span>
+        </a>
+
+        <a href="https://onlineradiobox.com/in/ranbow/?cs=in.ranbow&played=1" target="_blank" class="platform-card glass-card p-4 flex flex-col items-center justify-center text-center hover:border-blue-500/40 group">
+          <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl mb-3 group-hover:bg-blue-500/20 transition">
+            <i class="fas fa-box-open"></i>
+          </div>
+          <span class="text-white font-medium text-sm">Online Radio Box</span>
+        </a>
+
+        <a href="https://www.radioindialive.com/radiorainbow" target="_blank" class="platform-card glass-card p-4 flex flex-col items-center justify-center text-center hover:border-purple-500/40 group">
+          <div class="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 text-xl mb-3 group-hover:bg-purple-500/20 transition">
+            <i class="fas fa-headphones"></i>
+          </div>
+          <span class="text-white font-medium text-sm">Radio India Live</span>
+        </a>
+
+        <a href="https://streema.com/radios/Radio_Rainbow" target="_blank" class="platform-card glass-card p-4 flex flex-col items-center justify-center text-center hover:border-indigo-500/40 group">
+          <div class="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-xl mb-3 group-hover:bg-indigo-500/20 transition">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <span class="text-white font-medium text-sm">Streema</span>
+        </a>
+
+        <a href="https://www.radio.net/s/radiorainbowse" target="_blank" class="platform-card glass-card p-4 flex flex-col items-center justify-center text-center hover:border-teal-500/40 group">
+          <div class="w-12 h-12 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-400 text-xl mb-3 group-hover:bg-teal-500/20 transition">
+            <i class="fas fa-globe"></i>
+          </div>
+          <span class="text-white font-medium text-sm">Radio.net</span>
+        </a>
+
+        <a href="https://liveonlineradio.net/radiorainbow" target="_blank" class="platform-card glass-card p-4 flex flex-col items-center justify-center text-center hover:border-red-500/40 group">
+          <div class="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center text-red-400 text-xl mb-3 group-hover:bg-red-500/20 transition">
+            <i class="fas fa-circle-play"></i>
+          </div>
+          <span class="text-white font-medium text-sm">Live Online Radio</span>
+        </a>
+
       </div>
     </div>
   </section>
