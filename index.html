@@ -82,7 +82,7 @@
     @keyframes bounce { from { transform: scaleY(0.2); } to { transform: scaleY(1); } }
     .interactive-card { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; }
     .interactive-card:hover { transform: translateY(-6px); border-color: rgba(139, 92, 246, 0.4); box-shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.3); }
-    .gallery-img-container { overflow: hidden; border-radius: 0.75rem; }
+    .gallery-img-container { overflow: hidden; border-radius: 0.75rem; background: rgba(255,255,255,0.02); }
     .gallery-img { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease; }
     .gallery-img:hover { transform: scale(1.06); filter: brightness(1.1); }
     .live-badge { animation: pulseRed 1.5s infinite; }
@@ -111,7 +111,7 @@
     <nav id="navbar" class="fixed top-0 left-0 w-full z-50 sticky-nav">
       <div class="max-w-7xl mx-auto px-6 md:px-8 py-3.5 flex justify-between items-center">
         <a href="#home" class="flex items-center gap-3 focus:outline-none">
-          <img src="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w200" alt="Radio Rainbow Logo" width="44" height="44" class="h-11 w-11 rounded-xl object-contain transition-transform duration-200 hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/200x200/8B5CF6/white?text=🌈RR';">
+          <img src="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w200" alt="Radio Rainbow Logo" width="44" height="44" class="h-11 w-11 rounded-xl object-contain transition-transform duration-200 hover:scale-105" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2244%22 height=%2244%22 viewBox=%220 0 44 44%22><rect width=%2244%22 height=%2244%22 rx=%2212%22 fill=%22%238B5CF6%22/><text x=%2250%%22 y=%2255%%22 fill=%22white%22 font-size=%2216%22 font-weight=%22bold%22 font-family=%22sans-serif%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>🌈</text></svg>';">
           <span class="text-2xl font-bold bg-gradient-to-r from-pink-500 via-yellow-400 to-purple-600 bg-clip-text text-transparent hidden sm:inline-block">Radio Rainbow</span>
         </a>
         <div class="hidden lg:flex space-x-5 text-white/80 font-medium text-sm tracking-wide">
@@ -161,7 +161,7 @@
           <div class="equalizer-bar"></div>
         </div>
         <div class="flex justify-center mb-6">
-          <img src="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w400" alt="Radio Rainbow Online Interface Display Cover" width="144" height="144" class="w-28 h-28 md:w-36 md:h-36 rounded-2xl shadow-2xl object-cover border border-white/10" onerror="this.onerror=null; this.src='https://placehold.co/400x400/8B5CF6/white?text=🌈RADIO+RAINBOW';">
+          <img src="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w400" alt="Radio Rainbow Online Interface Display Cover" width="144" height="144" class="w-28 h-28 md:w-36 md:h-36 rounded-2xl shadow-2xl object-cover border border-white/10" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22144%22 height=%22144%22 viewBox=%220 0 144 144%22><rect width=%22144%22 height=%22144%22 rx=%2224%22 fill=%22%231F1F2E%22/><text x=%2250%%22 y=%2255%%22 fill=%22%238B5CF6%22 font-size=%2248%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>🌈</text></svg>';">
         </div>
         <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-pink-500 via-indigo-400 to-purple-500 bg-clip-text text-transparent">Radio Rainbow</h1>
         <p class="text-lg md:text-2xl text-white/80 mt-4 font-medium max-w-2xl mx-auto">Music • Entertainment • Live Shows • 24x7 Streaming</p>
@@ -197,7 +197,10 @@
         <!-- Live Now Playing Tracking Meta Card Box Component -->
         <div class="glass-card p-5 rounded-2xl max-w-md mx-auto mt-10 text-left">
           <div class="flex items-center gap-4">
-            <img id="albumArt" src="https://picsum.photos/id/29/100/100" alt="Live Broadcasting Album Track Artwork" width="80 ram" height="80 ram" class="w-16 h-16 md:w-20 md:h-20 rounded-xl shadow-lg object-cover bg-neutral-900" />
+            <!-- Fixed Blocked Resource by utilizing inline crawlable structural design -->
+            <div class="w-16 h-16 md:w-20 md:h-20 shrink-0 rounded-xl overflow-hidden bg-gradient-to-br from-pink-500/20 to-purple-500/30 flex items-center justify-center border border-white/10 shadow-lg">
+              <i class="fas fa-music text-2xl text-pink-400 animate-pulse"></i>
+            </div>
             <div class="flex-1 min-w-0">
               <span class="text-pink-400 text-xs font-bold tracking-wider uppercase flex items-center gap-1.5 mb-1">
                 <span class="live-badge text-[8px] text-pink-500">●</span> NOW PLAYING
@@ -322,13 +325,16 @@
       </div>
     </section>
 
-    <!-- Featured Shows Matrix Listing Section -->
+    <!-- Featured Shows Matrix Listing Section (Fixed Blocked Resources) -->
     <section id="shows" class="py-20 px-6 relative z-30">
       <div class="max-w-7xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12 tracking-wide">✨ Featured Shows</h2>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="interactive-card glass-card overflow-hidden rounded-2xl flex flex-col">
-            <img src="https://picsum.photos/id/167/400/250" alt="Music Unlimited Presentation Visual Banner" width="400" height="250" class="w-full h-44 object-cover" loading="lazy" />
+            <div class="w-full h-44 bg-gradient-to-br from-purple-900 to-indigo-950 flex items-center justify-center border-b border-white/5 relative">
+              <i class="fas fa-sliders text-5xl text-purple-400/40"></i>
+              <span class="absolute bottom-3 left-4 bg-purple-500/20 text-purple-300 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border border-purple-500/30">Live Deck</span>
+            </div>
             <div class="p-5 flex flex-col flex-1 justify-between">
               <div>
                 <h3 class="text-xl font-bold text-white">Music Unlimited</h3>
@@ -340,7 +346,10 @@
             </div>
           </div>
           <div class="interactive-card glass-card overflow-hidden rounded-2xl flex flex-col">
-            <img src="https://picsum.photos/id/108/400/250" alt="Retro Night Presentation Visual Banner" width="400" height="250" class="w-full h-44 object-cover" loading="lazy" />
+            <div class="w-full h-44 bg-gradient-to-br from-pink-900 to-purple-950 flex items-center justify-center border-b border-white/5 relative">
+              <i class="fas fa-compact-disc text-5xl text-pink-400/40 fa-spin" style="animation-duration: 10s;"></i>
+              <span class="absolute bottom-3 left-4 bg-pink-500/20 text-pink-300 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border border-pink-500/30">Classic</span>
+            </div>
             <div class="p-5 flex flex-col flex-1 justify-between">
               <div>
                 <h3 class="text-xl font-bold text-white">Retro Night</h3>
@@ -352,7 +361,10 @@
             </div>
           </div>
           <div class="interactive-card glass-card overflow-hidden rounded-2xl flex flex-col">
-            <img src="https://picsum.photos/id/64/400/250" alt="Love Songs Presentation Visual Banner" width="400" height="250" class="w-full h-44 object-cover" loading="lazy" />
+            <div class="w-full h-44 bg-gradient-to-br from-red-900 to-pink-950 flex items-center justify-center border-b border-white/5 relative">
+              <i class="fas fa-heart text-5xl text-red-400/40"></i>
+              <span class="absolute bottom-3 left-4 bg-red-500/20 text-red-300 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border border-red-500/30">Acoustic</span>
+            </div>
             <div class="p-5 flex flex-col flex-1 justify-between">
               <div>
                 <h3 class="text-xl font-bold text-white">Love Songs</h3>
@@ -425,22 +437,46 @@
       </div>
     </section>
 
-    <!-- Visual Portfolio Image Gallery Module Block -->
+    <!-- Visual Portfolio Gallery Module Block (Fixed Blocked Resources) -->
     <section id="gallery" class="py-20 px-6 bg-white/[0.01] relative z-30">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-10 tracking-wide">📸 Gallery</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-10 tracking-wide">📸 Gallery Studio Preview</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <div class="gallery-img-container"><img src="https://picsum.photos/id/169/400/300" alt="Radio Rainbow Digital Broadcast Control Room Desk Setup" width="400" height="300" class="gallery-img w-full h-44 md:h-52 object-cover cursor-pointer" loading="lazy" /></div>
-          <div class="gallery-img-container"><img src="https://picsum.photos/id/155/400/300" alt="On-Air Host Presenting Live Studio Show Segment" width="400" height="300" class="gallery-img w-full h-44 md:h-52 object-cover cursor-pointer" loading="lazy" /></div>
-          <div class="gallery-img-container"><img src="https://picsum.photos/id/158/400/300" alt="Pro Audio Condenser Vocal Microphone In Recording Booth" width="400" height="300" class="gallery-img w-full h-44 md:h-52 object-cover cursor-pointer" loading="lazy" /></div>
-          <div class="gallery-img-container"><img src="https://picsum.photos/id/91/400/300" alt="Digital Mixing Board Master Equalizer Level Indicators" width="400" height="300" class="gallery-img w-full h-44 md:h-52 object-cover cursor-pointer" loading="lazy" /></div>
-          <div class="gallery-img-container"><img src="https://picsum.photos/id/29/400/300" alt="Headphones Resting On Electronic Sound Synthesis Equipment" width="400" height="300" class="gallery-img w-full h-44 md:h-52 object-cover cursor-pointer" loading="lazy" /></div>
-          <div class="gallery-img-container"><img src="https://picsum.photos/id/24/400/300" alt="Live Concert Event Spectators Waving Rainbow Colored Lights" width="400" height="300" class="gallery-img w-full h-44 md:h-52 object-cover cursor-pointer" loading="lazy" /></div>
+          <div class="gallery-img-container aspect-[4/3] flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
+            <i class="fas fa-tower-broadcast text-3xl text-purple-400/50 group-hover:text-purple-400 transition mb-2"></i>
+            <span class="text-white font-semibold text-xs md:text-sm">Main Control Room</span>
+            <span class="text-white/40 text-[10px] mt-1 hidden sm:inline-block">HD Audio Matrix Desks</span>
+          </div>
+          <div class="gallery-img-container aspect-[4/3] flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
+            <i class="fas fa-microphone-lines text-3xl text-pink-400/50 group-hover:text-pink-400 transition mb-2"></i>
+            <span class="text-white font-semibold text-xs md:text-sm">Vocal Recording Booth</span>
+            <span class="text-white/40 text-[10px] mt-1 hidden sm:inline-block">Pro Condenser Setups</span>
+          </div>
+          <div class="gallery-img-container aspect-[4/3] flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
+            <i class="fas fa-headphones-simple text-3xl text-yellow-400/50 group-hover:text-yellow-400 transition mb-2"></i>
+            <span class="text-white font-semibold text-xs md:text-sm">Live Monitoring Station</span>
+            <span class="text-white/40 text-[10px] mt-1 hidden sm:inline-block">Zero Latency Feeds</span>
+          </div>
+          <div class="gallery-img-container aspect-[4/3] flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
+            <i class="fas fa-network-wired text-3xl text-blue-400/50 group-hover:text-blue-400 transition mb-2"></i>
+            <span class="text-white font-semibold text-xs md:text-sm">Digital Content Servers</span>
+            <span class="text-white/40 text-[10px] mt-1 hidden sm:inline-block">24x7 Continuous Node</span>
+          </div>
+          <div class="gallery-img-container aspect-[4/3] flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
+            <i class="fas fa-users text-3xl text-green-400/50 group-hover:text-green-400 transition mb-2"></i>
+            <span class="text-white font-semibold text-xs md:text-sm">Interactions Hub</span>
+            <span class="text-white/40 text-[10px] mt-1 hidden sm:inline-block">Global Listener Sync</span>
+          </div>
+          <div class="gallery-img-container aspect-[4/3] flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
+            <i class="fas fa-radio text-3xl text-orange-400/50 group-hover:text-orange-400 transition mb-2"></i>
+            <span class="text-white font-semibold text-xs md:text-sm">Syndication Matrix</span>
+            <span class="text-white/40 text-[10px] mt-1 hidden sm:inline-block">Multi Directory Relays</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Rich Editorial Information Segment (Fixes text-to-HTML density rules) -->
+    <!-- Rich Editorial Information Segment -->
     <section class="py-12 px-6 max-w-4xl mx-auto relative z-30">
       <div class="glass-card p-6 md:p-10 text-left text-white/80 rounded-2xl border border-white/5 space-y-5 text-sm md:text-base leading-relaxed">
         <h2 class="text-2xl font-bold text-white text-center tracking-wide">🎙️ About Radio Rainbow</h2>
@@ -500,11 +536,11 @@
     </section>
   </main>
 
-  <!-- Legal & Compliance Footer (Upgraded to direct anchors to fix E-E-A-T score defaults) -->
+  <!-- Legal & Compliance Footer -->
   <footer class="bg-black/80 backdrop-blur-lg border-t border-white/5 py-10 px-6 text-center text-white/60 relative z-30 text-xs md:text-sm">
     <div class="max-w-7xl mx-auto space-y-4">
       <div class="flex justify-center mb-1">
-        <img src="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w200" alt="Radio Rainbow Logo Footer" width="40" height="40" class="h-10 w-auto rounded-lg opacity-80" onerror="this.style.display='none'">
+        <span class="text-2xl" aria-hidden="true">🌈</span>
       </div>
       <div class="text-xl font-bold bg-gradient-to-r from-pink-500 to-indigo-400 bg-clip-text text-transparent">🌈 Radio Rainbow</div>
       <p>Streaming Music Across The World</p>
@@ -518,7 +554,7 @@
     </div>
   </footer>
 
-  <!-- Privacy Policy Popup Modal Box (Provides fallbacks for indexing visibility) -->
+  <!-- Privacy Policy Popup Modal Box -->
   <div id="privacyModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop" role="dialog" aria-modal="true">
     <div id="privacySection" class="glass-card max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 md:p-8 text-white relative rounded-2xl shadow-2xl">
       <button onclick="closeLegalModal('privacyModal')" class="absolute top-5 right-5 text-white/50 hover:text-white text-lg" aria-label="Close Modal"><i class="fas fa-times"></i></button>
@@ -658,10 +694,10 @@
       }, 30000);
 
       const tracks = [
-        { song: "Electric Dreams", artist: "Neon Lights", img: "https://picsum.photos/id/100/100/100" },
-        { song: "Morning Melody", artist: "DJ Aurora", img: "https://picsum.photos/id/145/100/100" },
-        { song: "Rainbow Vibes", artist: "Radio Rainbow Crew", img: "https://picsum.photos/id/96/100/100" },
-        { song: "Sunshine Love", artist: "Rainbow Beats", img: "https://picsum.photos/id/29/100/100" }
+        { song: "Electric Dreams", artist: "Neon Lights" },
+        { song: "Morning Melody", artist: "DJ Aurora" },
+        { song: "Rainbow Vibes", artist: "Radio Rainbow Crew" },
+        { song: "Sunshine Love", artist: "Rainbow Beats" }
       ];
       let trackIndex = 0;
       let progress = 0;
@@ -670,12 +706,10 @@
         const track = tracks[trackIndex];
         const songEl = document.getElementById('songName');
         const artistEl = document.getElementById('artistName');
-        const artEl = document.getElementById('albumArt');
         const fillEl = document.getElementById('progressFill');
         
         if (songEl) songEl.textContent = track.song;
         if (artistEl) artistEl.textContent = track.artist;
-        if (artEl) artEl.src = track.img;
         progress = 0;
         if (fillEl) fillEl.style.width = '0%';
       }
