@@ -4,20 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#8B5CF6">
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1060634245404425" crossorigin="anonymous" defer></script>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BRM7XKE17Y"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-BRM7XKE17Y', { 'page_title': 'Radio Rainbow Home' });
+    gtag('config', 'G-BRM7XKE17Y', { 'page_title': 'Radio Rainbow Home', 'transport_type': 'beacon' });
   </script>
   
   <title>Radio Rainbow Live | Online Internet Radio Station Broadcast</title>
@@ -58,7 +55,6 @@
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
   
   <style>
     * { font-family: 'Inter', sans-serif; }
@@ -78,7 +74,6 @@
     @keyframes bounce { from { transform: scaleY(0.2); } to { transform: scaleY(1); } }
     .interactive-card { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; }
     .interactive-card:hover { transform: translateY(-6px); border-color: rgba(139, 92, 246, 0.4); box-shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.3); }
-    .gallery-img-container { overflow: hidden; border-radius: 0.75rem; background: rgba(255,255,255,0.02); }
     .live-badge { animation: pulseRed 1.5s infinite; }
     @keyframes pulseRed { 0%, 100% { opacity: 1; filter: drop-shadow(0 0 2px #ff4444); } 50% { opacity: 0.6; filter: drop-shadow(0 0 8px #ff4444); } }
     .sticky-nav { transition: all 0.3s ease; }
@@ -96,13 +91,13 @@
 </head>
 <body class="antialiased text-gray-200">
 
-  <a href="#listenlive" class="skip-to-content">Skip to Live Radio Player Content</a>
+  <a href="#listenlive" class="skip-to-content">Skip to Live Radio Player</a>
 
   <header>
     <nav id="navbar" class="fixed top-0 left-0 w-full z-50 sticky-nav">
       <div class="max-w-7xl mx-auto px-6 md:px-8 py-3.5 flex justify-between items-center">
         <a href="#home" class="flex items-center gap-3 focus:outline-none" aria-label="Radio Rainbow Home">
-          <img src="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w200" alt="Radio Rainbow Logo" width="44" height="44" class="h-11 w-11 rounded-xl object-contain transition-transform duration-200 hover:scale-105" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2244%22 height=%2244%22 viewBox=%220 0 44 44%22><rect width=%2244%22 height=%2244%22 rx=%2212%22 fill=%22%238B5CF6%22/><text x=%2250%%22 y=%2255%%22 fill=%22white%22 font-size=%2216%22 font-weight=%22bold%22 font-family=%22sans-serif%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>🌈</text></svg>';">
+          <img src="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w200" alt="Radio Rainbow Logo" width="44" height="44" class="h-11 w-11 rounded-xl object-contain shadow-md">
           <span class="text-2xl font-bold bg-gradient-to-r from-pink-500 via-yellow-400 to-purple-600 bg-clip-text text-transparent hidden sm:inline-block">Radio Rainbow</span>
         </a>
         <div class="hidden lg:flex space-x-5 text-white/80 font-medium text-sm tracking-wide">
@@ -117,7 +112,7 @@
           <a href="#contact" class="hover:text-white transition-colors duration-200">Contact</a>
         </div>
         <button id="mobileMenuBtn" class="lg:hidden text-white p-2 text-xl focus:outline-none" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobileMenu">
-          <i class="fas fa-bars"></i>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
       <div id="mobileMenu" class="hidden lg:hidden bg-[#0a0a0f]/95 border-t border-white/10 p-6 flex flex-col space-y-4 text-white text-base font-medium">
@@ -150,13 +145,14 @@
           <div class="equalizer-bar"></div>
         </div>
         <div class="flex justify-center mb-6">
-          <img src="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w400" alt="Radio Rainbow Cover Artwork" width="144" height="144" class="w-28 h-28 md:w-36 md:h-36 rounded-2xl shadow-2xl object-cover border border-white/10" fetchpriority="high">
+          <img src="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w400" alt="Radio Rainbow Cover" width="144" height="144" class="w-28 h-28 md:w-36 md:h-36 rounded-2xl shadow-2xl object-cover border border-white/10" fetchpriority="high">
         </div>
         <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-pink-500 via-indigo-400 to-purple-500 bg-clip-text text-transparent">Radio Rainbow</h1>
         <p class="text-lg md:text-2xl text-white/80 mt-4 font-medium max-w-2xl mx-auto">Music • Entertainment • Live Shows • 24x7 Streaming</p>
         <div class="mt-8">
           <a href="#listenlive" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold shadow-lg hover:opacity-90 transition transform hover:-translate-y-0.5">
-            <i class="fas fa-play-circle text-lg"></i> Listen Live On Air
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
+            Listen Live On Air
           </a>
         </div>
       </div>
@@ -168,9 +164,8 @@
           <span class="text-red-500 live-badge text-xl">●</span> LIVE ON AIR
         </h2>
         <div class="flex justify-center my-8">
-          <div class="w-full glass-card p-4 md:p-6 rounded-2xl shadow-xl">
-            <iframe src="https://zeno.fm/player/radiorainbow" width="100%" height="250" frameborder="0" scrolling="no" loading="lazy" title="Radio Rainbow Live Web Audio Stream Player Network"></iframe>
-            <a href="https://zeno.fm/" target="_blank" rel="noopener noreferrer" class="text-xs text-white/40 block mt-3 hover:text-white/60 transition">A Zeno.FM Station</a>
+          <div class="w-full glass-card p-4 md:p-6 rounded-2xl shadow-xl min-h-[250px]">
+            <iframe src="https://zeno.fm/player/radiorainbow" width="100%" height="250" frameborder="0" scrolling="no" loading="lazy" title="Radio Rainbow Web Player"></iframe>
           </div>
         </div>
         <div class="mt-4 flex flex-col items-center gap-3">
@@ -178,13 +173,16 @@
             <span class="text-green-400 text-lg live-badge">●</span>
             <span class="text-white text-sm font-semibold tracking-wide" id="liveStatus">LIVE NOW</span>
           </div>
-          <p class="text-white/60 text-xs md:text-sm"><i class="fas fa-globe text-purple-400 mr-1.5"></i> Streaming Worldwide · Crystal Clear Premium Audio</p>
+          <p class="text-white/60 text-sm flex items-center justify-center gap-1.5">
+            <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+            Streaming Worldwide · Premium Quality Feed
+          </p>
         </div>
         
         <div class="glass-card p-5 rounded-2xl max-w-md mx-auto mt-10 text-left">
           <div class="flex items-center gap-4">
-            <div class="w-16 h-16 md:w-20 md:h-20 shrink-0 rounded-xl overflow-hidden bg-gradient-to-br from-pink-500/20 to-purple-500/30 flex items-center justify-center border border-white/10 shadow-lg">
-              <i class="fas fa-music text-2xl text-pink-400 animate-pulse"></i>
+            <div class="w-16 h-16 md:w-20 md:h-20 shrink-0 rounded-xl bg-gradient-to-br from-pink-500/20 to-purple-500/30 flex items-center justify-center border border-white/10 shadow-lg">
+              <svg class="w-8 h-8 text-pink-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
             </div>
             <div class="flex-1 min-w-0">
               <span class="text-pink-400 text-xs font-bold tracking-wider uppercase flex items-center gap-1.5 mb-1">
@@ -205,55 +203,31 @@
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold text-white mb-3 tracking-wide">📡 Also Available On</h2>
-          <p class="text-white/60 text-sm md:text-base max-w-2xl mx-auto">Tune in to Radio Rainbow across your favorite directory networks and online radio streaming platforms globally.</p>
+          <p class="text-white/60 text-sm md:text-base max-w-2xl mx-auto">Find Radio Rainbow listed across global directories and streaming audio networks.</p>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
           <a href="https://radioindia.org/rainbow/" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-5 flex flex-col items-center justify-center text-center rounded-2xl group">
-            <span class="w-11 h-11 rounded-full bg-pink-500/10 flex items-center justify-center text-pink-400 text-lg mb-3 group-hover:bg-pink-500/20 transition">
-              <i class="fas fa-radio"></i>
-            </span>
             <span class="text-white font-medium text-sm">Radio India</span>
           </a>
           <a href="https://zeno.fm/radio/radiorainbow/" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-5 flex flex-col items-center justify-center text-center rounded-2xl group">
-            <span class="w-11 h-11 rounded-full bg-yellow-500/10 flex items-center justify-center text-yellow-400 text-lg mb-3 group-hover:bg-yellow-500/20 transition">
-              <i class="fas fa-tower-broadcast"></i>
-            </span>
             <span class="text-white font-medium text-sm">Zeno.FM</span>
           </a>
           <a href="https://pcradio.app/radio/radio-rainbow-live-pcr-7mjg0h/" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-5 flex flex-col items-center justify-center text-center rounded-2xl group">
-            <span class="w-11 h-11 rounded-full bg-green-500/10 flex items-center justify-center text-green-400 text-lg mb-3 group-hover:bg-green-500/20 transition">
-              <i class="fas fa-mobile-screen"></i>
-            </span>
             <span class="text-white font-medium text-sm">PCRadio App</span>
           </a>
           <a href="https://onlineradiobox.com/in/ranbow/?cs=in.ranbow&played=1" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-5 flex flex-col items-center justify-center text-center rounded-2xl group">
-            <span class="w-11 h-11 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 text-lg mb-3 group-hover:bg-blue-500/20 transition">
-              <i class="fas fa-box-open"></i>
-            </span>
             <span class="text-white font-medium text-sm">Online Radio Box</span>
           </a>
           <a href="https://www.radioindialive.com/radiorainbow" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-5 flex flex-col items-center justify-center text-center rounded-2xl group">
-            <span class="w-11 h-11 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 text-lg mb-3 group-hover:bg-purple-500/20 transition">
-              <i class="fas fa-headphones"></i>
-            </span>
             <span class="text-white font-medium text-sm">Radio India Live</span>
           </a>
           <a href="https://streema.com/radios/Radio_Rainbow" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-5 flex flex-col items-center justify-center text-center rounded-2xl group">
-            <span class="w-11 h-11 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-lg mb-3 group-hover:bg-indigo-500/20 transition">
-              <i class="fas fa-bolt"></i>
-            </span>
             <span class="text-white font-medium text-sm">Streema</span>
           </a>
           <a href="https://radio.net/s/radiorainbow" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-5 flex flex-col items-center justify-center text-center rounded-2xl group">
-            <span class="w-11 h-11 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-400 text-lg mb-3 group-hover:bg-teal-500/20 transition">
-              <i class="fas fa-globe"></i>
-            </span>
             <span class="text-white font-medium text-sm">Radio.net</span>
           </a>
           <a href="https://worldradios.app/en/station/6094/radio-rainbow" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-5 flex flex-col items-center justify-center text-center rounded-2xl group">
-            <span class="w-11 h-11 rounded-full bg-red-500/10 flex items-center justify-center text-red-400 text-lg mb-3 group-hover:bg-red-500/20 transition">
-              <i class="fas fa-circle-play"></i>
-            </span>
             <span class="text-white font-medium text-sm">World Radios</span>
           </a>
         </div>
@@ -271,7 +245,7 @@
         <div id="scheduleContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           </div>
         <div class="text-center text-white/40 text-xs md:text-sm mt-8 font-medium">
-          <i class="far fa-clock mr-1"></i> Local Station Time: <span id="currentTimeDisplay" class="text-white/60">--:--</span> · 
+          Local Station Time: <span id="currentTimeDisplay" class="text-white/60">--:--</span> · 
           <span class="text-yellow-400">★</span> Highlighted Cards Indicate Active Dynamic Broadcast Blocks
         </div>
       </div>
@@ -280,21 +254,17 @@
     <section id="donations" class="py-16 px-6 relative z-30">
       <div class="max-w-5xl mx-auto">
         <div class="glass-card relative overflow-hidden p-6 md:p-10 rounded-3xl border border-pink-500/20 bg-[#111118]">
-          <div class="absolute -right-16 -top-16 w-48 h-48 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full blur-3xl opacity-15 pointer-events-none"></div>
           <div class="relative z-10 grid md:grid-cols-3 gap-8 items-center">
             <div class="md:col-span-2 space-y-4">
-              <h2 class="text-3xl font-bold text-white flex items-center gap-2.5">
-                <i class="fas fa-heart text-pink-500 animate-pulse"></i> Support Our Broadcast
-              </h2>
+              <h2 class="text-3xl font-bold text-white flex items-center gap-2.5">Support Our Broadcast</h2>
               <p class="text-white/80 text-sm md:text-base leading-relaxed">
-                As an independent global digital station, keeping our transmissions continuous and crystal clear depends profoundly on the mutual love and support of our global listening family. Every single donation fuels our core infrastructure maintenance.
+                As an independent digital station, keeping our transmissions continuous and crystal clear depends profoundly on the mutual support of our global listening family. Every single donation fuels our core server infrastructure maintenance.
               </p>
               <p class="text-yellow-400 font-semibold text-sm md:text-base">Thank you for standing by us!</p>
             </div>
             <div class="flex flex-col items-center justify-center p-5 rounded-2xl bg-white/[0.03] border border-white/5 space-y-3.5">
               <span class="text-xs text-white/40 uppercase font-bold tracking-widest">Secure Link Gateway</span>
               <a href="https://www.paypal.com/paypalme/abhinavverma08" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 bg-[#003087] hover:bg-[#0079C1] text-white rounded-full font-bold text-sm text-center flex items-center justify-center gap-2 transition duration-200 shadow-md">
-                <i class="fab fa-paypal text-base text-[#009CDE]"></i>
                 <span>Donate with PayPal</span>
               </a>
               <span class="text-[10px] text-white/40 text-center font-mono select-all bg-black/40 p-1.5 rounded-lg border border-white/5 w-full block truncate">
@@ -312,7 +282,6 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="interactive-card glass-card overflow-hidden rounded-2xl flex flex-col">
             <div class="w-full h-44 bg-gradient-to-br from-purple-900 to-indigo-950 flex items-center justify-center border-b border-white/5 relative">
-              <i class="fas fa-sliders text-5xl text-purple-400/40"></i>
               <span class="absolute bottom-3 left-4 bg-purple-500/20 text-purple-300 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border border-purple-500/30">Live Deck</span>
             </div>
             <div class="p-5 flex flex-col flex-1 justify-between">
@@ -320,14 +289,11 @@
                 <h3 class="text-xl font-bold text-white">Music Unlimited</h3>
                 <p class="text-white/60 text-sm mt-1.5">Nonstop global hits, trending track analysis, and independent artist releases.</p>
               </div>
-              <a href="#listenlive" class="inline-flex items-center gap-1.5 mt-4 text-xs font-semibold px-4 py-2 bg-purple-600/30 border border-purple-500/30 rounded-full text-purple-300 hover:bg-purple-600 hover:text-white transition w-max">
-                <i class="fas fa-play text-[10px]"></i> Listen Live
-              </a>
+              <a href="#listenlive" class="inline-flex items-center gap-1.5 mt-4 text-xs font-semibold px-4 py-2 bg-purple-600/30 border border-purple-500/30 rounded-full text-purple-300 hover:bg-purple-600 hover:text-white transition w-max">Listen Live</a>
             </div>
           </div>
           <div class="interactive-card glass-card overflow-hidden rounded-2xl flex flex-col">
             <div class="w-full h-44 bg-gradient-to-br from-pink-900 to-purple-950 flex items-center justify-center border-b border-white/5 relative">
-              <i class="fas fa-compact-disc text-5xl text-pink-400/40 fa-spin" style="animation-duration: 10s;"></i>
               <span class="absolute bottom-3 left-4 bg-pink-500/20 text-pink-300 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border border-pink-500/30">Classic</span>
             </div>
             <div class="p-5 flex flex-col flex-1 justify-between">
@@ -335,14 +301,11 @@
                 <h3 class="text-xl font-bold text-white">Retro Night</h3>
                 <p class="text-white/60 text-sm mt-1.5">Timeless musical journeys through classic pop, early synth-wave, and alternative rock archives.</p>
               </div>
-              <a href="#listenlive" class="inline-flex items-center gap-1.5 mt-4 text-xs font-semibold px-4 py-2 bg-purple-600/30 border border-purple-500/30 rounded-full text-purple-300 hover:bg-purple-600 hover:text-white transition w-max">
-                <i class="fas fa-play text-[10px]"></i> Listen Live
-              </a>
+              <a href="#listenlive" class="inline-flex items-center gap-1.5 mt-4 text-xs font-semibold px-4 py-2 bg-purple-600/30 border border-purple-500/30 rounded-full text-purple-300 hover:bg-purple-600 hover:text-white transition w-max">Listen Live</a>
             </div>
           </div>
           <div class="interactive-card glass-card overflow-hidden rounded-2xl flex flex-col">
             <div class="w-full h-44 bg-gradient-to-br from-red-900 to-pink-950 flex items-center justify-center border-b border-white/5 relative">
-              <i class="fas fa-heart text-5xl text-red-400/40"></i>
               <span class="absolute bottom-3 left-4 bg-red-500/20 text-red-300 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border border-red-500/30">Acoustic</span>
             </div>
             <div class="p-5 flex flex-col flex-1 justify-between">
@@ -350,9 +313,7 @@
                 <h3 class="text-xl font-bold text-white">Love Songs</h3>
                 <p class="text-white/60 text-sm mt-1.5">Unwind and indulge in acoustic masterpieces, smooth contemporary ballads, and romantic melodies.</p>
               </div>
-              <a href="#listenlive" class="inline-flex items-center gap-1.5 mt-4 text-xs font-semibold px-4 py-2 bg-purple-600/30 border border-purple-500/30 rounded-full text-purple-300 hover:bg-purple-600 hover:text-white transition w-max">
-                <i class="fas fa-play text-[10px]"></i> Listen Live
-              </a>
+              <a href="#listenlive" class="inline-flex items-center gap-1.5 mt-4 text-xs font-semibold px-4 py-2 bg-purple-600/30 border border-purple-500/30 rounded-full text-purple-300 hover:bg-purple-600 hover:text-white transition w-max">Listen Live</a>
             </div>
           </div>
         </div>
@@ -362,12 +323,12 @@
     <section id="news" class="py-20 px-6 bg-[#0e0e16]/30 relative z-30">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-center text-white tracking-wide">📰 Latest News</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-center text-white tracking-wide">Latest News</h2>
           <p class="text-white/60 text-sm mt-2">Stay informed with music updates, station bulletins, and special community announcements.</p>
         </div>
 
         <div id="breakingNewsTicker" class="hidden flex items-center bg-gradient-to-r from-red-950/80 via-black/40 to-red-950/20 backdrop-blur border border-red-500/20 rounded-xl overflow-hidden mb-10 shadow-lg">
-          <span class="bg-red-600 text-white font-bold text-xs uppercase px-4 py-2.5 flex items-center gap-2 z-10 shrink-0 select-none shadow-md">
+          <span class="bg-red-600 text-white font-bold text-xs uppercase px-4 py-2.5 flex items-center gap-2 z-10 shrink-0 select-none">
             <span class="inline-block w-2 h-2 rounded-full bg-white animate-ping"></span>
             <span>Breaking</span>
           </span>
@@ -379,7 +340,7 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="interactive-card glass-card p-6 rounded-2xl flex flex-col justify-between">
             <div>
-              <span class="text-[11px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded-full"><i class="fas fa-calendar-alt mr-1"></i> Event</span>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded-full">Event</span>
               <h3 class="text-lg font-bold text-white mt-4">Grand Studio Relaunch Planned</h3>
               <p class="text-white/60 text-sm mt-2 leading-relaxed">We are expanding our physical setup to support state-of-the-art digital desks and live visual stream integrations coming down the pipeline later this quarter.</p>
             </div>
@@ -391,7 +352,7 @@
 
           <div class="interactive-card glass-card p-6 rounded-2xl flex flex-col justify-between">
             <div>
-              <span class="text-[11px] font-bold uppercase tracking-wider text-yellow-400 bg-yellow-500/10 px-2.5 py-1 rounded-full"><i class="fas fa-trophy mr-1"></i> Milestone</span>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-yellow-400 bg-yellow-500/10 px-2.5 py-1 rounded-full">Milestone</span>
               <h3 class="text-lg font-bold text-white mt-4">1 Million Milestone Listeners</h3>
               <p class="text-white/60 text-sm mt-2 leading-relaxed">Thanks to our incredible global network of listener interactions across 120+ countries, Radio Rainbow has officially crossed one million stream hits this month!</p>
             </div>
@@ -403,7 +364,7 @@
 
           <div class="interactive-card glass-card p-6 rounded-2xl flex flex-col justify-between">
             <div>
-              <span class="text-[11px] font-bold uppercase tracking-wider text-green-400 bg-green-500/10 px-2.5 py-1 rounded-full"><i class="fas fa-music mr-1"></i> Show Buzz</span>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-green-400 bg-green-500/10 px-2.5 py-1 rounded-full">Show Buzz</span>
               <h3 class="text-lg font-bold text-white mt-4">Submissions Open for Indie Hour</h3>
               <p class="text-white/60 text-sm mt-2 leading-relaxed">Are you an independent tracking artist or producer? Drop your high-fidelity mp3 files to our management mail route to stand a chance to get featured live on air.</p>
             </div>
@@ -420,33 +381,27 @@
       <div class="max-w-7xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-10 tracking-wide">📸 Gallery Studio Preview</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <div class="gallery-img-container aspect-video flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
-            <i class="fas fa-tower-broadcast text-3xl text-purple-400/50 group-hover:text-purple-400 transition mb-2"></i>
+          <div class="aspect-video flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
             <span class="text-white font-semibold text-xs md:text-sm">Main Control Room</span>
             <span class="text-white/40 text-[10px] mt-1 hidden sm:inline-block">HD Audio Matrix Desks</span>
           </div>
-          <div class="gallery-img-container aspect-video flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
-            <i class="fas fa-microphone-lines text-3xl text-pink-400/50 group-hover:text-pink-400 transition mb-2"></i>
+          <div class="aspect-video flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
             <span class="text-white font-semibold text-xs md:text-sm">Vocal Recording Booth</span>
             <span class="text-white/40 text-[10px] mt-1 hidden sm:inline-block">Pro Condenser Setups</span>
           </div>
-          <div class="gallery-img-container aspect-video flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
-            <i class="fas fa-headphones-simple text-3xl text-yellow-400/50 group-hover:text-yellow-400 transition mb-2"></i>
+          <div class="aspect-video flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
             <span class="text-white font-semibold text-xs md:text-sm">Live Monitoring Station</span>
             <span class="text-white/40 text-[10px] mt-1 hidden sm:inline-block">Zero Latency Feeds</span>
           </div>
-          <div class="gallery-img-container aspect-video flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
-            <i class="fas fa-network-wired text-3xl text-blue-400/50 group-hover:text-blue-400 transition mb-2"></i>
+          <div class="aspect-video flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
             <span class="text-white font-semibold text-xs md:text-sm">Digital Content Servers</span>
             <span class="text-white/40 text-[10px] mt-1 hidden sm:inline-block">24x7 Continuous Node</span>
           </div>
-          <div class="gallery-img-container aspect-video flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
-            <i class="fas fa-users text-3xl text-green-400/50 group-hover:text-green-400 transition mb-2"></i>
+          <div class="aspect-video flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
             <span class="text-white font-semibold text-xs md:text-sm">Interactions Hub</span>
             <span class="text-white/40 text-[10px] mt-1 hidden sm:inline-block">Global Listener Sync</span>
           </div>
-          <div class="gallery-img-container aspect-video flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
-            <i class="fas fa-radio text-3xl text-orange-400/50 group-hover:text-orange-400 transition mb-2"></i>
+          <div class="aspect-video flex flex-col items-center justify-center p-6 text-center border border-white/5 glass-card group">
             <span class="text-white font-semibold text-xs md:text-sm">Syndication Matrix</span>
             <span class="text-white/40 text-[10px] mt-1 hidden sm:inline-block">Multi Directory Relays</span>
           </div>
@@ -460,12 +415,6 @@
         <p>
           Welcome to <strong>Radio Rainbow</strong>, your premium destination for round-the-clock independent internet radio streaming. Our channel delivers an optimized selection of genres, audio programming variations, interactive talks, and entertainment showcases daily. Operating globally out of digital infrastructure setups, we ensure crystal-clear digital acoustics across multiple web players, standalone software platforms, and mobile audio applications.
         </p>
-        <p>
-          Our core scheduling grid integrates distinct daily show blocks designed to align with varying target audiences across worldwide zones. From early daytime tranquil sounds to dynamic evening electronic clubs, we focus heavily on maintaining modern playlist content matrices. By supporting creative recording artists, independent songwriters, and underground audio content creators, our station represents a vital bridge for continuous cultural dialogue.
-        </p>
-        <p>
-          Through structural syndication platforms including <em>Zeno.FM, Radio India, PCRadio App, and Streema networks</em>, listeners are capable of streaming our digital feeds seamlessly on touchscreens, car dashboards, or home sound systems. Radio Rainbow continues to invest heavily in modernizing stream distribution, scaling content formats, and introducing innovative, modern interactive features to bring live media closer to everyone.
-        </p>
       </div>
     </section>
 
@@ -476,16 +425,13 @@
           <form action="https://formsubmit.co/radiorainbow15@gmail.com" method="POST" class="space-y-4">
             <input type="text" name="name" aria-label="Your Name" placeholder="Your Name" class="w-full p-3 text-sm rounded-xl bg-white/5 text-white border border-white/10 focus:outline-none focus:border-purple-500 transition">
             <input type="email" name="email" aria-label="Your Email" placeholder="Your Email" class="w-full p-3 text-sm rounded-xl bg-white/5 text-white border border-white/10 focus:outline-none focus:border-purple-500 transition" required>
-            <input type="text" name="subject" aria-label="Subject" placeholder="Subject" class="w-full p-3 text-sm rounded-xl bg-white/5 text-white border border-white/10 focus:outline-none focus:border-purple-500 transition">
             <textarea name="message" rows="4" aria-label="Your Message" placeholder="Your Message" class="w-full p-3 text-sm rounded-xl bg-white/5 text-white border border-white/10 focus:outline-none focus:border-purple-500 transition" required></textarea>
             
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_replyto" value="email">
-            <input type="hidden" name="_subject" value="New message from Radio Rainbow website!">
             
             <button type="submit" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full text-white text-sm font-semibold hover:opacity-90 transition">
-              <i class="fas fa-paper-plane text-xs"></i> Send Message
+              Send Message
             </button>
           </form>
           <p class="text-green-400 text-xs mt-3 text-center" id="formMessage"></p>
@@ -493,18 +439,16 @@
         <div class="text-white flex flex-col justify-between">
           <div>
             <h3 class="text-xl font-bold tracking-wide">Get In Touch</h3>
-            <p class="mt-4 text-white/70 text-sm flex gap-3"><i class="fas fa-envelope mt-1 text-purple-400"></i> info [at] radiorainbow.online</p>
-            <p class="mt-2.5 text-white/70 text-sm flex gap-3"><i class="fas fa-phone-alt mt-1 text-purple-400"></i> Broadcasting Global Route ID Platform Network</p>
+            <p class="mt-4 text-white/70 text-sm">Email: info [at] radiorainbow.online</p>
           </div>
           
           <div class="mt-8 md:mt-0">
             <span class="text-xs uppercase tracking-wider text-white/40 block mb-3 font-bold">Our Linked Communities</span>
-            <div class="flex gap-5 text-2xl text-white/70">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500 transition" aria-label="Follow Radio Rainbow on Facebook"><i class="fab fa-facebook"></i></a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-pink-500 transition" aria-label="Follow Radio Rainbow on Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition" aria-label="Subscribe to Radio Rainbow on YouTube"><i class="fab fa-youtube"></i></a>
-              <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" class="hover:text-green-400 transition" aria-label="Connect with Radio Rainbow on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-              <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition" aria-label="Follow Radio Rainbow on X Profile"><i class="fab fa-twitter"></i></a>
+            <div class="flex gap-5 text-sm text-white/70">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500 transition">Facebook</a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-pink-500 transition">Instagram</a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition">YouTube</a>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition">X profile</a>
             </div>
           </div>
         </div>
@@ -514,22 +458,34 @@
 
   <footer class="bg-black/80 backdrop-blur-lg border-t border-white/5 py-10 px-6 text-center text-white/60 relative z-30 text-xs md:text-sm">
     <div class="max-w-7xl mx-auto space-y-4">
-      <div class="flex justify-center mb-1">
-        <span class="text-2xl" aria-hidden="true">🌈</span>
-      </div>
-      <div class="text-xl font-bold bg-gradient-to-r from-pink-500 to-indigo-400 bg-clip-text text-transparent">🌈 Radio Rainbow</div>
-      <p>Streaming Music Across The World</p>
-      <p class="text-white/40 pt-2">&copy; 2026 Radio Rainbow. All Rights Reserved.</p>
+      <div class="text-xl font-bold bg-gradient-to-r from-pink-500 to-indigo-400 bg-clip-text text-transparent">Radio Rainbow</div>
+      <p>&copy; 2026 Radio Rainbow. All Rights Reserved.</p>
       <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 font-medium text-white/40">
         <a href="privacy-policy.html" class="hover:text-white/80 transition">Privacy Policy</a>
         <a href="terms.html" class="hover:text-white/80 transition">Terms of Service</a>
         <a href="dmca.html" class="hover:text-white/80 transition">DMCA Policy</a>
-        <a href="#contact" class="hover:text-white/80 transition">Contact</a>
       </div>
     </div>
   </footer>
 
   <script>
+    // Defers AdSense delivery until the user directly interacts with the mobile viewport layout
+    function injectAdSense() {
+      if (window.adsenseLoaded) return;
+      window.adsenseLoaded = true;
+      const script = document.createElement('script');
+      script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1060634245404425";
+      script.crossOrigin = "anonymous";
+      script.async = true;
+      document.head.appendChild(script);
+      
+      // Clean up event listener binds
+      window.removeEventListener('scroll', injectAdSense);
+      window.removeEventListener('touchstart', injectAdSense);
+    }
+    window.addEventListener('scroll', injectAdSense, { passive: true });
+    window.addEventListener('touchstart', injectAdSense, { passive: true });
+
     document.addEventListener('DOMContentLoaded', () => {
       const breakingAlerts = [
         "⚠️ SPECIAL ANNOUNCEMENT: Live DJ Set change tonight at 8 PM EST! Don't miss the ultimate mashup.",
@@ -546,8 +502,6 @@
           const fullTickerText = breakingAlerts.join(" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ");
           container.innerHTML = `${fullTickerText} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${fullTickerText}`;
           banner.classList.remove('hidden');
-        } else {
-          banner.classList.add('hidden');
         }
       }
       setupBreakingNews();
@@ -578,15 +532,6 @@
         });
       });
 
-      let liveStatusToggle = false;
-      setInterval(() => {
-        const statusEl = document.getElementById('liveStatus');
-        if (statusEl) {
-          liveStatusToggle = !liveStatusToggle;
-          statusEl.textContent = liveStatusToggle ? "LIVE NOW • Worldwide" : "🔴 LIVE: 24x7 Streaming";
-        }
-      }, 30000);
-
       const tracks = [
         { song: "Electric Dreams", artist: "Neon Lights" },
         { song: "Morning Melody", artist: "DJ Aurora" },
@@ -608,7 +553,7 @@
         if (fillEl) fillEl.style.width = '0%';
       }
       
-      function updateProgress() {
+      setInterval(() => {
         progress += 1;
         if (progress >= 100) {
           progress = 0;
@@ -617,19 +562,7 @@
         }
         const fillEl = document.getElementById('progressFill');
         if (fillEl) fillEl.style.width = progress + '%';
-      }
-      
-      updateNowPlaying();
-      setInterval(updateProgress, 300);
-
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.has('submit') && urlParams.get('submit') === 'success') {
-        const formMsgEl = document.getElementById('formMessage');
-        if (formMsgEl) {
-          formMsgEl.innerHTML = '✅ Message sent successfully! We\'ll get back to you soon.';
-          setTimeout(() => { formMsgEl.innerHTML = ''; }, 5000);
-        }
-      }
+      }, 300);
 
       const programs = [
         { name: "Morning Melody", start: 6, end: 10, color: "from-orange-400 to-pink-500" },
@@ -649,13 +582,8 @@
         const currentHour = now.getHours();
         const currentMinutes = now.getMinutes();
         
-        const hours = String(currentHour).padStart(2, '0');
-        const displayMins = String(currentMinutes).padStart(2, '0');
-        if (currentTimeDisplay) currentTimeDisplay.textContent = `${hours}:${displayMins}`;
-        
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        const dateStr = now.toLocaleDateString('en-US', options);
-        if (currentDateDisplay) currentDateDisplay.textContent = `${dateStr}`;
+        if (currentTimeDisplay) currentTimeDisplay.textContent = `${String(currentHour).padStart(2, '0')}:${String(currentMinutes).padStart(2, '0')}`;
+        if (currentDateDisplay) currentDateDisplay.textContent = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
         let activeIndex = -1;
         for (let i = 0; i < programs.length; i++) {
@@ -665,10 +593,6 @@
           } else {
             if (currentHour >= prog.start && currentHour < prog.end) { activeIndex = i; break; }
           }
-        }
-
-        if (activeIndex === -1) {
-          activeIndex = (currentHour >= 0 && currentHour < 6) ? 5 : 4;
         }
 
         if (scheduleContainer) {
@@ -684,8 +608,8 @@
             card.innerHTML = `
               <div class="h-1 w-14 rounded-full bg-gradient-to-r ${prog.color} mb-3"></div>
               <h3 class="text-xl font-bold text-white">${prog.name}</h3>
-              <p class="text-white/60 text-sm mt-1.5"><i class="far fa-clock mr-1"></i> ${startTime} - ${endTime}</p>
-              ${isActive ? '<span class="time-badge mt-3 inline-block text-[11px] px-2.5 py-0.5 rounded-full"><i class="fas fa-circle text-green-500 mr-1 text-[8px] animate-pulse"></i> LIVE NOW</span>' : ''}
+              <p class="text-white/60 text-sm mt-1.5">${startTime} - ${endTime}</p>
+              ${isActive ? '<span class="time-badge mt-3 inline-block text-[11px] px-2.5 py-0.5 rounded-full">● LIVE NOW</span>' : ''}
             `;
             scheduleContainer.appendChild(card);
           });
@@ -694,19 +618,6 @@
 
       renderSchedule();
       setInterval(renderSchedule, 30000);
-
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          const hash = this.getAttribute('href');
-          if(hash.startsWith("#") && hash.length > 1) {
-            const target = document.querySelector(hash);
-            if (target) {
-              e.preventDefault();
-              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-          }
-        });
-      });
     });
   </script>
 </body>
