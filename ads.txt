@@ -39,6 +39,6 @@ rubiconproject.com, 8441, RESELLER, 0bfd66d529a55807
 
 # Google Adsense
 
-google.com, pub-1060634245404425, DIRECT, f08c47fec0942fa0
+google.com, pub-2598903974952281, DIRECT, f08c47fec0942fa0
 
 #-----------End surfernetwork.com-----------------
