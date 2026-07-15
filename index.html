@@ -71,7 +71,6 @@
     * { font-family: 'Inter', sans-serif; }
     body { background: #07070a; overflow-x: hidden; color: #f3f4f6; }
     
-    /* Premium Glowing Glassmorphism */
     .glass-card { 
       background: rgba(18, 18, 29, 0.6); 
       backdrop-filter: blur(20px); 
@@ -80,7 +79,6 @@
       box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     }
     
-    /* Smooth Gradient Animations */
     .rainbow-gradient-bg { 
       background: linear-gradient(135deg, #ff416c, #ff4b2b, #8a2387, #e94057, #f27121); 
       background-size: 400% 400%; 
@@ -89,7 +87,6 @@
     }
     @keyframes rainbowMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
     
-    /* Elegant Wave Background Overlay */
     .waves { 
       position: absolute; 
       bottom: 0; 
@@ -103,7 +100,6 @@
     }
     @keyframes waveShift { 0% { transform: translate3d(0,0,0); } 100% { transform: translate3d(100px,0,0); } }
     
-    /* Dynamic Audio Equalizer Animation */
     .equalizer { display: flex; gap: 4px; align-items: center; justify-content: center; height: 50px; }
     .equalizer-bar { width: 4px; height: 15px; background: linear-gradient(to top, #ec4899, #8b5cf6); animation: bounce 0.6s ease infinite alternate; transform-origin: bottom; will-change: transform; }
     .equalizer-bar:nth-child(2) { animation-delay: 0.15s; height: 35px; background: linear-gradient(to top, #8b5cf6, #3b82f6); }
@@ -112,10 +108,8 @@
     .equalizer-bar:nth-child(5) { animation-delay: 0.4s; height: 28px; background: linear-gradient(to top, #f59e0b, #ef4444); }
     @keyframes bounce { from { transform: scaleY(0.3); } to { transform: scaleY(1); } }
     
-    /* Strict Frame dimensions to block layout shifts (CLS) */
     .player-wrapper { min-height: 252px; height: 252px; }
     
-    /* Hover Effects for Grid Cards */
     .interactive-card { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
     .interactive-card:hover { 
       transform: translateY(-5px); 
@@ -129,14 +123,12 @@
     .sticky-nav { transition: all 0.3s ease; }
     .sticky-nav.scrolled { background: rgba(7, 7, 10, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
     
-    /* Active Schedule Styling */
     .schedule-card.active-schedule { 
       border: 1px solid rgba(245, 158, 11, 0.4); 
       background: rgba(245, 158, 11, 0.03); 
       box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.05);
     }
     
-    /* Marquee News Ticker */
     @keyframes ticker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-50%, 0, 0); } }
     .ticker-wrap { overflow: hidden; white-space: nowrap; }
     .ticker-content { display: inline-block; padding-left: 50%; animation: ticker 25s linear infinite; will-change: transform; }
@@ -318,12 +310,10 @@
               </p>
             </div>
             <div class="shrink-0 flex flex-col items-center gap-2 bg-black/20 p-4 rounded-xl border border-white/5">
-              <a href="https://www.paypal.com/paypalme/abhinavverma08" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-5 bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white rounded-full font-bold text-xs text-center flex items-center justify-center transition shadow-md">
+              <button onclick="window.open('https://www.paypal.com/paypalme/abhinavverma08','_blank')" class="w-full py-2 px-5 bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white rounded-full font-bold text-xs text-center flex items-center justify-center transition shadow-md">
                 Donate via PayPal
-              </a>
-              <span class="text-[9px] text-gray-500 font-mono select-all truncate max-w-[160px]">
-                abhinavverma0806@gmail.com
-              </span>
+              </button>
+              <span id="donationNode" class="text-[9px] text-gray-500 font-mono select-all truncate max-w-[160px]"></span>
             </div>
           </div>
         </div>
@@ -467,7 +457,7 @@
           <p class="text-gray-400 text-xs md:text-sm leading-relaxed">Have a content pitch, scheduling question, technical report, or corporate advertising query? Drop a direct line or fill out our automated form processing terminal wrapper layout link.</p>
           <div class="text-xs space-y-1">
             <p class="text-gray-500">Primary Gateway Node:</p>
-            <a href="mailto:radiorainbow15@gmail.com" class="text-purple-400 font-semibold text-sm hover:underline select-all">radiorainbow15@gmail.com</a>
+            <div id="contactMailNode"></div>
           </div>
         </div>
       </div>
@@ -479,6 +469,20 @@
   </footer>
 
   <script>
+    // Safe programmatic execution to bypass Cloudflare's email redirection bug
+    document.addEventListener("DOMContentLoaded", () => {
+      const p1 = "abhinavverma0806";
+      const p2 = "gmail.com";
+      document.getElementById('donationNode').textContent = `${p1}@${p2}`;
+      
+      const c1 = "radiorainbow15";
+      const c2 = "gmail.com";
+      const mailWrapper = document.getElementById('contactMailNode');
+      if(mailWrapper) {
+        mailWrapper.innerHTML = `<a href="mailto:${c1}@${c2}" class="text-purple-400 font-semibold text-sm hover:underline select-all">${c1}@${c2}</a>`;
+      }
+    });
+
     // Navbar Scroll Tracking Node logic
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
@@ -506,7 +510,7 @@
       });
     });
 
-    // --- WORKING AUTOMATIC SCHEDULER & CLOCK ENGINE ---
+    // --- AUTOMATIC SCHEDULER & CLOCK ENGINE ---
     const scheduleData = [
       { name: "Morning Melodies", start: 6, end: 12, desc: "Wake up with standard acoustical melodies and soft instrumentation.", host: "DJ Aurora" },
       { name: "Midday Chartbusters", start: 12, end: 17, desc: "Continuous mainstream breakdowns, fresh indie evaluations, and charting hits.", host: "DJ Zephyr" },
@@ -517,32 +521,26 @@
     function updateTimeAndSchedule() {
       const now = new Date();
       
-      // Update local clock display
       const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
       document.getElementById('currentTimeDisplay').textContent = timeString;
       
-      // Update local date display
       const dateString = now.toLocaleDateString([], { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
       document.getElementById('currentDateDisplay').textContent = `TODAY'S LINEUP: ${dateString.toUpperCase()}`;
 
-      // Build schedule elements dynamically
       const container = document.getElementById('scheduleContainer');
       const currentHour = now.getHours();
       let html = '';
 
       scheduleData.forEach(item => {
-        // Determine if this show is currently live
         let isCurrent = false;
         if (item.start < item.end) {
           isCurrent = currentHour >= item.start && currentHour < item.end;
-        } else { // Handle midnight crossover
+        } else {
           isCurrent = currentHour >= item.start || currentHour < item.end;
         }
 
         const activeClass = isCurrent ? 'schedule-card active-schedule border-amber-500/40 bg-amber-500/[0.03] shadow-[inset_0_0_20px_rgba(245,158,11,0.05)]' : 'border-white/5';
         const liveBadge = isCurrent ? '<span class="text-amber-400 text-[10px] font-bold tracking-widest uppercase flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-amber-400 live-badge"></span>LIVE NOW</span>' : '';
-
-        // Format times for readability
         const formatHour = h => `${h.toString().padStart(2, '0')}:00`;
 
         html += `
@@ -563,7 +561,6 @@
       container.innerHTML = html;
     }
 
-    // Run updates immediately on page load, and refresh every 10 seconds
     updateTimeAndSchedule();
     setInterval(updateTimeAndSchedule, 10000);
   </script>
