@@ -7,15 +7,20 @@
 
   <script src="https://analytics.ahrefs.com/analytics.js" data-key="yis9dISUYt6dfczRPqHyuA" async></script>
 
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PC52FDW');</script>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PC52FDW');</script>
+<!-- End Google Tag Manager -->
+  
+  <!-- Preconnect Assets -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com">
 
+  <!-- Async Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BRM7XKE17Y"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -33,20 +38,17 @@
   <link rel="canonical" href="https://radiorainbow.online">
   <link rel="content-discovery" href="/llms.txt" type="text/plain">
   
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w32">
   <link rel="icon" type="image/png" sizes="16x16" href="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w16">
   <link rel="apple-touch-icon" sizes="180x180" href="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w180">
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Radio Rainbow Live | Online Internet Radio Station Broadcast">
   <meta property="og:description" content="Listen to Radio Rainbow live online. Enjoy nonstop music, entertainment, live shows, and worldwide streaming.">
   <meta property="og:image" content="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w1000">
   <meta property="og:url" content="https://radiorainbow.online">
   <meta property="og:type" content="website">
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Radio Rainbow Live | Online Internet Radio Station Broadcast">
-  <meta name="twitter:description" content="Listen to Radio Rainbow live online. Enjoy nonstop music, entertainment, live shows, and worldwide streaming.">
-  <meta name="twitter:image" content="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w1000">
   
   <script type="application/ld+json">
   {
@@ -54,16 +56,13 @@
     "@type": "RadioStation",
     "name": "Radio Rainbow",
     "url": "https://radiorainbow.online",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w500"
-    },
-    "image": "https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w1000",
+    "logo": "https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w500",
     "description": "Global online radio station delivering music, entertainment, culture, talk shows, and community programs 24 hours a day.",
     "areaServed": "Worldwide"
   }
   </script>
   
+  <!-- Tailwind & Font Setup -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
@@ -71,6 +70,7 @@
     * { font-family: 'Inter', sans-serif; }
     body { background: #07070a; overflow-x: hidden; color: #f3f4f6; }
     
+    /* Premium Glowing Glassmorphism */
     .glass-card { 
       background: rgba(18, 18, 29, 0.6); 
       backdrop-filter: blur(20px); 
@@ -79,6 +79,7 @@
       box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     }
     
+    /* Smooth Gradient Animations */
     .rainbow-gradient-bg { 
       background: linear-gradient(135deg, #ff416c, #ff4b2b, #8a2387, #e94057, #f27121); 
       background-size: 400% 400%; 
@@ -87,6 +88,7 @@
     }
     @keyframes rainbowMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
     
+    /* Elegant Wave Background Overlay */
     .waves { 
       position: absolute; 
       bottom: 0; 
@@ -100,6 +102,7 @@
     }
     @keyframes waveShift { 0% { transform: translate3d(0,0,0); } 100% { transform: translate3d(100px,0,0); } }
     
+    /* Dynamic Audio Equalizer Animation */
     .equalizer { display: flex; gap: 4px; align-items: center; justify-content: center; height: 50px; }
     .equalizer-bar { width: 4px; height: 15px; background: linear-gradient(to top, #ec4899, #8b5cf6); animation: bounce 0.6s ease infinite alternate; transform-origin: bottom; will-change: transform; }
     .equalizer-bar:nth-child(2) { animation-delay: 0.15s; height: 35px; background: linear-gradient(to top, #8b5cf6, #3b82f6); }
@@ -108,8 +111,10 @@
     .equalizer-bar:nth-child(5) { animation-delay: 0.4s; height: 28px; background: linear-gradient(to top, #f59e0b, #ef4444); }
     @keyframes bounce { from { transform: scaleY(0.3); } to { transform: scaleY(1); } }
     
+    /* Strict Frame dimensions to block layout shifts (CLS) */
     .player-wrapper { min-height: 252px; height: 252px; }
     
+    /* Hover Effects for Grid Cards */
     .interactive-card { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
     .interactive-card:hover { 
       transform: translateY(-5px); 
@@ -123,12 +128,14 @@
     .sticky-nav { transition: all 0.3s ease; }
     .sticky-nav.scrolled { background: rgba(7, 7, 10, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
     
+    /* Active Schedule Styling */
     .schedule-card.active-schedule { 
       border: 1px solid rgba(245, 158, 11, 0.4); 
       background: rgba(245, 158, 11, 0.03); 
       box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.05);
     }
     
+    /* Marquee News Ticker */
     @keyframes ticker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-50%, 0, 0); } }
     .ticker-wrap { overflow: hidden; white-space: nowrap; }
     .ticker-content { display: inline-block; padding-left: 50%; animation: ticker 25s linear infinite; will-change: transform; }
@@ -139,10 +146,14 @@
 </head>
 <body class="antialiased text-gray-300">
 
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC52FDW"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC52FDW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
   <a href="#listenlive" class="skip-to-content">Skip to Live Radio Player</a>
 
+  <!-- Header Navigation -->
   <header>
     <nav id="navbar" class="fixed top-0 left-0 w-full z-50 sticky-nav">
       <div class="max-w-7xl mx-auto px-6 md:px-8 py-4 flex justify-between items-center">
@@ -180,6 +191,7 @@
   </header>
 
   <main>
+    <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       <div class="absolute inset-0 rainbow-gradient-bg opacity-10"></div>
       <div class="absolute inset-0 waves"></div>
@@ -209,6 +221,7 @@
       </div>
     </section>
 
+    <!-- Player Component -->
     <section id="listenlive" class="py-16 px-6 relative z-30">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-2xl md:text-3xl font-bold flex justify-center items-center gap-2.5 text-white tracking-wider">
@@ -228,6 +241,7 @@
           </div>
         </div>
         
+        <!-- Now Playing Track Card -->
         <div class="glass-card p-5 rounded-2xl max-w-sm mx-auto mt-10 text-left border border-white/5 relative overflow-hidden">
           <div class="absolute top-0 right-0 w-24 h-24 bg-pink-500/10 rounded-full blur-xl pointer-events-none"></div>
           <div class="flex items-center gap-4 relative z-10">
@@ -247,6 +261,7 @@
       </div>
     </section>
 
+    <!-- Platform Aggregators -->
     <section id="platforms" class="py-20 px-6 relative z-30">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-10">
@@ -282,6 +297,7 @@
       </div>
     </section>
 
+    <!-- Program Matrix -->
     <section id="schedule" class="py-20 px-6 bg-white/[0.01] relative z-30 border-y border-white/[0.02]">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
@@ -291,13 +307,15 @@
           </div>
         </div>
         <div id="scheduleContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          </div>
+          <!-- Populated dynamically without shifting page elements -->
+        </div>
         <div class="text-center text-gray-500 text-xs mt-8">
           Local Station Sync Time: <span id="currentTimeDisplay" class="text-gray-400">--:--</span>
         </div>
       </div>
     </section>
 
+    <!-- Support Portal -->
     <section id="donations" class="py-16 px-6 relative z-30">
       <div class="max-w-4xl mx-auto">
         <div class="glass-card relative overflow-hidden p-6 md:p-8 rounded-2xl border border-purple-500/10 bg-gradient-to-br from-[#12121d] to-[#07070a]">
@@ -310,16 +328,19 @@
               </p>
             </div>
             <div class="shrink-0 flex flex-col items-center gap-2 bg-black/20 p-4 rounded-xl border border-white/5">
-              <button onclick="window.open('https://www.paypal.com/paypalme/abhinavverma08','_blank')" class="w-full py-2 px-5 bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white rounded-full font-bold text-xs text-center flex items-center justify-center transition shadow-md">
+              <a href="https://www.paypal.com/paypalme/abhinavverma08" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-5 bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white rounded-full font-bold text-xs text-center flex items-center justify-center transition shadow-md">
                 Donate via PayPal
-              </button>
-              <span id="donationNode" class="text-[9px] text-gray-500 font-mono select-all truncate max-w-[160px]"></span>
+              </a>
+              <span class="text-[9px] text-gray-500 font-mono select-all truncate max-w-[160px]">
+                abhinavverma0806@gmail.com
+              </span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Featured Curations -->
     <section id="shows" class="py-16 px-6 relative z-30">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-2xl md:text-3xl font-bold text-center text-white mb-10 tracking-wide">✨ Featured Radios</h2>
@@ -352,6 +373,7 @@
       </div>
     </section>
 
+    <!-- News Board -->
     <section id="news" class="py-16 px-6 bg-white/[0.005] relative z-30">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-10">
@@ -394,6 +416,7 @@
       </div>
     </section>
 
+    <!-- Beautiful, Clean Visual Portfolio Grid -->
     <section id="gallery" class="py-16 px-6 relative z-30">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-2xl md:text-3xl font-bold text-center text-white mb-10 tracking-wide">📸 Studio Monitor Preview</h2>
@@ -432,6 +455,7 @@
       </div>
     </section>
 
+    <!-- Rich SEO Content Block -->
     <section class="py-8 px-6 max-w-4xl mx-auto relative z-30">
       <div class="glass-card p-6 md:p-8 text-left text-gray-400 rounded-2xl border border-white/5 space-y-3 text-xs md:text-sm leading-relaxed">
         <h2 class="text-lg font-bold tracking-wide text-white">🎙️ About Radio Rainbow</h2>
@@ -441,134 +465,230 @@
       </div>
     </section>
 
+    <!-- Contact Portal -->
     <section id="contact" class="py-16 px-6 relative z-30">
       <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
         <div>
-          <h2 class="text-xl font-bold text-white mb-4 tracking-wide">Contect Us</h2>
-  <form action="https://formsubmit.co/radiorainbow15@gmail.com" method="POST" class="space-y-3">
-  <!-- OPTIONAL: Disables the reCAPTCHA screen if you don't want it -->
-  <input type="hidden" name="_captcha" value="false">
-  
-  <!-- OPTIONAL: Redirects users back to your homepage after they submit -->
-  <input type="hidden" name="_next" value="https://radiorainbow.online#contact">
-
-  <input type="text" name="name" placeholder="Your Name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500 transition">
-  <input type="email" name="email" placeholder="Your Email Address" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500 transition">
-  <textarea name="message" rows="4" placeholder="Type your message details..." required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500 transition"></textarea>
-  <button type="submit" class="w-full py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl font-bold text-xs text-white hover:opacity-90 transition">Transmit Message</button>
-     </form>
+          <h2 class="text-xl font-bold text-white mb-4 tracking-wide">Send a Transmission</h2>
+          <form action="https://formsubmit.co/radiorainbow15@gmail.com" method="POST" class="space-y-3">
+            <input type="text" name="name" aria-label="Your Name" placeholder="Your Name" class="w-full p-3 text-xs rounded-xl bg-white/5 text-white border border-white/10 focus:outline-none focus:border-purple-500 transition">
+            <input type="email" name="email" aria-label="Your Email" placeholder="Your Email" class="w-full p-3 text-xs rounded-xl bg-white/5 text-white border border-white/10 focus:outline-none focus:border-purple-500 transition" required>
+            <textarea name="message" rows="4" aria-label="Your Message" placeholder="Your Message" class="w-full p-3 text-xs rounded-xl bg-white/5 text-white border border-white/10 focus:outline-none focus:border-purple-500 transition" required></textarea>
+            
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            
+            <button type="submit" class="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold rounded-xl transition">
+              Submit Message
+            </button>
+          </form>
         </div>
-        <div class="flex flex-col justify-center space-y-4">
-          <h2 class="text-xl font-bold text-white tracking-wide">Direct Communications</h2>
-          <p class="text-gray-400 text-xs md:text-sm leading-relaxed">Have a content pitch, scheduling question, technical report, or corporate advertising query? Drop a direct line or fill out our automated form processing terminal wrapper layout link.</p>
-          <div class="text-xs space-y-1">
-            <p class="text-gray-500">Primary Gateway Node:</p>
-            <div id="contactMailNode"></div>
+        <div class="flex flex-col justify-between">
+          <div>
+            <h3 class="text-lg font-bold text-white tracking-wide">Get In Touch</h3>
+            <p class="mt-2 text-gray-400 text-xs md:text-sm">Inquiries: info [at] radiorainbow.online</p>
+          </div>
+          
+          <div class="mt-6">
+            <span class="text-[10px] uppercase tracking-widest text-gray-500 block mb-2 font-bold">Community Portals</span>
+            <div class="flex gap-4 text-xs font-medium text-gray-400">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Facebook</a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Instagram</a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">YouTube</a>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">X</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="py-8 text-center text-gray-600 text-[10px] tracking-widest uppercase border-t border-white/5 bg-[#040406]">
-    <p>&copy; 2026 Radio Rainbow. All Rights Reserved.</p>
+  <footer class="bg-black/40 backdrop-blur-md border-t border-white/5 py-8 px-6 text-center text-gray-500 relative z-30 text-xs">
+    <div class="max-w-5xl mx-auto space-y-3">
+      <div class="text-base font-bold bg-gradient-to-r from-pink-500 to-indigo-400 bg-clip-text text-transparent">Radio Rainbow</div>
+      <p>&copy; 2026 Radio Rainbow. All Rights Reserved.</p>
+      <div class="flex justify-center gap-x-4 mt-2 text-gray-600 font-medium">
+        <a href="privacy-policy.html" class="hover:text-gray-400 transition">Privacy Policy</a>
+        <a href="terms.html" class="hover:text-gray-400 transition">Terms</a>
+        <a href="dmca.html" class="hover:text-gray-400 transition">DMCA</a>
+      </div>
+    </div>
   </footer>
 
   <script>
-    // Safe programmatic execution to bypass Cloudflare's email redirection bug
-    document.addEventListener("DOMContentLoaded", () => {
-      const p1 = "abhinavverma0806";
-      const p2 = "gmail.com";
-      document.getElementById('donationNode').textContent = `${p1}@${p2}`;
+    // Delay AdSense setup to preserve performance metrics
+    function injectAdSense() {
+      if (window.adsenseLoaded) return;
+      window.adsenseLoaded = true;
+      const script = document.createElement('script');
+      script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1060634245404425";
+      script.crossOrigin = "anonymous";
+      script.async = true;
+      document.head.appendChild(script);
       
-      const c1 = "radiorainbow15";
-      const c2 = "gmail.com";
-      const mailWrapper = document.getElementById('contactMailNode');
-      if(mailWrapper) {
-        mailWrapper.innerHTML = `<a href="mailto:${c1}@${c2}" class="text-purple-400 font-semibold text-sm hover:underline select-all">${c1}@${c2}</a>`;
+      window.removeEventListener('scroll', injectAdSense);
+      window.removeEventListener('touchstart', injectAdSense);
+    }
+    window.addEventListener('scroll', injectAdSense, { passive: true });
+    window.addEventListener('touchstart', injectAdSense, { passive: true });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const breakingAlerts = [
+        "⚠️ SCHEDULE REMINDER: Live syndication deck operations switch patterns at 8 PM EST tonight.",
+        "🎉 FEATURE TRACK: Catch our global artist showcase line-up dropping this Friday!",
+        "📻 DECK COMPLETED: Infrastructure node routing completed successfully. High fidelity feeds are live."
+      ];
+
+      function setupBreakingNews() {
+        const banner = document.getElementById('breakingNewsTicker');
+        const container = document.getElementById('tickerContainer');
+        if (!banner || !container) return;
+
+        if (breakingAlerts && breakingAlerts.length > 0) {
+          const fullTickerText = breakingAlerts.join(" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ");
+          container.innerHTML = `${fullTickerText} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${fullTickerText}`;
+          banner.classList.remove('hidden');
+        }
       }
-    });
+      setupBreakingNews();
 
-    // Navbar Scroll Tracking Node logic
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-
-    // Mobile View Drawer Actions
-    const menuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    
-    menuBtn.addEventListener('click', () => {
-      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuBtn.setAttribute('aria-expanded', !isExpanded);
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuBtn.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // --- AUTOMATIC SCHEDULER & CLOCK ENGINE ---
-    const scheduleData = [
-      { name: "Morning Melodies", start: 6, end: 12, desc: "Wake up with standard acoustical melodies and soft instrumentation.", host: "DJ Aurora" },
-      { name: "Midday Chartbusters", start: 12, end: 17, desc: "Continuous mainstream breakdowns, fresh indie evaluations, and charting hits.", host: "DJ Zephyr" },
-      { name: "Sunset Lounge", start: 17, end: 21, desc: "Unwind your evening with vintage synthesizers, chillout ambient beats, and slow-burn grooves.", host: "DJ Horizon" },
-      { name: "Late Night Beats", start: 21, end: 6, desc: "Soothing acoustics, dark ambient loops, and late-night nostalgic master tapes.", host: "DJ Midnight" }
-    ];
-
-    function updateTimeAndSchedule() {
-      const now = new Date();
-      
-      const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
-      document.getElementById('currentTimeDisplay').textContent = timeString;
-      
-      const dateString = now.toLocaleDateString([], { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-      document.getElementById('currentDateDisplay').textContent = `TODAY'S LINEUP: ${dateString.toUpperCase()}`;
-
-      const container = document.getElementById('scheduleContainer');
-      const currentHour = now.getHours();
-      let html = '';
-
-      scheduleData.forEach(item => {
-        let isCurrent = false;
-        if (item.start < item.end) {
-          isCurrent = currentHour >= item.start && currentHour < item.end;
+      window.addEventListener('scroll', function() {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 30) {
+          nav.classList.add('scrolled');
         } else {
-          isCurrent = currentHour >= item.start || currentHour < item.end;
+          nav.classList.remove('scrolled');
+        }
+      }, { passive: true });
+
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          mobileMenu.classList.toggle('hidden');
+          mobileBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+        });
+      }
+      
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          mobileBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      const tracks = [
+        { song: "Electric Dreams", artist: "Neon Lights" },
+        { song: "Morning Melody", artist: "DJ Aurora" },
+        { song: "Rainbow Vibes", artist: "Radio Rainbow Crew" },
+        { song: "Sunshine Love", artist: "Rainbow Beats" }
+      ];
+      let trackIndex = 0;
+      let lastUpdateTime = 0;
+      let progress = 0;
+      
+      function updateNowPlaying() {
+        const track = tracks[trackIndex];
+        const songEl = document.getElementById('songName');
+        const artistEl = document.getElementById('artistName');
+        if (songEl) songEl.textContent = track.song;
+        if (artistEl) artistEl.textContent = track.artist;
+      }
+      
+      function tickProgressBar(timestamp) {
+        if (!lastUpdateTime) lastUpdateTime = timestamp;
+        const delta = timestamp - lastUpdateTime;
+        
+        if (delta >= 300) {
+          progress += 1;
+          if (progress >= 100) {
+            progress = 0;
+            trackIndex = (trackIndex + 1) % tracks.length;
+            updateNowPlaying();
+          }
+          const fillEl = document.getElementById('progressFill');
+          if (fillEl) fillEl.style.width = progress + '%';
+          lastUpdateTime = timestamp;
+        }
+        requestAnimationFrame(tickProgressBar);
+      }
+      requestAnimationFrame(tickProgressBar);
+
+      const programs = [
+        { name: "Morning Melody", start: 6, end: 10, color: "from-orange-500 to-pink-500" },
+        { name: "Rainbow Hits", start: 10, end: 14, color: "from-yellow-400 to-red-500" },
+        { name: "Afternoon Chill", start: 14, end: 17, color: "from-green-400 to-teal-500" },
+        { name: "Evening Vibes", start: 17, end: 20, color: "from-blue-400 to-indigo-500" },
+        { name: "Night Express", start: 20, end: 24, color: "from-purple-500 to-pink-600" },
+        { name: "Midnight Mix", start: 0, end: 6, color: "from-gray-700 to-purple-800" }
+      ];
+
+      const scheduleContainer = document.getElementById('scheduleContainer');
+      const currentTimeDisplay = document.getElementById('currentTimeDisplay');
+      const currentDateDisplay = document.getElementById('currentDateDisplay');
+
+      function renderSchedule() {
+        const now = new Date();
+        const currentHour = now.getHours();
+        const currentMinutes = now.getMinutes();
+        
+        if (currentTimeDisplay) currentTimeDisplay.textContent = `${String(currentHour).padStart(2, '0')}:${String(currentMinutes).padStart(2, '0')}`;
+        if (currentDateDisplay) currentDateDisplay.textContent = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+        let activeIndex = -1;
+        for (let i = 0; i < programs.length; i++) {
+          const prog = programs[i];
+          if (prog.start === 0 && prog.end === 6) {
+            if (currentHour >= 0 && currentHour < 6) { activeIndex = i; break; }
+          } else {
+            if (currentHour >= prog.start && currentHour < prog.end) { activeIndex = i; break; }
+          }
         }
 
-        const activeClass = isCurrent ? 'schedule-card active-schedule border-amber-500/40 bg-amber-500/[0.03] shadow-[inset_0_0_20px_rgba(245,158,11,0.05)]' : 'border-white/5';
-        const liveBadge = isCurrent ? '<span class="text-amber-400 text-[10px] font-bold tracking-widest uppercase flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-amber-400 live-badge"></span>LIVE NOW</span>' : '';
-        const formatHour = h => `${h.toString().padStart(2, '0')}:00`;
-
-        html += `
-          <div class="interactive-card glass-card p-5 rounded-xl border flex flex-col justify-between ${activeClass}">
-            <div>
-              <div class="flex justify-between items-start mb-3">
-                <span class="text-[10px] font-bold text-gray-500 tracking-wider font-mono">${formatHour(item.start)} - ${formatHour(item.end)}</span>
-                ${liveBadge}
+        if (scheduleContainer) {
+          scheduleContainer.innerHTML = '';
+          programs.forEach((prog, idx) => {
+            const isActive = (idx === activeIndex);
+            const card = document.createElement('div');
+            card.className = `schedule-card glass-card p-5 rounded-xl transition-all duration-300 ${isActive ? 'active-schedule' : ''}`;
+            
+            const startTime = prog.start === 0 ? '12 AM' : prog.start < 12 ? `${prog.start} AM` : prog.start === 12 ? '12 PM' : `${prog.start - 12} PM`;
+            const endTime = prog.end === 0 || prog.end === 24 ? '12 AM' : prog.end < 12 ? `${prog.end} AM` : prog.end === 12 ? '12 PM' : `${prog.end - 12} PM`;
+            
+            card.innerHTML = `
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-sm font-bold text-white tracking-wide">${prog.name}</h3>
+                  <p class="text-gray-400 text-[11px] mt-0.5">${startTime} - ${endTime}</p>
+                </div>
+                ${isActive ? '<span class="bg-amber-500/20 text-amber-400 font-bold text-[9px] px-2 py-0.5 rounded-full border border-amber-500/30">LIVE NOW</span>' : ''}
               </div>
-              <h3 class="text-base font-bold text-white tracking-wide">${item.name}</h3>
-              <p class="text-gray-400 text-xs mt-2 leading-relaxed">${item.desc}</p>
-            </div>
-            <span class="text-[10px] text-purple-400 font-semibold mt-4 block">Hosted by ${item.host}</span>
-          </div>
-        `;
-      });
+            `;
+            scheduleContainer.appendChild(card);
+          });
+        }
+      }
 
-      container.innerHTML = html;
-    }
-
-    updateTimeAndSchedule();
-    setInterval(updateTimeAndSchedule, 10000);
+      renderSchedule();
+      setInterval(renderSchedule, 60000); 
+    });
   </script>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1060634245404425"
+     crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2598903974952281"
+     crossorigin="anonymous"></script>
+
+  <!-- Radio Square Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2598903974952281"
+     data-ad-slot="9744177970"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </body>
 </html>
