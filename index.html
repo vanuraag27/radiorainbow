@@ -34,7 +34,7 @@
   
   <!-- Optimized Meta Description (< 150 Characters to eliminate truncation & 4XX/SEO errors) -->
   <meta name="description" content="Read the DMCA Copyright Policy for Radio Rainbow. Learn how to submit copyright infringement notices and takedown requests seamlessly.">
-  <meta name="keywords" content="radio rainbow, live radio, internet radio, online streaming, music, live shows, radio station">
+  <meta name="keywords" content="radio rainbow, live radio, internet radio, online streaming, music, live shows, radio station, google web stories, web series love story, music entertainment">
   <meta name="author" content="Radio Rainbow">
   
   <link rel="canonical" href="https://radiorainbow.online">
@@ -144,6 +144,10 @@
     
     .skip-to-content { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
     .skip-to-content:focus { position: fixed; left: 24px; top: 24px; width: auto; height: auto; background: #8B5CF6; color: white; padding: 12px 24px; border-radius: 8px; z-index: 100; font-weight: bold; }
+
+    /* Custom Scrollbar styling for Web Stories carousel */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
 <body class="antialiased text-gray-300">
@@ -166,6 +170,7 @@
         <div class="hidden lg:flex space-x-6 text-gray-400 font-medium text-sm tracking-wide">
           <a href="#home" class="hover:text-white transition-colors duration-200">Home</a>
           <a href="#listenlive" class="hover:text-white transition-colors duration-200">Listen Live</a>
+          <a href="#stories" class="hover:text-white transition-colors duration-200">Love Stories</a>
           <a href="#platforms" class="hover:text-white transition-colors duration-200">Platforms</a>
           <a href="#schedule" class="hover:text-white transition-colors duration-200">Schedule</a>
           <a href="#donations" class="hover:text-white transition-colors duration-200">Donations</a>
@@ -181,6 +186,7 @@
       <div id="mobileMenu" class="hidden lg:hidden bg-[#07070a]/98 border-t border-white/5 p-6 flex flex-col space-y-4 text-gray-300 text-base font-medium">
         <a href="#home" class="mobile-link py-1 hover:text-white">Home</a>
         <a href="#listenlive" class="mobile-link py-1 hover:text-white">Listen Live</a>
+        <a href="#stories" class="mobile-link py-1 hover:text-white">Love Stories</a>
         <a href="#platforms" class="mobile-link py-1 hover:text-white">Platforms</a>
         <a href="#schedule" class="mobile-link py-1 hover:text-white">Schedule</a>
         <a href="#donations" class="mobile-link py-1 hover:text-white">Donations</a>
@@ -257,6 +263,62 @@
               <div class="w-full bg-white/5 h-1 rounded-full mt-3 overflow-hidden">
                 <div id="progressFill" class="bg-gradient-to-r from-pink-500 to-purple-500 h-1 rounded-full transition-all" style="width: 0%; transition-duration: 300ms;"></div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Web Series Love Stories Section -->
+    <section id="stories" class="py-12 px-6 relative z-30 bg-white/[0.005]">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h2 class="text-2xl font-bold text-white tracking-wide">💞 Trending Love Stories & Series</h2>
+            <p class="text-xs text-gray-400 mt-1">Explore real-time reviews of trending Google web series and romantic drama updates.</p>
+          </div>
+          <span class="text-xs text-pink-400 font-bold tracking-wider uppercase border border-pink-500/20 px-3 py-1 rounded-full bg-pink-950/20 hidden sm:inline-block">LIVE TRENDING</span>
+        </div>
+
+        <!-- Scrollable Story Container -->
+        <div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar snap-x snap-mandatory">
+          <!-- Love Story Card 1 -->
+          <div onclick="openStory('secret-romance')" class="cursor-pointer snap-start shrink-0 w-36 sm:w-44 aspect-[9/16] glass-card rounded-2xl overflow-hidden relative interactive-card border border-white/10 flex flex-col justify-end p-3 group">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+            <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=400&q=80" alt="Secret Romance Web Series Cover" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="relative z-20">
+              <span class="text-[8px] font-bold bg-pink-600 text-white px-1.5 py-0.5 rounded uppercase tracking-wider">Romance</span>
+              <h3 class="text-xs font-bold text-white mt-1 line-clamp-2 drop-shadow">My Secret Romance Season 2</h3>
+            </div>
+          </div>
+
+          <!-- Love Story Card 2 -->
+          <div onclick="openStory('city-love')" class="cursor-pointer snap-start shrink-0 w-36 sm:w-44 aspect-[9/16] glass-card rounded-2xl overflow-hidden relative interactive-card border border-white/10 flex flex-col justify-end p-3 group">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+            <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=400&q=80" alt="City Lights Love Story Cover" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="relative z-20">
+              <span class="text-[8px] font-bold bg-purple-600 text-white px-1.5 py-0.5 rounded uppercase tracking-wider">Urban Drama</span>
+              <h3 class="text-xs font-bold text-white mt-1 line-clamp-2 drop-shadow">Love in the City Sparkles</h3>
+            </div>
+          </div>
+
+          <!-- Love Story Card 3 -->
+          <div onclick="openStory('kdrama-hits')" class="cursor-pointer snap-start shrink-0 w-36 sm:w-44 aspect-[9/16] glass-card rounded-2xl overflow-hidden relative interactive-card border border-white/10 flex flex-col justify-end p-3 group">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80" alt="K-Drama Love Story Cover" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="relative z-20">
+              <span class="text-[8px] font-bold bg-red-600 text-white px-1.5 py-0.5 rounded uppercase tracking-wider">KDrama</span>
+              <h3 class="text-xs font-bold text-white mt-1 line-clamp-2 drop-shadow">Top K-Drama Romantic Hits</h3>
+            </div>
+          </div>
+
+          <!-- Love Story Card 4 -->
+          <div onclick="openStory('young-love')" class="cursor-pointer snap-start shrink-0 w-36 sm:w-44 aspect-[9/16] glass-card rounded-2xl overflow-hidden relative interactive-card border border-white/10 flex flex-col justify-end p-3 group">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+            <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=400&q=80" alt="Young Love Story Cover" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="relative z-20">
+              <span class="text-[8px] font-bold bg-amber-600 text-white px-1.5 py-0.5 rounded uppercase tracking-wider">YA Romance</span>
+              <h3 class="text-xs font-bold text-white mt-1 line-clamp-2 drop-shadow">Sweet Heartstopper Era</h3>
             </div>
           </div>
         </div>
@@ -467,7 +529,7 @@
       </div>
     </section>
 
-    <!-- Contact Portal (Fixed raw email format triggering Cloudflare cdn-cgi error) -->
+    <!-- Contact Portal -->
     <section id="contact" class="py-16 px-6 relative z-30">
       <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
         <div>
@@ -509,6 +571,34 @@
     </section>
   </main>
 
+  <!-- Web Story Modal Integration -->
+  <div id="storyModal" class="hidden fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+    <div class="relative w-full max-w-[360px] aspect-[9/16] bg-gray-900 rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(139,92,246,0.15)] border border-white/10 flex flex-col">
+      <!-- Close Button -->
+      <button onclick="closeStory()" class="absolute top-4 right-4 z-50 text-white bg-black/40 backdrop-blur p-2 rounded-full hover:bg-white/20 transition-colors" aria-label="Close Story">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+      
+      <!-- Progress Bar Container -->
+      <div id="storyProgressContainer" class="absolute top-3 left-3 right-14 z-50 flex gap-1.5 h-1"></div>
+      
+      <!-- Image Backdrop -->
+      <img id="storyImage" src="" alt="Story visual" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[6000ms] scale-100 ease-out">
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+      
+      <!-- Story Content Content -->
+      <div class="absolute bottom-10 left-5 right-5 z-20">
+        <span id="storyTag" class="text-[9px] font-bold text-white px-2 py-1 rounded uppercase tracking-wider mb-3 inline-block shadow-lg"></span>
+        <h2 id="storyTitle" class="text-2xl font-bold text-white mb-2 leading-tight drop-shadow-md"></h2>
+        <p id="storyDesc" class="text-sm text-gray-200 drop-shadow"></p>
+      </div>
+      
+      <!-- Tap Interaction Areas -->
+      <div class="absolute inset-y-0 left-0 w-1/3 z-30 cursor-pointer" onclick="prevStorySlide()" aria-label="Previous Slide"></div>
+      <div class="absolute inset-y-0 right-0 w-2/3 z-30 cursor-pointer" onclick="nextStorySlide()" aria-label="Next Slide"></div>
+    </div>
+  </div>
+
   <footer class="bg-black/40 backdrop-blur-md border-t border-white/5 py-8 px-6 text-center text-gray-500 relative z-30 text-xs">
     <div class="max-w-5xl mx-auto space-y-3">
       <div class="text-base font-bold bg-gradient-to-r from-pink-500 to-indigo-400 bg-clip-text text-transparent">Radio Rainbow</div>
@@ -537,6 +627,130 @@
     }
     window.addEventListener('scroll', injectAdSense, { passive: true });
     window.addEventListener('touchstart', injectAdSense, { passive: true });
+
+    // Web Story Romance Series Logic Data
+    const storyData = {
+      'secret-romance': [
+        { tag: 'Trending', tagColor: 'bg-pink-600', title: 'Secret Romance Returns', desc: 'The most discussed romance web series of the season starts production on highly-anticipated new episodes.', img: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=400&q=80' },
+        { tag: 'Updates', tagColor: 'bg-pink-600', title: 'Sneak Peek Teased', desc: 'Leaked photos from the set hint at a mysterious reunion scene in Paris.', img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=80' }
+      ],
+      'city-love': [
+        { tag: 'Urban Love', tagColor: 'bg-purple-600', title: 'Love in the City Sparkles', desc: 'A deeply engaging portrayal of two people finding connection in a fast-paced metropolis.', img: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=400&q=80' },
+        { tag: 'Review', tagColor: 'bg-purple-600', title: 'A Modern Masterpiece', desc: 'Critics rave over the breathtaking cinematography and real-time acoustic soundtrack elements.', img: 'https://images.unsplash.com/photo-1516280440502-a2915651c626?auto=format&fit=crop&w=400&q=80' }
+      ],
+      'kdrama-hits': [
+        { tag: 'KDrama', tagColor: 'bg-red-600', title: 'Top K-Drama Romantic Hits', desc: 'Unraveling the emotional charm and heartfelt screenplays dominating current global streaming networks.', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80' },
+        { tag: 'Ranking', tagColor: 'bg-red-600', title: 'Top Selected Romantic Scenes', desc: 'The absolute best heart-fluttering confession scenes of the year voted by global fans.', img: 'https://images.unsplash.com/photo-1487180144351-b8472da7d491?auto=format&fit=crop&w=400&q=80' }
+      ],
+      'young-love': [
+        { tag: 'YA Romance', tagColor: 'bg-amber-600', title: 'The Sweet Heartstopper Era', desc: 'How youthful romantic dynamics and nostalgic high school drama stories reshaped modern web series formats.', img: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=400&q=80' },
+        { tag: 'Analysis', tagColor: 'bg-amber-600', title: 'Defining Modern Representation', desc: 'Analyzing the impactful themes, beautiful cinematography, and inclusive romantic arcs.', img: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=400&q=80' }
+      ]
+    };
+
+    let currentStoryId = null;
+    let currentSlideIndex = 0;
+    let storyTimeout = null;
+
+    // Web Story Methods
+    function openStory(id) {
+      if (!storyData[id]) return;
+      currentStoryId = id;
+      currentSlideIndex = 0;
+      
+      const modal = document.getElementById('storyModal');
+      modal.classList.remove('hidden');
+      // Timeout to allow display block to render before triggering opacity transition
+      setTimeout(() => modal.classList.remove('opacity-0'), 10);
+      renderStorySlide();
+    }
+
+    function closeStory() {
+      const modal = document.getElementById('storyModal');
+      modal.classList.add('opacity-0');
+      clearTimeout(storyTimeout);
+      
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        currentStoryId = null;
+      }, 300); // Matches Tailwind transition duration
+    }
+
+    function renderStorySlide() {
+      clearTimeout(storyTimeout);
+      const slides = storyData[currentStoryId];
+      const slide = slides[currentSlideIndex];
+      
+      // Setup Text and Images
+      const imgEl = document.getElementById('storyImage');
+      imgEl.src = slide.img;
+      
+      // Image scale effect
+      imgEl.classList.remove('scale-105');
+      void imgEl.offsetWidth; // Trigger reflow
+      imgEl.classList.add('scale-105');
+
+      const tagEl = document.getElementById('storyTag');
+      tagEl.className = `text-[9px] font-bold text-white px-2 py-1 rounded uppercase tracking-wider mb-3 inline-block shadow-lg ${slide.tagColor}`;
+      tagEl.innerText = slide.tag;
+      
+      document.getElementById('storyTitle').innerText = slide.title;
+      document.getElementById('storyDesc').innerText = slide.desc;
+
+      // Handle Progress Bars
+      const progressContainer = document.getElementById('storyProgressContainer');
+      progressContainer.innerHTML = ''; // Reset bars
+      
+      slides.forEach((_, idx) => {
+        const barDiv = document.createElement('div');
+        barDiv.className = 'flex-1 bg-white/20 rounded-full overflow-hidden';
+        
+        const fillDiv = document.createElement('div');
+        fillDiv.className = 'h-full bg-white rounded-full transition-all ease-linear';
+        
+        if (idx < currentSlideIndex) {
+          // Completed slides
+          fillDiv.style.width = '100%';
+        } else if (idx === currentSlideIndex) {
+          // Active slide
+          fillDiv.style.width = '0%';
+          fillDiv.style.transitionDuration = '5000ms';
+          setTimeout(() => { fillDiv.style.width = '100%'; }, 50); // Small delay to kick off CSS animation
+        } else {
+          // Upcoming slides
+          fillDiv.style.width = '0%';
+        }
+        
+        barDiv.appendChild(fillDiv);
+        progressContainer.appendChild(barDiv);
+      });
+
+      // Auto Advance Timeout (5 Seconds)
+      storyTimeout = setTimeout(() => {
+        nextStorySlide();
+      }, 5000);
+    }
+
+    function nextStorySlide() {
+      if (!currentStoryId) return;
+      if (currentSlideIndex < storyData[currentStoryId].length - 1) {
+        currentSlideIndex++;
+        renderStorySlide();
+      } else {
+        closeStory(); // Reached end of story list
+      }
+    }
+
+    function prevStorySlide() {
+      if (!currentStoryId) return;
+      if (currentSlideIndex > 0) {
+        currentSlideIndex--;
+        renderStorySlide();
+      } else {
+        // Optional: restart slide 0 or close
+        renderStorySlide();
+      }
+    }
 
     document.addEventListener('DOMContentLoaded', () => {
       const breakingAlerts = [
