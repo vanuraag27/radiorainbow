@@ -70,6 +70,7 @@
   
   <style>
     * { font-family: 'Inter', sans-serif; }
+    html { font-size: 16px; } /* SEO Standard base font size */
     body { background: #07070a; overflow-x: hidden; color: #f3f4f6; }
     
     /* Premium Glowing Glassmorphism */
@@ -150,7 +151,7 @@
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
-<body class="antialiased text-gray-300">
+<body class="antialiased text-gray-200"> <!-- Enhanced global text contrast for SEO -->
 
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC52FDW"
@@ -165,9 +166,9 @@
       <div class="max-w-7xl mx-auto px-6 md:px-8 py-4 flex justify-between items-center">
         <a href="#home" class="flex items-center gap-3 focus:outline-none" aria-label="Radio Rainbow Home">
           <img src="https://drive.google.com/thumbnail?id=1bRk3qNdGqYlfu9p65mn1OSeCuViq_i3n&sz=w200" alt="Radio Rainbow Official Station Logo" width="40" height="40" class="h-10 w-10 rounded-xl object-contain shadow-lg border border-white/10">
-          <span class="text-xl font-bold bg-gradient-to-r from-pink-500 via-purple-400 to-indigo-500 bg-clip-text text-transparent tracking-wider">Radio Rainbow</span>
+          <span class="text-xl md:text-2xl font-bold bg-gradient-to-r from-pink-500 via-purple-400 to-indigo-500 bg-clip-text text-transparent tracking-wider">Radio Rainbow</span>
         </a>
-        <div class="hidden lg:flex space-x-6 text-gray-400 font-medium text-sm tracking-wide">
+        <div class="hidden lg:flex space-x-6 text-gray-300 font-semibold text-sm xl:text-base tracking-wide"> <!-- Increased size & weight for nav links -->
           <a href="#home" class="hover:text-white transition-colors duration-200">Home</a>
           <a href="#listenlive" class="hover:text-white transition-colors duration-200">Listen Live</a>
           <a href="#stories" class="hover:text-white transition-colors duration-200">Love Stories</a>
@@ -183,7 +184,7 @@
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
-      <div id="mobileMenu" class="hidden lg:hidden bg-[#07070a]/98 border-t border-white/5 p-6 flex flex-col space-y-4 text-gray-300 text-base font-medium">
+      <div id="mobileMenu" class="hidden lg:hidden bg-[#07070a]/98 border-t border-white/5 p-6 flex flex-col space-y-4 text-gray-200 text-lg font-medium"> <!-- Increased mobile text size -->
         <a href="#home" class="mobile-link py-1 hover:text-white">Home</a>
         <a href="#listenlive" class="mobile-link py-1 hover:text-white">Listen Live</a>
         <a href="#stories" class="mobile-link py-1 hover:text-white">Love Stories</a>
@@ -219,10 +220,10 @@
           </div>
         </div>
         <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-pink-500 via-purple-400 to-indigo-400 bg-clip-text text-transparent">Radio Rainbow</h1>
-        <p class="text-base md:text-xl text-gray-400 mt-4 font-medium max-w-xl mx-auto tracking-wide">Music • Entertainment • Live Shows • 24x7 Streaming</p>
+        <p class="text-lg md:text-2xl text-gray-300 mt-4 font-semibold max-w-2xl mx-auto tracking-wide">Music • Entertainment • Live Shows • 24x7 Streaming</p> <!-- Increased hero text font-size & weight -->
         <div class="mt-8">
-          <a href="#listenlive" class="inline-flex items-center gap-2.5 px-6 py-3.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold text-sm shadow-lg shadow-purple-900/30 hover:opacity-95 transition transform hover:-translate-y-0.5">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
+          <a href="#listenlive" class="inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-bold text-base shadow-lg shadow-purple-900/30 hover:opacity-95 transition transform hover:-translate-y-0.5"> <!-- Increased button padding & font size -->
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
             Listen Live On Air
           </a>
         </div>
@@ -232,8 +233,8 @@
     <!-- Player Component -->
     <section id="listenlive" class="py-16 px-6 relative z-30">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-2xl md:text-3xl font-bold flex justify-center items-center gap-2.5 text-white tracking-wider">
-          <span class="text-red-500 live-badge text-lg">●</span> LIVE ON AIR
+        <h2 class="text-3xl md:text-4xl font-bold flex justify-center items-center gap-2.5 text-white tracking-wider">
+          <span class="text-red-500 live-badge text-xl">●</span> LIVE ON AIR
         </h2>
         
         <div class="flex justify-center my-8">
@@ -243,25 +244,25 @@
         </div>
 
         <div class="mt-4 flex flex-col items-center gap-3">
-          <div class="flex items-center gap-2 bg-purple-950/30 rounded-full px-4 py-1.5 border border-purple-500/20 backdrop-blur">
-            <span class="text-green-400 text-xs live-badge">●</span>
-            <span class="text-purple-300 text-xs font-bold tracking-widest" id="liveStatus">GLOBAL FEED</span>
+          <div class="flex items-center gap-2 bg-purple-950/30 rounded-full px-5 py-2 border border-purple-500/20 backdrop-blur">
+            <span class="text-green-400 text-sm live-badge">●</span>
+            <span class="text-purple-300 text-sm font-black tracking-widest" id="liveStatus">GLOBAL FEED</span> <!-- Enlarged tag status -->
           </div>
         </div>
         
         <!-- Now Playing Track Card -->
-        <div class="glass-card p-5 rounded-2xl max-w-sm mx-auto mt-10 text-left border border-white/5 relative overflow-hidden">
+        <div class="glass-card p-6 rounded-2xl max-w-md mx-auto mt-10 text-left border border-white/5 relative overflow-hidden">
           <div class="absolute top-0 right-0 w-24 h-24 bg-pink-500/10 rounded-full blur-xl pointer-events-none"></div>
           <div class="flex items-center gap-4 relative z-10">
             <div class="w-16 h-16 shrink-0 rounded-xl bg-gradient-to-br from-pink-500/10 to-purple-500/20 flex items-center justify-center border border-white/10">
-              <svg class="w-6 h-6 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
+              <svg class="w-7 h-7 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
             </div>
             <div class="flex-1 min-w-0">
-              <span class="text-pink-400 text-[10px] font-bold tracking-widest uppercase block mb-0.5">NOW PLAYING</span>
-              <h3 id="songName" class="text-white font-bold text-base truncate">Sunshine Love</h3>
-              <p id="artistName" class="text-gray-400 text-xs truncate">Rainbow Beats</p>
-              <div class="w-full bg-white/5 h-1 rounded-full mt-3 overflow-hidden">
-                <div id="progressFill" class="bg-gradient-to-r from-pink-500 to-purple-500 h-1 rounded-full transition-all" style="width: 0%; transition-duration: 300ms;"></div>
+              <span class="text-pink-400 text-xs font-black tracking-widest uppercase block mb-1">NOW PLAYING</span> <!-- Enhanced readability sizes -->
+              <h3 id="songName" class="text-white font-bold text-lg truncate">Sunshine Love</h3>
+              <p id="artistName" class="text-gray-300 text-sm truncate font-medium">Rainbow Beats</p>
+              <div class="w-full bg-white/5 h-1.5 rounded-full mt-3 overflow-hidden">
+                <div id="progressFill" class="bg-gradient-to-r from-pink-500 to-purple-500 h-1.5 rounded-full transition-all" style="width: 0%; transition-duration: 300ms;"></div>
               </div>
             </div>
           </div>
@@ -274,51 +275,51 @@
       <div class="max-w-6xl mx-auto">
         <div class="flex items-center justify-between mb-8">
           <div>
-            <h2 class="text-2xl font-bold text-white tracking-wide">💞 Trending Love Stories & Series</h2>
-            <p class="text-xs text-gray-400 mt-1">Explore real-time reviews of trending Google web series and romantic drama updates.</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-white tracking-wide">💞 Trending Love Stories & Series</h2>
+            <p class="text-sm md:text-base text-gray-300 mt-1.5 font-medium">Explore real-time reviews of trending Google web series and romantic drama updates.</p> <!-- Made description readable -->
           </div>
-          <span class="text-xs text-pink-400 font-bold tracking-wider uppercase border border-pink-500/20 px-3 py-1 rounded-full bg-pink-950/20 hidden sm:inline-block">LIVE TRENDING</span>
+          <span class="text-xs md:text-sm text-pink-400 font-bold tracking-wider uppercase border border-pink-500/20 px-4 py-1.5 rounded-full bg-pink-950/20 hidden sm:inline-block">LIVE TRENDING</span>
         </div>
 
         <!-- Scrollable Story Container -->
         <div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar snap-x snap-mandatory">
           <!-- Love Story Card 1 -->
-          <div onclick="openStory('secret-romance')" class="cursor-pointer snap-start shrink-0 w-36 sm:w-44 aspect-[9/16] glass-card rounded-2xl overflow-hidden relative interactive-card border border-white/10 flex flex-col justify-end p-3 group">
+          <div onclick="openStory('secret-romance')" class="cursor-pointer snap-start shrink-0 w-40 sm:w-48 aspect-[9/16] glass-card rounded-2xl overflow-hidden relative interactive-card border border-white/10 flex flex-col justify-end p-4 group"> <!-- Increased card width for better text breathing space -->
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
             <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=400&q=80" alt="Secret Romance Web Series Cover" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
             <div class="relative z-20">
-              <span class="text-[8px] font-bold bg-pink-600 text-white px-1.5 py-0.5 rounded uppercase tracking-wider">Romance</span>
-              <h3 class="text-xs font-bold text-white mt-1 line-clamp-2 drop-shadow">My Secret Romance Season 2</h3>
+              <span class="text-[10px] font-extrabold bg-pink-600 text-white px-2 py-0.5 rounded uppercase tracking-wider">Romance</span>
+              <h3 class="text-sm font-bold text-white mt-1.5 line-clamp-2 drop-shadow">My Secret Romance Season 2</h3>
             </div>
           </div>
 
           <!-- Love Story Card 2 -->
-          <div onclick="openStory('city-love')" class="cursor-pointer snap-start shrink-0 w-36 sm:w-44 aspect-[9/16] glass-card rounded-2xl overflow-hidden relative interactive-card border border-white/10 flex flex-col justify-end p-3 group">
+          <div onclick="openStory('city-love')" class="cursor-pointer snap-start shrink-0 w-40 sm:w-48 aspect-[9/16] glass-card rounded-2xl overflow-hidden relative interactive-card border border-white/10 flex flex-col justify-end p-4 group">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
             <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=400&q=80" alt="City Lights Love Story Cover" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
             <div class="relative z-20">
-              <span class="text-[8px] font-bold bg-purple-600 text-white px-1.5 py-0.5 rounded uppercase tracking-wider">Urban Drama</span>
-              <h3 class="text-xs font-bold text-white mt-1 line-clamp-2 drop-shadow">Love in the City Sparkles</h3>
+              <span class="text-[10px] font-extrabold bg-purple-600 text-white px-2 py-0.5 rounded uppercase tracking-wider">Urban Drama</span>
+              <h3 class="text-sm font-bold text-white mt-1.5 line-clamp-2 drop-shadow">Love in the City Sparkles</h3>
             </div>
           </div>
 
           <!-- Love Story Card 3 -->
-          <div onclick="openStory('kdrama-hits')" class="cursor-pointer snap-start shrink-0 w-36 sm:w-44 aspect-[9/16] glass-card rounded-2xl overflow-hidden relative interactive-card border border-white/10 flex flex-col justify-end p-3 group">
+          <div onclick="openStory('kdrama-hits')" class="cursor-pointer snap-start shrink-0 w-40 sm:w-48 aspect-[9/16] glass-card rounded-2xl overflow-hidden relative interactive-card border border-white/10 flex flex-col justify-end p-4 group">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80" alt="K-Drama Love Story Cover" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
             <div class="relative z-20">
-              <span class="text-[8px] font-bold bg-red-600 text-white px-1.5 py-0.5 rounded uppercase tracking-wider">KDrama</span>
-              <h3 class="text-xs font-bold text-white mt-1 line-clamp-2 drop-shadow">Top K-Drama Romantic Hits</h3>
+              <span class="text-[10px] font-extrabold bg-red-600 text-white px-2 py-0.5 rounded uppercase tracking-wider">KDrama</span>
+              <h3 class="text-sm font-bold text-white mt-1.5 line-clamp-2 drop-shadow">Top K-Drama Romantic Hits</h3>
             </div>
           </div>
 
           <!-- Love Story Card 4 -->
-          <div onclick="openStory('young-love')" class="cursor-pointer snap-start shrink-0 w-36 sm:w-44 aspect-[9/16] glass-card rounded-2xl overflow-hidden relative interactive-card border border-white/10 flex flex-col justify-end p-3 group">
+          <div onclick="openStory('young-love')" class="cursor-pointer snap-start shrink-0 w-40 sm:w-48 aspect-[9/16] glass-card rounded-2xl overflow-hidden relative interactive-card border border-white/10 flex flex-col justify-end p-4 group">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
             <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=400&q=80" alt="Young Love Story Cover" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
             <div class="relative z-20">
-              <span class="text-[8px] font-bold bg-amber-600 text-white px-1.5 py-0.5 rounded uppercase tracking-wider">YA Romance</span>
-              <h3 class="text-xs font-bold text-white mt-1 line-clamp-2 drop-shadow">Sweet Heartstopper Era</h3>
+              <span class="text-[10px] font-extrabold bg-amber-600 text-white px-2 py-0.5 rounded uppercase tracking-wider">YA Romance</span>
+              <h3 class="text-sm font-bold text-white mt-1.5 line-clamp-2 drop-shadow">Sweet Heartstopper Era</h3>
             </div>
           </div>
         </div>
@@ -330,32 +331,32 @@
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-10">
           <h2 class="text-2xl md:text-3xl font-bold text-white mb-2 tracking-wide">📡 Network Directories</h2>
-          <p class="text-gray-400 text-xs md:text-sm">Tune in directly via any of your favorite worldwide radio hubs.</p>
+          <p class="text-gray-300 text-sm md:text-base font-medium">Tune in directly via any of your favorite worldwide radio hubs.</p>
         </div>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          <a href="https://radioindia.org/rainbow/" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-4 flex flex-col items-center justify-center text-center rounded-xl group hover:bg-white/[0.02]">
-            <span class="text-gray-200 font-medium text-xs tracking-wide">Radio India</span>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <a href="https://radioindia.org/rainbow/" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-5 flex flex-col items-center justify-center text-center rounded-xl group hover:bg-white/[0.02]">
+            <span class="text-gray-100 font-bold text-sm md:text-base tracking-wide">Radio India</span> <!-- Amplified text weight and size for better links -->
           </a>
-          <a href="https://zeno.fm/radio/radiorainbow/" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-4 flex flex-col items-center justify-center text-center rounded-xl group hover:bg-white/[0.02]">
-            <span class="text-gray-200 font-medium text-xs tracking-wide">Zeno.FM</span>
+          <a href="https://zeno.fm/radio/radiorainbow/" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-5 flex flex-col items-center justify-center text-center rounded-xl group hover:bg-white/[0.02]">
+            <span class="text-gray-100 font-bold text-sm md:text-base tracking-wide">Zeno.FM</span>
           </a>
-          <a href="https://pcradio.app/radio/radio-rainbow-live-pcr-7mjg0h/" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-4 flex flex-col items-center justify-center text-center rounded-xl group hover:bg-white/[0.02]">
-            <span class="text-gray-200 font-medium text-xs tracking-wide">PCRadio App</span>
+          <a href="https://pcradio.app/radio/radio-rainbow-live-pcr-7mjg0h/" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-5 flex flex-col items-center justify-center text-center rounded-xl group hover:bg-white/[0.02]">
+            <span class="text-gray-100 font-bold text-sm md:text-base tracking-wide">PCRadio App</span>
           </a>
-          <a href="https://onlineradiobox.com/in/ranbow/?cs=in.ranbow&played=1" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-4 flex flex-col items-center justify-center text-center rounded-xl group hover:bg-white/[0.02]">
-            <span class="text-gray-200 font-medium text-xs tracking-wide">Online Radio Box</span>
+          <a href="https://onlineradiobox.com/in/ranbow/?cs=in.ranbow&played=1" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-5 flex flex-col items-center justify-center text-center rounded-xl group hover:bg-white/[0.02]">
+            <span class="text-gray-100 font-bold text-sm md:text-base tracking-wide">Online Radio Box</span>
           </a>
-          <a href="https://www.radioindialive.com/radiorainbow" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-4 flex flex-col items-center justify-center text-center rounded-xl group hover:bg-white/[0.02]">
-            <span class="text-gray-200 font-medium text-xs tracking-wide">Radio India Live</span>
+          <a href="https://www.radioindialive.com/radiorainbow" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-5 flex flex-col items-center justify-center text-center rounded-xl group hover:bg-white/[0.02]">
+            <span class="text-gray-100 font-bold text-sm md:text-base tracking-wide">Radio India Live</span>
           </a>
-          <a href="https://streema.com/radios/Radio_Rainbow" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-4 flex flex-col items-center justify-center text-center rounded-xl group hover:bg-white/[0.02]">
-            <span class="text-gray-200 font-medium text-xs tracking-wide">Streema</span>
+          <a href="https://streema.com/radios/Radio_Rainbow" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-5 flex flex-col items-center justify-center text-center rounded-xl group hover:bg-white/[0.02]">
+            <span class="text-gray-100 font-bold text-sm md:text-base tracking-wide">Streema</span>
           </a>
-          <a href="https://radio.net/s/radiorainbow" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-4 flex flex-col items-center justify-center text-center rounded-xl group hover:bg-white/[0.02]">
-            <span class="text-gray-200 font-medium text-xs tracking-wide">Radio.net</span>
+          <a href="https://radio.net/s/radiorainbow" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-5 flex flex-col items-center justify-center text-center rounded-xl group hover:bg-white/[0.02]">
+            <span class="text-gray-100 font-bold text-sm md:text-base tracking-wide">Radio.net</span>
           </a>
-          <a href="https://worldradios.app/en/station/6094/radio-rainbow" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-4 flex flex-col items-center justify-center text-center rounded-xl group hover:bg-white/[0.02]">
-            <span class="text-gray-200 font-medium text-xs tracking-wide">World Radios</span>
+          <a href="https://worldradios.app/en/station/6094/radio-rainbow" target="_blank" rel="noopener noreferrer" class="interactive-card glass-card p-5 flex flex-col items-center justify-center text-center rounded-xl group hover:bg-white/[0.02]">
+            <span class="text-gray-100 font-bold text-sm md:text-base tracking-wide">World Radios</span>
           </a>
         </div>
       </div>
@@ -366,15 +367,15 @@
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
           <h2 class="text-2xl md:text-3xl font-bold text-white mb-3 tracking-wide">On-Air Broadcast Guide</h2>
-          <div class="bg-purple-950/40 border border-purple-500/20 px-4 py-1 rounded-full inline-block">
-            <span id="currentDateDisplay" class="text-purple-300 text-xs font-semibold tracking-wide">Loading today's lineup...</span>
+          <div class="bg-purple-950/40 border border-purple-500/20 px-5 py-2 rounded-full inline-block">
+            <span id="currentDateDisplay" class="text-purple-300 text-sm font-bold tracking-wide">Loading today's lineup...</span>
           </div>
         </div>
-        <div id="scheduleContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div id="scheduleContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <!-- Populated dynamically without shifting page elements -->
         </div>
-        <div class="text-center text-gray-500 text-xs mt-8">
-          Local Station Sync Time: <span id="currentTimeDisplay" class="text-gray-400">--:--</span>
+        <div class="text-center text-gray-400 text-xs md:text-sm mt-8 font-medium">
+          Local Station Sync Time: <span id="currentTimeDisplay" class="text-gray-200 font-semibold">--:--</span>
         </div>
       </div>
     </section>
@@ -382,20 +383,20 @@
     <!-- Support Portal -->
     <section id="donations" class="py-16 px-6 relative z-30">
       <div class="max-w-4xl mx-auto">
-        <div class="glass-card relative overflow-hidden p-6 md:p-8 rounded-2xl border border-purple-500/10 bg-gradient-to-br from-[#12121d] to-[#07070a]">
+        <div class="glass-card relative overflow-hidden p-6 md:p-10 rounded-2xl border border-purple-500/10 bg-gradient-to-br from-[#12121d] to-[#07070a]">
           <div class="absolute -top-10 -left-10 w-40 h-40 bg-purple-600/10 rounded-full blur-2xl pointer-events-none"></div>
           <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div class="max-w-xl space-y-2">
-              <h2 class="text-xl font-bold text-white tracking-wide">Support Station Operations</h2>
-              <p class="text-gray-400 text-xs md:text-sm leading-relaxed">
+            <div class="max-w-xl space-y-3">
+              <h2 class="text-2xl font-bold text-white tracking-wide">Support Station Operations</h2>
+              <p class="text-gray-300 text-sm md:text-base leading-relaxed font-medium">
                 Radio Rainbow runs entirely independent of corporate backing. Contributions help fund premium streaming relays, web architecture overhead, and keeping your airwaves premium and ad-free.
               </p>
             </div>
-            <div class="shrink-0 flex flex-col items-center gap-2 bg-black/20 p-4 rounded-xl border border-white/5">
-              <a href="https://www.paypal.com/paypalme/abhinavverma08" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-5 bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white rounded-full font-bold text-xs text-center flex items-center justify-center transition shadow-md">
+            <div class="shrink-0 flex flex-col items-center gap-3 bg-black/20 p-5 rounded-xl border border-white/5">
+              <a href="https://www.paypal.com/paypalme/abhinavverma08" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white rounded-full font-bold text-sm text-center flex items-center justify-center transition shadow-md">
                 Donate via PayPal
               </a>
-              <span class="text-[9px] text-gray-500 font-mono select-all truncate max-w-[160px]">
+              <span class="text-xs text-gray-400 font-mono select-all truncate max-w-[200px]">
                 abhinavverma0806@gmail.com
               </span>
             </div>
@@ -408,30 +409,30 @@
     <section id="shows" class="py-16 px-6 relative z-30">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-2xl md:text-3xl font-bold text-center text-white mb-10 tracking-wide">✨ Featured Radios</h2>
-        <div class="grid sm:grid-cols-3 gap-4">
-          <div class="interactive-card glass-card p-5 rounded-xl flex flex-col justify-between border border-white/5">
+        <div class="grid sm:grid-cols-3 gap-5">
+          <div class="interactive-card glass-card p-6 rounded-xl flex flex-col justify-between border border-white/5">
             <div>
-              <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 font-bold text-xs mb-4">01</div>
-              <h3 class="text-base font-bold text-white tracking-wide">Music Unlimited</h3>
-              <p class="text-gray-400 text-xs mt-2 leading-relaxed">Continuous mainstream breakdowns, fresh indie evaluations, and charting hits across multiple global horizons.</p>
+              <div class="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 font-extrabold text-sm mb-4">01</div>
+              <h3 class="text-lg font-bold text-white tracking-wide">Music Unlimited</h3>
+              <p class="text-gray-300 text-sm md:text-base mt-2.5 leading-relaxed font-medium">Continuous mainstream breakdowns, fresh indie evaluations, and charting hits across multiple global horizons.</p>
             </div>
-            <a href="#listenlive" class="text-[10px] uppercase font-bold tracking-widest text-purple-400 hover:text-purple-300 mt-5 block">Tune In Now &rarr;</a>
+            <a href="#listenlive" class="text-xs uppercase font-extrabold tracking-widest text-purple-400 hover:text-purple-300 mt-6 block">Tune In Now &rarr;</a>
           </div>
-          <div class="interactive-card glass-card p-5 rounded-xl flex flex-col justify-between border border-white/5">
+          <div class="interactive-card glass-card p-6 rounded-xl flex flex-col justify-between border border-white/5">
             <div>
-              <div class="w-10 h-10 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-400 font-bold text-xs mb-4">02</div>
-              <h3 class="text-base font-bold text-white tracking-wide">Retro Night</h3>
-              <p class="text-gray-400 text-xs mt-2 leading-relaxed">Timeless sonic nostalgia trips covering early modern pop, vintage synths, and classic alternative rock selections.</p>
+              <div class="w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-400 font-extrabold text-sm mb-4">02</div>
+              <h3 class="text-lg font-bold text-white tracking-wide">Retro Night</h3>
+              <p class="text-gray-300 text-sm md:text-base mt-2.5 leading-relaxed font-medium">Timeless sonic nostalgia trips covering early modern pop, vintage synths, and classic alternative rock selections.</p>
             </div>
-            <a href="#listenlive" class="text-[10px] uppercase font-bold tracking-widest text-pink-400 hover:text-pink-300 mt-5 block">Tune In Now &rarr;</a>
+            <a href="#listenlive" class="text-xs uppercase font-extrabold tracking-widest text-pink-400 hover:text-pink-300 mt-6 block">Tune In Now &rarr;</a>
           </div>
-          <div class="interactive-card glass-card p-5 rounded-xl flex flex-col justify-between border border-white/5">
+          <div class="interactive-card glass-card p-6 rounded-xl flex flex-col justify-between border border-white/5">
             <div>
-              <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 font-bold text-xs mb-4">03</div>
-              <h3 class="text-base font-bold text-white tracking-wide">Love Songs</h3>
-              <p class="text-gray-400 text-xs mt-2 leading-relaxed">Unwind with soothing acoustics, ambient slow-burn melodies, and deep romantic master tapes handpicked for your evening.</p>
+              <div class="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 font-extrabold text-sm mb-4">03</div>
+              <h3 class="text-lg font-bold text-white tracking-wide">Love Songs</h3>
+              <p class="text-gray-300 text-sm md:text-base mt-2.5 leading-relaxed font-medium">Unwind with soothing acoustics, ambient slow-burn melodies, and deep romantic master tapes handpicked for your evening.</p>
             </div>
-            <a href="#listenlive" class="text-[10px] uppercase font-bold tracking-widest text-amber-400 hover:text-amber-300 mt-5 block">Tune In Now &rarr;</a>
+            <a href="#listenlive" class="text-xs uppercase font-extrabold tracking-widest text-amber-400 hover:text-amber-300 mt-6 block">Tune In Now &rarr;</a>
           </div>
         </div>
       </div>
@@ -445,36 +446,36 @@
         </div>
 
         <div id="breakingNewsTicker" class="hidden flex items-center bg-red-950/20 backdrop-blur border border-red-500/20 rounded-xl overflow-hidden mb-8">
-          <span class="bg-red-600 text-white font-bold text-[10px] uppercase px-3 py-1.5 tracking-wider select-none shrink-0">BREAKING</span>
-          <div class="ticker-wrap flex-1 relative text-white py-1.5 text-xs font-semibold">
+          <span class="bg-red-600 text-white font-bold text-xs uppercase px-4 py-2 tracking-wider select-none shrink-0">BREAKING</span>
+          <div class="ticker-wrap flex-1 relative text-white py-2 text-sm font-semibold">
             <div id="tickerContainer" class="ticker-content text-red-200"></div>
           </div>
         </div>
 
-        <div class="grid sm:grid-cols-3 gap-4">
-          <div class="glass-card p-5 rounded-xl border border-white/5 flex flex-col justify-between">
+        <div class="grid sm:grid-cols-3 gap-5">
+          <div class="glass-card p-6 rounded-xl border border-white/5 flex flex-col justify-between">
             <div>
-              <span class="text-[9px] font-bold uppercase tracking-widest text-purple-400">ANNOUNCEMENT</span>
-              <h3 class="text-sm font-bold text-white mt-2">Grand Studio Relaunch Planned</h3>
-              <p class="text-gray-400 text-xs mt-2 leading-relaxed">Expanding central deck hardware arrays to prepare for native visual integration pipelines launching soon.</p>
+              <span class="text-xs font-bold uppercase tracking-widest text-purple-400">ANNOUNCEMENT</span>
+              <h3 class="text-base font-bold text-white mt-2">Grand Studio Relaunch Planned</h3>
+              <p class="text-gray-300 text-sm md:text-base mt-2.5 leading-relaxed font-medium">Expanding central deck hardware arrays to prepare for native visual integration pipelines launching soon.</p>
             </div>
-            <span class="text-[10px] text-gray-500 mt-4 block">June 2026</span>
+            <span class="text-xs font-medium text-gray-400 mt-5 block">June 2026</span>
           </div>
-          <div class="glass-card p-5 rounded-xl border border-white/5 flex flex-col justify-between">
+          <div class="glass-card p-6 rounded-xl border border-white/5 flex flex-col justify-between">
             <div>
-              <span class="text-[9px] font-bold uppercase tracking-widest text-amber-400">NETWORK MILESTONE</span>
-              <h3 class="text-sm font-bold text-white mt-2">Serving Listeners Worldwide</h3>
-              <p class="text-gray-400 text-xs mt-2 leading-relaxed">Our content stream arrays officially registered unique music lovers around the world.</p>
+              <span class="text-xs font-bold uppercase tracking-widest text-amber-400">NETWORK MILESTONE</span>
+              <h3 class="text-base font-bold text-white mt-2">Serving Listeners Worldwide</h3>
+              <p class="text-gray-300 text-sm md:text-base mt-2.5 leading-relaxed font-medium">Our content stream arrays officially registered unique music lovers around the world.</p>
             </div>
-            <span class="text-[10px] text-gray-500 mt-4 block">June 2026</span>
+            <span class="text-xs font-medium text-gray-400 mt-5 block">June 2026</span>
           </div>
-          <div class="glass-card p-5 rounded-xl border border-white/5 flex flex-col justify-between">
+          <div class="glass-card p-6 rounded-xl border border-white/5 flex flex-col justify-between">
             <div>
-              <span class="text-[9px] font-bold uppercase tracking-widest text-green-400">SUBMISSIONS</span>
-              <h3 class="text-sm font-bold text-white mt-2">Independent Submissions Open</h3>
-              <p class="text-gray-400 text-xs mt-2 leading-relaxed">Unsigned tracking bands and audio engineers can forward masters directly to stand a slot on our evening syndication runs.</p>
+              <span class="text-xs font-bold uppercase tracking-widest text-green-400">SUBMISSIONS</span>
+              <h3 class="text-base font-bold text-white mt-2">Independent Submissions Open</h3>
+              <p class="text-gray-300 text-sm md:text-base mt-2.5 leading-relaxed font-medium">Unsigned tracking bands and audio engineers can forward masters directly to stand a slot on our evening syndication runs.</p>
             </div>
-            <span class="text-[10px] text-gray-500 mt-4 block">May 2026</span>
+            <span class="text-xs font-medium text-gray-400 mt-5 block">May 2026</span>
           </div>
         </div>
       </div>
@@ -484,36 +485,36 @@
     <section id="gallery" class="py-16 px-6 relative z-30">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-2xl md:text-3xl font-bold text-center text-white mb-10 tracking-wide">📸 Studio Monitor Preview</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-          <div class="aspect-[4/3] flex flex-col items-center justify-center p-4 text-center border border-white/5 glass-card rounded-xl" role="img" aria-label="Visual preview of the main audio control deck console matrix layout">
-            <div class="w-8 h-8 rounded-full bg-purple-500/10 flex items-center justify-center mb-2"><span class="text-purple-400 text-xs" aria-hidden="true">🎛️</span></div>
-            <span class="text-white font-semibold text-xs tracking-wide">Main Control Deck</span>
-            <span class="text-gray-500 text-[10px] mt-0.5">High Fidelity Console matrix</span>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="aspect-[4/3] flex flex-col items-center justify-center p-5 text-center border border-white/5 glass-card rounded-xl" role="img" aria-label="Visual preview of the main audio control deck console matrix layout">
+            <div class="w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center mb-3"><span class="text-purple-400 text-sm" aria-hidden="true">🎛️</span></div>
+            <span class="text-white font-bold text-sm tracking-wide">Main Control Deck</span>
+            <span class="text-gray-400 text-xs mt-1 font-medium">High Fidelity Console matrix</span>
           </div>
-          <div class="aspect-[4/3] flex flex-col items-center justify-center p-4 text-center border border-white/5 glass-card rounded-xl" role="img" aria-label="Visual preview of the isolated pro microphone vocal capture enclosure setup">
-            <div class="w-8 h-8 rounded-full bg-pink-500/10 flex items-center justify-center mb-2"><span class="text-pink-400 text-xs" aria-hidden="true">🎙️</span></div>
-            <span class="text-white font-semibold text-xs tracking-wide">Vocal Capture Enclosure</span>
-            <span class="text-gray-500 text-[10px] mt-0.5">Pro isolated condenser relays</span>
+          <div class="aspect-[4/3] flex flex-col items-center justify-center p-5 text-center border border-white/5 glass-card rounded-xl" role="img" aria-label="Visual preview of the isolated pro microphone vocal capture enclosure setup">
+            <div class="w-10 h-10 rounded-full bg-pink-500/10 flex items-center justify-center mb-3"><span class="text-pink-400 text-sm" aria-hidden="true">🎙️</span></div>
+            <span class="text-white font-bold text-sm tracking-wide">Vocal Capture Enclosure</span>
+            <span class="text-gray-400 text-xs mt-1 font-medium">Pro isolated condenser relays</span>
           </div>
-          <div class="aspect-[4/3] flex flex-col items-center justify-center p-4 text-center border border-white/5 glass-card rounded-xl" role="img" aria-label="Visual preview of real-time zero latency monitoring systems">
-            <div class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center mb-2"><span class="text-blue-400 text-xs" aria-hidden="true">🎧</span></div>
-            <span class="text-white font-semibold text-xs tracking-wide">Zero Latency Monitoring</span>
-            <span class="text-gray-500 text-[10px] mt-0.5">Realtime monitoring nodes</span>
+          <div class="aspect-[4/3] flex flex-col items-center justify-center p-5 text-center border border-white/5 glass-card rounded-xl" role="img" aria-label="Visual preview of real-time zero latency monitoring systems">
+            <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center mb-3"><span class="text-blue-400 text-sm" aria-hidden="true">🎧</span></div>
+            <span class="text-white font-bold text-sm tracking-wide">Zero Latency Monitoring</span>
+            <span class="text-gray-400 text-xs mt-1 font-medium">Realtime monitoring nodes</span>
           </div>
-          <div class="aspect-[4/3] flex flex-col items-center justify-center p-4 text-center border border-white/5 glass-card rounded-xl" role="img" aria-label="Visual preview of the 24x7 non-interrupted streaming digital server node infrastructure">
-            <div class="w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center mb-2"><span class="text-amber-400 text-xs" aria-hidden="true">🖥️</span></div>
-            <span class="text-white font-semibold text-xs tracking-wide">Infrastructure Core</span>
-            <span class="text-gray-500 text-[10px] mt-0.5">24x7 non-interrupted digital node</span>
+          <div class="aspect-[4/3] flex flex-col items-center justify-center p-5 text-center border border-white/5 glass-card rounded-xl" role="img" aria-label="Visual preview of the 24x7 non-interrupted streaming digital server node infrastructure">
+            <div class="w-10 h-10 rounded-full bg-amber-500/10 flex items-center justify-center mb-3"><span class="text-amber-400 text-sm" aria-hidden="true">🖥️</span></div>
+            <span class="text-white font-bold text-sm tracking-wide">Infrastructure Core</span>
+            <span class="text-gray-400 text-xs mt-1 font-medium">24x7 non-interrupted digital node</span>
           </div>
-          <div class="aspect-[4/3] flex flex-col items-center justify-center p-4 text-center border border-white/5 glass-card rounded-xl" role="img" aria-label="Visual preview of the automated interface monitoring community calls listener sync grid">
-            <div class="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center mb-2"><span class="text-green-400 text-xs" aria-hidden="true">💬</span></div>
-            <span class="text-white font-semibold text-xs tracking-wide">Interaction Grid</span>
-            <span class="text-gray-500 text-[10px] mt-0.5">Global listener call syncing</span>
+          <div class="aspect-[4/3] flex flex-col items-center justify-center p-5 text-center border border-white/5 glass-card rounded-xl" role="img" aria-label="Visual preview of the automated interface monitoring community calls listener sync grid">
+            <div class="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center mb-3"><span class="text-green-400 text-sm" aria-hidden="true">💬</span></div>
+            <span class="text-white font-bold text-sm tracking-wide">Interaction Grid</span>
+            <span class="text-gray-400 text-xs mt-1 font-medium">Global listener call syncing</span>
           </div>
-          <div class="aspect-[4/3] flex flex-col items-center justify-center p-4 text-center border border-white/5 glass-card rounded-xl" role="img" aria-label="Visual preview of automated content directories broadcast distribution systems">
-            <div class="w-8 h-8 rounded-full bg-teal-500/10 flex items-center justify-center mb-2"><span class="text-teal-400 text-xs" aria-hidden="true">📡</span></div>
-            <span class="text-white font-semibold text-xs tracking-wide">Syndication Pipeline</span>
-            <span class="text-gray-500 text-[10px] mt-0.5">Multi directory automated feeds</span>
+          <div class="aspect-[4/3] flex flex-col items-center justify-center p-5 text-center border border-white/5 glass-card rounded-xl" role="img" aria-label="Visual preview of automated content directories broadcast distribution systems">
+            <div class="w-10 h-10 rounded-full bg-teal-500/10 flex items-center justify-center mb-3"><span class="text-teal-400 text-sm" aria-hidden="true">📡</span></div>
+            <span class="text-white font-bold text-sm tracking-wide">Syndication Pipeline</span>
+            <span class="text-gray-400 text-xs mt-1 font-medium">Multi directory automated feeds</span>
           </div>
         </div>
       </div>
@@ -521,9 +522,9 @@
 
     <!-- Rich SEO Content Block -->
     <section class="py-8 px-6 max-w-4xl mx-auto relative z-30">
-      <div class="glass-card p-6 md:p-8 text-left text-gray-400 rounded-2xl border border-white/5 space-y-3 text-xs md:text-sm leading-relaxed">
-        <h2 class="text-lg font-bold tracking-wide text-white">🎙️ About Radio Rainbow</h2>
-        <p>
+      <div class="glass-card p-6 md:p-10 text-left text-gray-300 rounded-2xl border border-white/5 space-y-4 text-sm md:text-base leading-relaxed"> <!-- Increased from text-xs/sm to text-sm/base -->
+        <h2 class="text-xl md:text-2xl font-bold tracking-wide text-white">🎙️ About Radio Rainbow</h2>
+        <p class="font-medium">
           Welcome to <strong>Radio Rainbow</strong>, your premium destination for round-the-clock independent internet radio streaming. Our channel delivers an optimized selection of genres, audio programming variations, interactive talks, and entertainment showcases daily. Operating globally out of digital infrastructure setups, we ensure crystal-clear digital acoustics across multiple web players, standalone software platforms, and mobile audio applications.
         </p>
       </div>
@@ -531,35 +532,35 @@
 
     <!-- Contact Portal -->
     <section id="contact" class="py-16 px-6 relative z-30">
-      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
         <div>
-          <h2 class="text-xl font-bold text-white mb-4 tracking-wide">Send a Transmission</h2>
-          <form action="https://formsubmit.co/radiorainbow15@gmail.com" method="POST" class="space-y-3">
-            <input type="text" name="name" aria-label="Your Name" placeholder="Your Name" class="w-full p-3 text-xs rounded-xl bg-white/5 text-white border border-white/10 focus:outline-none focus:border-purple-500 transition">
-            <input type="email" name="email" aria-label="Your Email" placeholder="Your Email" class="w-full p-3 text-xs rounded-xl bg-white/5 text-white border border-white/10 focus:outline-none focus:border-purple-500 transition" required>
-            <textarea name="message" rows="4" aria-label="Your Message" placeholder="Your Message" class="w-full p-3 text-xs rounded-xl bg-white/5 text-white border border-white/10 focus:outline-none focus:border-purple-500 transition" required></textarea>
+          <h2 class="text-xl md:text-2xl font-bold text-white mb-6 tracking-wide">Send a Transmission</h2>
+          <form action="https://formsubmit.co/radiorainbow15@gmail.com" method="POST" class="space-y-4">
+            <input type="text" name="name" aria-label="Your Name" placeholder="Your Name" class="w-full p-4 text-sm rounded-xl bg-white/5 text-white border border-white/10 focus:outline-none focus:border-purple-500 transition">
+            <input type="email" name="email" aria-label="Your Email" placeholder="Your Email" class="w-full p-4 text-sm rounded-xl bg-white/5 text-white border border-white/10 focus:outline-none focus:border-purple-500 transition" required>
+            <textarea name="message" rows="4" aria-label="Your Message" placeholder="Your Message" class="w-full p-4 text-sm rounded-xl bg-white/5 text-white border border-white/10 focus:outline-none focus:border-purple-500 transition" required></textarea>
             
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
             
-            <button type="submit" class="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold rounded-xl transition">
+            <button type="submit" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white text-sm font-bold rounded-xl transition">
               Submit Message
             </button>
           </form>
         </div>
         <div class="flex flex-col justify-between">
           <div>
-            <h3 class="text-lg font-bold text-white tracking-wide">Get In Touch</h3>
+            <h3 class="text-xl font-bold text-white tracking-wide">Get In Touch</h3>
             <!-- Encoded string design to bypass scraper interception engines -->
-            <div class="mt-2 text-gray-400 text-xs md:text-sm flex items-center gap-2">
+            <div class="mt-3 text-gray-300 text-sm md:text-base flex items-center gap-2 font-medium">
               <span>Inquiries:</span>
-              <span class="font-mono text-gray-200 bg-white/5 px-2 py-1 rounded select-all">info&#64;radiorainbow.online</span>
+              <span class="font-mono text-gray-100 bg-white/5 px-2.5 py-1.5 rounded select-all">info&#64;radiorainbow.online</span>
             </div>
           </div>
           
-          <div class="mt-6">
-            <span class="text-[10px] uppercase tracking-widest text-gray-500 block mb-2 font-bold">Community Portals</span>
-            <div class="flex gap-4 text-xs font-medium text-gray-400">
+          <div class="mt-8">
+            <span class="text-xs uppercase tracking-widest text-gray-400 block mb-3 font-bold">Community Portals</span>
+            <div class="flex gap-5 text-sm md:text-base font-semibold text-gray-300">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Facebook</a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Instagram</a>
               <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">YouTube</a>
@@ -588,9 +589,9 @@
       
       <!-- Story Content Content -->
       <div class="absolute bottom-10 left-5 right-5 z-20">
-        <span id="storyTag" class="text-[9px] font-bold text-white px-2 py-1 rounded uppercase tracking-wider mb-3 inline-block shadow-lg"></span>
-        <h2 id="storyTitle" class="text-2xl font-bold text-white mb-2 leading-tight drop-shadow-md"></h2>
-        <p id="storyDesc" class="text-sm text-gray-200 drop-shadow"></p>
+        <span id="storyTag" class="text-[10px] font-extrabold text-white px-2 py-1 rounded uppercase tracking-wider mb-3 inline-block shadow-lg"></span>
+        <h2 id="storyTitle" class="text-2xl font-extrabold text-white mb-2 leading-tight drop-shadow-md"></h2>
+        <p id="storyDesc" class="text-sm md:text-base text-gray-200 drop-shadow font-medium"></p>
       </div>
       
       <!-- Tap Interaction Areas -->
@@ -599,14 +600,14 @@
     </div>
   </div>
 
-  <footer class="bg-black/40 backdrop-blur-md border-t border-white/5 py-8 px-6 text-center text-gray-500 relative z-30 text-xs">
-    <div class="max-w-5xl mx-auto space-y-3">
-      <div class="text-base font-bold bg-gradient-to-r from-pink-500 to-indigo-400 bg-clip-text text-transparent">Radio Rainbow</div>
-      <p>&copy; 2026 Radio Rainbow. All Rights Reserved.</p>
-      <div class="flex justify-center gap-x-4 mt-2 text-gray-600 font-medium">
-        <a href="privacy-policy.html" class="hover:text-gray-400 transition">Privacy Policy</a>
-        <a href="terms.html" class="hover:text-gray-400 transition">Terms</a>
-        <a href="dmca.html" class="hover:text-gray-400 transition">DMCA</a>
+  <footer class="bg-black/40 backdrop-blur-md border-t border-white/5 py-10 px-6 text-center text-gray-400 relative z-30 text-sm"> <!-- Optimized footer fonts and paddings -->
+    <div class="max-w-5xl mx-auto space-y-4">
+      <div class="text-lg font-bold bg-gradient-to-r from-pink-500 to-indigo-400 bg-clip-text text-transparent">Radio Rainbow</div>
+      <p class="font-medium">&copy; 2026 Radio Rainbow. All Rights Reserved.</p>
+      <div class="flex justify-center gap-x-6 mt-3 text-gray-400 font-semibold">
+        <a href="privacy-policy.html" class="hover:text-white transition">Privacy Policy</a>
+        <a href="terms.html" class="hover:text-white transition">Terms</a>
+        <a href="dmca.html" class="hover:text-white transition">DMCA</a>
       </div>
     </div>
   </footer>
@@ -691,7 +692,7 @@
       imgEl.classList.add('scale-105');
 
       const tagEl = document.getElementById('storyTag');
-      tagEl.className = `text-[9px] font-bold text-white px-2 py-1 rounded uppercase tracking-wider mb-3 inline-block shadow-lg ${slide.tagColor}`;
+      tagEl.className = `text-[10px] font-extrabold text-white px-2.5 py-1 rounded uppercase tracking-wider mb-3 inline-block shadow-lg ${slide.tagColor}`;
       tagEl.innerText = slide.tag;
       
       document.getElementById('storyTitle').innerText = slide.title;
@@ -871,7 +872,7 @@
           programs.forEach((prog, idx) => {
             const isActive = (idx === activeIndex);
             const card = document.createElement('div');
-            card.className = `schedule-card glass-card p-5 rounded-xl transition-all duration-300 ${isActive ? 'active-schedule' : ''}`;
+            card.className = `schedule-card glass-card p-6 rounded-xl transition-all duration-300 ${isActive ? 'active-schedule' : ''}`;
             
             const startTime = prog.start === 0 ? '12 AM' : prog.start < 12 ? `${prog.start} AM` : prog.start === 12 ? '12 PM' : `${prog.start - 12} PM`;
             const endTime = prog.end === 0 || prog.end === 24 ? '12 AM' : prog.end < 12 ? `${prog.end} AM` : prog.end === 12 ? '12 PM' : `${prog.end - 12} PM`;
@@ -879,10 +880,10 @@
             card.innerHTML = `
               <div class="flex items-center justify-between">
                 <div>
-                  <h3 class="text-sm font-bold text-white tracking-wide">${prog.name}</h3>
-                  <p class="text-gray-400 text-[11px] mt-0.5">${startTime} - ${endTime}</p>
+                  <h3 class="text-base font-bold text-white tracking-wide">${prog.name}</h3>
+                  <p class="text-gray-300 text-xs mt-1 font-semibold">${startTime} - ${endTime}</p>
                 </div>
-                ${isActive ? '<span class="bg-amber-500/20 text-amber-400 font-bold text-[9px] px-2 py-0.5 rounded-full border border-amber-500/30">LIVE NOW</span>' : ''}
+                ${isActive ? '<span class="bg-amber-500/20 text-amber-400 font-bold text-xs px-2.5 py-0.5 rounded-full border border-amber-500/30">LIVE NOW</span>' : ''}
               </div>
             `;
             scheduleContainer.appendChild(card);
